@@ -23,5 +23,6 @@ Homestead.json
 .phpunit.result.cache
 
 
-*/artisan
-*/composer.lock
+BaetenMaarten_LenaertsNils/artisan
+
+BaetenMaarten_LenaertsNils/composer.lock
