@@ -17,5 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', [CharacterController::class, 'test']);
+Route::get('/home', [CharacterController::class, 'home']);
+Route::get('/randomCharacterCreation', [CharacterController::class, 'RCC']);
 //Route::get('/character/{weight}/{lenght}', [CharacterController::class, 'showBMI']);

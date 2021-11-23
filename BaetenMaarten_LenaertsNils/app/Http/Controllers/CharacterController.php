@@ -9,7 +9,11 @@ class CharacterController extends Controller
 {
     //
     
-    public function test(){
-        return view("Characters.index");
+    public function home(){
+        return view("home");
+    }
+    
+    public function RCC(){
+        return view("Characters\character");
     }
 }
