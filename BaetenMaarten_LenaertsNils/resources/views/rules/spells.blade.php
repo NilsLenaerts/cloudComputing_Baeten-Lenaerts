@@ -6,7 +6,7 @@
         <p>List of spells</p>
         <form action="foundSpells" method="post">
             @geencsrf
-            Casting Time; <input type="number" name="ondergrens" value="500" id="minPrijs"/>
+            Casting Time; <input type="string" name="casting Time" value="1 action" id="castingTime"/>
             <br/>
             <button type="submit"><strong>zoek via submit</strong></button>
         </form>
