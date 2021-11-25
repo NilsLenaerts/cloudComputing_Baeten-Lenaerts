@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Character @yield('subtitle')</title>
+        <title>D&D 5e @yield('subtitle')</title>
         <script type="text/javascript" src="functions.js">
         </script>
     </head>

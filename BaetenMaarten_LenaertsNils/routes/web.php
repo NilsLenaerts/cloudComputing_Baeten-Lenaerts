@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\RulesController;     
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +20,8 @@ Route::get('/', function () {
 
 Route::get('/home', [CharacterController::class, 'home']);
 Route::get('/randomCharacterCreation', [CharacterController::class, 'RCC']);
+Route::get('/rules', [RulesController::class, 'rules']);
+Route::get('/spells', [RulesController::class, 'spells']);
+Route::post('/foundSpells', [RulesController::class, 'foundSpells']);
+Route::get('/showSpell/{name}', [RulesController::class, 'showSpell']);
 //Route::get('/character/{weight}/{lenght}', [CharacterController::class, 'showBMI']);

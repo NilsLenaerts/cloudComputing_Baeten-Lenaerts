@@ -14,6 +14,6 @@ class CharacterController extends Controller
     }
     
     public function RCC(){
-        return view("Characters\character");
+        return view("Characters/character");
     }
 }
