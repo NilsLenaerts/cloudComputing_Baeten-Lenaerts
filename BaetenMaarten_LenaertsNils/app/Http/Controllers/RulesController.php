@@ -28,9 +28,9 @@ class RulesController extends Controller
         return view("rules/foundSpells")->with("spells",$spells->results);  
     }*/
     
+    
     public function foundSpells(Request $request){
         $level=$request->level;
-        
         //error_log($spells->results);
         if($level!=null){
             if($level>9){
@@ -47,6 +47,8 @@ class RulesController extends Controller
         }
         
     }
+    
+    
     
     public function foundClasses(Request $request){
         $classes= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/"));
