@@ -21,14 +21,17 @@ class RulesController extends Controller
         return view("rules/classes");
     }*/
     
-    /*
+    /* zonder level filter
     public function foundSpells(Request $request){
         $spells= json_decode(file_get_contents("https://www.dnd5eapi.co/api/spells/"));
         //error_log($spells->results);
         return view("rules/foundSpells")->with("spells",$spells->results);  
     }*/
     
-    
+    /*
+     * @Param request
+     * Zoekt spells op de D&D 5e API, eventueel op level, en geeft deze terug
+     */
     public function foundSpells(Request $request){
         $level=$request->level;
         //error_log($spells->results);
@@ -48,31 +51,36 @@ class RulesController extends Controller
         
     }
     
-    
-    
+    /*
+     * Haalt de classes op van de D&D5e api en geeft deze terug
+     */
     public function foundClasses(Request $request){
         $classes= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/"));
         //error_log($spells->results);
         return view("rules/foundClasses")->with("classes",$classes->results);  
     }
     
+    /*
+     * Haalt de inhoud van een spell op
+     */
     public function showSpell($name){
         $spell= json_decode(file_get_contents("https://www.dnd5eapi.co/api/spells/" . $name));
-        error_log(json_encode($spell));
+        //error_log(json_encode($spell));
         return view("rules/showSpell")->with("spell",$spell);  
     }
     
+    
+    /*
+     * haalt de inhoud van een klasse op
+     */
     public function showclass($name){
         $class= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $name));
-        error_log(json_encode($class));
+        //error_log(json_encode($class));
         return view("rules/showClass")->with("class",$class);  
     }
 
-    
-    
-    
-    
     //------------------------------------------------------------------------------------------
+    
     
     
 }
