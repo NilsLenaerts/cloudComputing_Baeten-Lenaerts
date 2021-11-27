@@ -21,7 +21,13 @@ Route::get('/', function () {
 Route::get('/home', [CharacterController::class, 'home']);
 Route::get('/randomCharacterCreation', [CharacterController::class, 'RCC']);
 Route::get('/rules', [RulesController::class, 'rules']);
+
 Route::get('/spells', [RulesController::class, 'spells']);
 Route::post('/foundSpells', [RulesController::class, 'foundSpells']);
 Route::get('/showSpell/{name}', [RulesController::class, 'showSpell']);
+
+//Route::get('/classes', [RulesController::class, 'classes']);
+Route::get('/foundClasses', [RulesController::class, 'foundClasses']);
+Route::get('/showClass/{name}', [RulesController::class, 'showClass']);
+
 //Route::get('/character/{weight}/{lenght}', [CharacterController::class, 'showBMI']);
