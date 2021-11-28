@@ -135,10 +135,6 @@ return [
     */
 
     'providers' => [
-        /*
-         * Google auth
-         */
-        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -233,8 +229,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
