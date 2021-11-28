@@ -26,6 +26,7 @@
     </head>
     <body>
         <h1><a id = "homeButton" href="/">D&D 5e</a></h1>
+        <h3><a href = "login">Login</a></h3>
         <h2>@yield('subtitle')</h2>
         @yield('content')
         
