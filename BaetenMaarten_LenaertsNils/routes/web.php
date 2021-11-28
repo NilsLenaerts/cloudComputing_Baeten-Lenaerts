@@ -14,9 +14,7 @@ use App\Http\Controllers\RulesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CharacterController::class, 'home']);
 
 Route::get('/home', [CharacterController::class, 'home']);
 Route::get('/randomCharacterCreation', [CharacterController::class, 'RCC']);

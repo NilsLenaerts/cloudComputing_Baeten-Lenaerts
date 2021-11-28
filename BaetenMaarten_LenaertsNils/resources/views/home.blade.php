@@ -9,6 +9,7 @@
     </head>
     <body>
         <h2>Welcome to D&amp;D&nbsp;</h2>
+        <p><a style="text-decoration: underline;" href="calendar">gameCalendar</a></p>
         <p>For random character creation press this <a style="text-decoration: underline;" href="randomCharacterCreation">link</a></p>
         <p>For random dungeon creation press this <a style="text-decoration: underline;" href="google.com">link</a></p>
         <p>For all D&amp;D rules press this <a style="text-decoration: underline;" href="rules">link</a></p>
