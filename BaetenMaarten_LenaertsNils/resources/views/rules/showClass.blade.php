@@ -13,8 +13,10 @@
 <p> Choose: {{$prof_choice->choose}} proficiencies</p>
 <p> From: 
     <ul>
-        @foreach($class->proficiency_choices->from as $froms)
-        <li>{{$froms->name}}</li>
+        @foreach($prof_choice->from as $froms)
+            
+                <li>{{$froms->name}}</li>
+            
         @endforeach
     </ul>
 @endforeach  

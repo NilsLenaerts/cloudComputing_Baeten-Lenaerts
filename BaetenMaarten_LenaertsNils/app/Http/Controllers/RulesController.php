@@ -56,7 +56,7 @@ class RulesController extends Controller
      */
     public function foundClasses(Request $request){
         $classes= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/"));
-        //error_log($spells->results);
+        error_log($classes>results);
         return view("rules/foundClasses")->with("classes",$classes->results);  
     }
     
@@ -75,7 +75,7 @@ class RulesController extends Controller
      */
     public function showclass($name){
         $class= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $name));
-        //error_log(json_encode($class));
+        error_log(json_encode($class->proficiency_choices[0]->from));
         return view("rules/showClass")->with("class",$class);  
     }
 
