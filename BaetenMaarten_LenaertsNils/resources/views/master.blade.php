@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>D&D 5e @yield('subtitle')</title>
         <script type="text/javascript" src="functions.js">
         </script>
         <style>
@@ -61,7 +60,7 @@
     
     </head>
     <body>
-        <h1><a id = "homeButton" href="/">D&D 5e</a></h1>
+      
         <ul>
         <li>
             <div id="homeButtonLogo" style="width: 50px;">
