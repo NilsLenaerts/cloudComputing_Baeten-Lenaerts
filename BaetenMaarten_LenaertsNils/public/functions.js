@@ -20,7 +20,7 @@ function saveSpell(){
     }
 }
 
-
+/*
 function searchSpell(){
     var level = document.getElementById("level").value;
     var url ="http://127.0.0.1:1200/searchspell/";
@@ -34,7 +34,17 @@ function searchSpell(){
     xhr.onload = () => {
         alert("Succes");
     }
+}*/
+
+function searchSpell()
+{
+    var level = document.getElementById("level").value;
+    fetch("http://127.0.0.1:1200/searchspell/" + level)
+        .then(response => {if (response.ok) return response.json();
+                            else alert("kleine pie");})
+        .then(showData).catch(err => alert(err));
 }
+
 
 
 function showData(json){

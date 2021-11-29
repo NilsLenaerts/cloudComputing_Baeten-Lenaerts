@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers;
 header('Access-Control-Allow-Origin: *');
-use App\Models\Character;
 use Illuminate\Http\Request;
 
 class homebrewController extends Controller{
