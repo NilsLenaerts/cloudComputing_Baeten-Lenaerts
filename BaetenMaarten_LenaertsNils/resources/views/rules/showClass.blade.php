@@ -33,6 +33,15 @@
 </ul>
 @endif
 
+@if(isset($class->saving_throws))
+<p>Saving throws:</p>
+<ul>
+@foreach($class->saving_throws as $saves)
+    <li>{{$saves->name}}</li>
+@endforeach  
+</ul>
+@endif
+
 @if(isset($class->subclasses))
 <p>subclasses:</p>
 <ul>
