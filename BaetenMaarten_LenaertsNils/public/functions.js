@@ -4,12 +4,37 @@
  * and open the template in the editor.
  */
 
+function saveSpell(){
+    var name = document.getElementById("name").value;
+    var castingTime = document.getElementById("castingTime").value;
+    var level = document.getElementById("level").value;
+    var url ="http://127.0.0.1:1200/savespell/";
+    var params = "name=" + name + "&castingTime=" + castingTime +"&level=" + level;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    //Send the proper header information along with the request
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(params);
+    xhr.onload = () => {
+        alert("Succes");
+    }
+}
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+function searchSpell(){
+    var level = document.getElementById("level").value;
+    var url ="http://127.0.0.1:1200/searchspell/";
+    //var params = "name=" + name + "&castingTime=" + castingTime +"&level=" + level;
+    var params ="level=" + level;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    //Send the proper header information along with the request
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(params);
+    xhr.onload = () => {
+        alert("Succes");
+    }
+}
 
 
 function showData(json){

@@ -13,7 +13,7 @@
         <p>For random character creation press this <a style="text-decoration: underline;" href="randomCharacterCreation">link</a></p>
         <p>For random dungeon creation press this <a style="text-decoration: underline;" href="google.com">link</a></p>
         <p>For all D&amp;D rules press this <a style="text-decoration: underline;" href="rules">link</a></p>
-        <p>For all D&amp;D homebrew content press this <a style="text-decoration: underline;" href="https://google.com">link</a></p>
+        <p>For all D&amp;D homebrew content press this <a style="text-decoration: underline;" href="homebrew">link</a></p>
         <p><img src="https://dnd.wizards.com/sites/all/themes/dx/logo.png" width="382" height="64" /></p>
         <p><em>&nbsp;May the die be in your favor</em></p>
         <p>&nbsp;</p>

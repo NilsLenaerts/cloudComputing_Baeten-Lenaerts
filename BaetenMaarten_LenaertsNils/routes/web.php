@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\RulesController;     
+use App\Http\Controllers\homebrewController;     
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,8 @@ Route::get('/foundClasses', [RulesController::class, 'foundClasses']);
 Route::get('/showClass/{name}', [RulesController::class, 'showClass']);
 
 //Route::get('/character/{weight}/{lenght}', [CharacterController::class, 'showBMI']);
+
+// homebrew content
+Route::get('/homebrew', [homebrewController::class, 'homebrew']);
+Route::get('/homebrewspellcreator', [homebrewController::class, 'homebrewSpellCreator']);
+Route::get('/foundhomebrewspells', [homebrewController::class, 'foundHomebrewSpells']);

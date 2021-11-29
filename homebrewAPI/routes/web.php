@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\homebrewController;     
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', [CharacterController::class, 'home']);
-Route::get('/homebrewSpell', [CharacterController::class, 'homebrewSpell']);
+Route::post('/savespell', [homebrewController::class, 'saveSpell']);
+Route::post('/searchspell', [homebrewController::class, 'searchSpell']);
