@@ -73,7 +73,16 @@
         </li>    
         <li class="topbarItem"><a href="home">Home</a> </li>
         <li class="topbarItem"><a href="login">Login</a></li>
-        <li class="topbarItem"><a href="homebrew">Homebrew</a></li>
+        
+        
+        <li class="dropdown">
+          <a href="homebrew" class="dropbtn">Homebrew</a>
+          <div class="dropdown-content">
+            <a href="foundHomebrewSpells">Homebrew spells</a>
+            <a href="">Homebrew Items</a>
+          </div>
+        </li>
+        
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Rules</a>
           <div class="dropdown-content">

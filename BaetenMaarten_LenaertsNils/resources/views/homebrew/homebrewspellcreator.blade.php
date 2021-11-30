@@ -8,7 +8,7 @@
             <p>Casting Time:  <input type="string" name="castingTime" value="" id="castingTime"/></p>
             <p>Level:  <input type="int" name="level" value="" id="level"/></p>  
             <button type="submit"><strong>zoek via submit</strong></button> 
-            <button type="button" onclick="saveSpell()">
+            <button type="button" onclick="saveSpell()"><strong>Save</strong></button> 
         </form>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
