@@ -27,15 +27,17 @@ class homebrewController extends Controller{
     
     public function foundHomebrewSpells(Request $request){
         //$level=$request->level;
+        error_log("hier");
         $name=$request->name;
         //error_log($spells->results);
+        error_log("hoer");
         if($name!=null){
             
-            $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/searchspell/" . "?name=" . $name));
+            $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell/" . "?name=" . $name));
             return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
            
         }else{
-            $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/searchspell/"));
+            $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell"));
             return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
         }
         

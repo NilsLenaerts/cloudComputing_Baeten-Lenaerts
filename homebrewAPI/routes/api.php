@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\homebrewController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/savespell', [homebrewController::class, 'saveSpell']);
-Route::post('/searchspell', [homebrewController::class, 'searchSpell']);
+Route::get('/searchspell', [homebrewController::class, 'searchSpells']);
 Route::post('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebrewSpell']);

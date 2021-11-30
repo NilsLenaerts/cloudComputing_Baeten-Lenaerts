@@ -20,9 +20,11 @@ class homebrewController extends Controller
         //error_log($spells->results);
     }
     
-    public function searchSpells(Request $request){
-        $homebrewSpells= DB::table('spells')->where('level',"==",$request->level);
-        return  $homebrewSpells;
+    public function searchSpells(){
+       
+        $homebrewSpells= DB::table('spells')->get();
+        echo(json_encode($homebrewSpells));
+        //return $homebrewSpells;
         //echo("spells retrieved");
         //error_log($spells->results);
     }
