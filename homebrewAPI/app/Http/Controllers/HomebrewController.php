@@ -29,7 +29,8 @@ class homebrewController extends Controller
     }
     
     public function showHomebrewSpell($name){
-        $homebrewSpell= DB::table('spells')->get()->where('name','=',$name);
+        $homebrewSpell= DB::table('spells')->where('name','=',$name)->first();
+        error_log(json_encode($homebrewSpell));
         echo(json_encode($homebrewSpell));
     }
 }
