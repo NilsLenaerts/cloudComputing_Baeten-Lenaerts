@@ -1,8 +1,23 @@
-          limenu{
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30 nov. 2021, 18:03:02
+    Author     : Maarten
+*/
+
+h4.blauw {
+          color: blue;
+          margin-right: 30px;
+        }
+        
+limenu{
             float: left;
           }
 
-          limenu a, .dropbtn  {
+        limenu a, .dropbtn  {
             display: inline-block;
             color: white;
             text-align: center;
@@ -39,4 +54,15 @@
 
           .dropdown:hover .dropdown-content {
             display: block;
+          }
+          
+          .lid.diamond::before {
+                content: "";
+                position: absolute; 
+                left: 0px; 
+                top: 0px; 
+                width: 0; 
+                height: 0; 
+                border: 5px solid transparent; 
+                border-bottom-color: #f9dd94;
           }

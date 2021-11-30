@@ -2,7 +2,7 @@
 @section("pagina","...")
 
 @section("content")
-
+<body class="show">
     <h3>{{$spell->name}}</h3>
     <h4><i>School of magic: {{$spell->school->name}}</i></h4>
     <h4>Casting Time: {{$spell->casting_time}}</h4>
@@ -14,7 +14,7 @@
     <h4>Components:</h4>
         <ul>
             @foreach($spell->components as $component)
-            <li>{{$component}}</li>
+            <li >{{$component}}</li>
             @endforeach  
         </ul>
     @endif
@@ -45,6 +45,6 @@
             <li>{{$class->name}}</li>
         @endforeach
     </ul>
-    
+</body>
 
 @stop

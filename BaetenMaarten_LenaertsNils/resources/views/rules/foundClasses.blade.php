@@ -2,11 +2,11 @@
 @section("pagina","...")
 
 @section("content")
-</body>
+<body class="classes">
     <ul>
         @foreach ($classes as $id)
-        <li><strong><a href = "showClass/{{$id->index}}" >{{$id->name}}</a></strong></li>
+        <li><strong><a style="color: white;" href = "showClass/{{$id->index}}" >{{$id->name}}</a></strong></li>
         @endforeach
     </ul>
-<body>
+</body>
 @stop

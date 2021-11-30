@@ -1,11 +1,13 @@
 @extends('master')
-@section('subtitle', 'Spells')
+@section('subtitle')
 @section('content')
-    <body>
-        <h2>Welcome to D&amp;D&nbsp; 5e Rules Spells</h2>
-        <p>List of spells</p>
+
+    <body class="spell">
+        <link rel="stylesheet" type="text/css" href="styles.css" media=”screen” />
+        <h2 style="color: white">Welcome to D&amp;D&nbsp; 5e Rules Spells</h2>
+        <p style="color: white">List of spells</p>
         <form action="foundSpells" method="post">
-            <p>Level:  <input type="int" name="level" value="" id="level"/>
+            <p style="color: white">Level:  <input type="int" name="level" value="" id="level"/>
                 <button type="submit"><strong>zoek via submit</strong></button>
             </p>
         </form>
