@@ -76,9 +76,9 @@
         
         
         <li class="dropdown">
-          <a href="homebrew" class="dropbtn">Homebrew</a>
+          <a href="/homebrew" class="dropbtn">Homebrew</a>
           <div class="dropdown-content">
-            <a href="foundHomebrewSpells">Homebrew spells</a>
+            <a href="/foundHomebrewSpells">Homebrew spells</a>
             <a href="">Homebrew Items</a>
           </div>
         </li>
@@ -86,8 +86,8 @@
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Rules</a>
           <div class="dropdown-content">
-            <a href="spells">Spells</a>
-            <a href="foundClasses">Classes</a>
+            <a href="/spells">Spells</a>
+            <a href="/foundClasses">Classes</a>
             <a href="">Races</a>
           </div>
         </li>

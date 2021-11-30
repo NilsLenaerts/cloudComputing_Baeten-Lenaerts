@@ -11,6 +11,7 @@ class homebrewController extends Controller
     
     
     public function saveSpell(Request $request){
+        error_log("we zitten hier");
         DB::table('spells')->insert([
             'name' => $request->name,
             'castingTime' => $request->castingTime, 

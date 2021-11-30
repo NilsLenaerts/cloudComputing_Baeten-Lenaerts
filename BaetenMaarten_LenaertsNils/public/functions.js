@@ -8,7 +8,7 @@ function saveSpell(){
     var name = document.getElementById("name").value;
     var castingTime = document.getElementById("castingTime").value;
     var level = document.getElementById("level").value;
-    var url ="http://127.0.0.1:1200/savespell/";
+    var url ="http://127.0.0.1:1200/api/savespell/";
     var params = "name=" + name + "&castingTime=" + castingTime +"&level=" + level;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
