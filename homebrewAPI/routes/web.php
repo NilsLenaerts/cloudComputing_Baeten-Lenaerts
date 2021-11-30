@@ -15,7 +15,9 @@ use App\Http\Controllers\homebrewController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+});/*
 Route::post('/savespell', [homebrewController::class, 'saveSpell']);
 Route::get('/searchspell', [homebrewController::class, 'searchSpells']);
 Route::post('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebrewSpell']);
+ * */
+ 

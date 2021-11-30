@@ -21,11 +21,15 @@ class homebrewController extends Controller
     }
     
     public function searchSpells(){
-       
         $homebrewSpells= DB::table('spells')->get();
-        echo(json_encode($homebrewSpells));
+        return json_encode($homebrewSpells);
         //return $homebrewSpells;
         //echo("spells retrieved");
         //error_log($spells->results);
+    }
+    
+    public function showHomebrewSpell($name){
+        $homebrewSpell= DB::table('spells')->get()->where('name','=',$name);
+        echo(json_encode($homebrewSpell));
     }
 }

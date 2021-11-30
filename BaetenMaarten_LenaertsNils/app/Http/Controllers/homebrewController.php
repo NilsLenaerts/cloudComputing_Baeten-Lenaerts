@@ -28,9 +28,12 @@ class homebrewController extends Controller{
     public function foundHomebrewSpells(Request $request){
         //$level=$request->level;
         error_log("hier");
-        $name=$request->name;
+        //$name=$request->name;
         //error_log($spells->results);
         error_log("hoer");
+        $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell"));
+        return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
+        /*
         if($name!=null){
             
             $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell/" . "?name=" . $name));
@@ -39,7 +42,7 @@ class homebrewController extends Controller{
         }else{
             $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell"));
             return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
-        }
+        }*/
         
     }
     
@@ -47,8 +50,8 @@ class homebrewController extends Controller{
     * Haalt de inhoud van een spell op
     */
     public function showHomebrewSpell($name){
-        $homebrewSpell= json_decode(file_get_contents("http://127.0.0.1:1200/searchspell/" . $name));
-        //error_log(json_encode($spell));
+        $homebrewSpell= json_decode(file_get_contents("http://127.0.0.1:1200/api/showHomebrewSpell/" . $name));
+        error_log(json_encode($homebrewSpell));
         return view("homebrew/showHomebrewSpell")->with("homebrewSpell",$homebrewSpell);  
     }
 
