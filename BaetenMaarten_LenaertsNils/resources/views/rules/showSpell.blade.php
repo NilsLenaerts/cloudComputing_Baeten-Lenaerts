@@ -2,6 +2,7 @@
 @section("pagina","...")
 
 @section("content")
+
     <h3>{{$spell->name}}</h3>
     <h4><i>School of magic: {{$spell->school->name}}</i></h4>
     <h4>Casting Time: {{$spell->casting_time}}</h4>
@@ -44,4 +45,6 @@
             <li>{{$class->name}}</li>
         @endforeach
     </ul>
+    
+
 @stop
