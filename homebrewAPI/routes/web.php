@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 Route::post('/savespell', [homebrewController::class, 'saveSpell']);
 Route::post('/searchspell', [homebrewController::class, 'searchSpell']);
+Route::post('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebrewSpell']);

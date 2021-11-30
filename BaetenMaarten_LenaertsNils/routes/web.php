@@ -34,4 +34,5 @@ Route::get('/showClass/{name}', [RulesController::class, 'showClass']);
 // homebrew content
 Route::get('/homebrew', [homebrewController::class, 'homebrew']);
 Route::get('/homebrewspellcreator', [homebrewController::class, 'homebrewSpellCreator']);
-Route::get('/foundhomebrewspells', [homebrewController::class, 'foundHomebrewSpells']);
+Route::post('/foundhomebrewspells', [homebrewController::class, 'foundHomebrewSpells']);
+Route::get('/showHomebrewspell/{name}', [homebrewController::class, 'showHomebrewSpell']);

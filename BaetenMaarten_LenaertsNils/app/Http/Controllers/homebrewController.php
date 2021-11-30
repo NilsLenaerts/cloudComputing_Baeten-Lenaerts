@@ -25,6 +25,30 @@ class homebrewController extends Controller{
         return view("homebrew/foundhomebrewspells");
     }*/
     
+    public function foundHomebrewSpells(Request $request){
+        //$level=$request->level;
+        $name=$request->name;
+        //error_log($spells->results);
+        if($name!=null){
+            
+            $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/searchspell/" . "?name=" . $name));
+            return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
+           
+        }else{
+            $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/searchspell/"));
+            return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
+        }
+        
+    }
+    
+    /*
+    * Haalt de inhoud van een spell op
+    */
+    public function showHomebrewSpell($name){
+        $homebrewSpell= json_decode(file_get_contents("http://127.0.0.1:1200/searchspell/" . $name));
+        //error_log(json_encode($spell));
+        return view("homebrew/showHomebrewSpell")->with("homebrewSpell",$homebrewSpell);  
+    }
 
   
     

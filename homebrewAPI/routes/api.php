@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/savespell', [homebrewController::class, 'saveSpell']);
 Route::post('/searchspell', [homebrewController::class, 'searchSpell']);
+Route::post('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebrewSpell']);

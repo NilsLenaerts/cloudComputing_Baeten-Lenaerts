@@ -49,6 +49,5 @@ function searchSpell()
 
 function showData(json){
     console.log(json);
-    document.getElementById("status").innerHTML = msg;
 }
 

@@ -78,6 +78,8 @@ class RulesController extends Controller
         return view("rules/showClass")->with("class",$class);  
     }
 
+    
+   
     //------------------------------------------------------------------------------------------
     
     
