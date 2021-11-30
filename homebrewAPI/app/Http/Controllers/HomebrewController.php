@@ -13,7 +13,7 @@ class homebrewController extends Controller
     public function saveSpell(Request $request){
         DB::table('spells')->insert([
             'name' => $request->name,
-            'casting time' => $request->castingTime, 
+            'castingTime' => $request->castingTime, 
             'level' => $request->level
             ]);
         echo("spell saved");

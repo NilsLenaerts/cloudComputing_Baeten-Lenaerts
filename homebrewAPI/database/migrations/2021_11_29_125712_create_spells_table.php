@@ -16,7 +16,7 @@ class CreateSpellsTable extends Migration
         Schema::create('spells', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('casting time'); // Voegt een VARCHAR toe.   
+            $table->string('castingTime'); // Voegt een VARCHAR toe.   
             $table->integer('level');
             $table->timestamps();
         });
