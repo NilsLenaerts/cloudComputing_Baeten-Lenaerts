@@ -71,8 +71,8 @@
                 </a>
             </div>
         </li>    
-        <li class="topbarItem"><a href="home">Home</a> </li>
-        <li class="topbarItem"><a href="login">Login</a></li>
+        <li class="topbarItem"><a href="/home">Home</a> </li>
+        <li class="topbarItem"><a href="/login">Login</a></li>
         
         
         <li class="dropdown">
@@ -91,7 +91,7 @@
             <a href="">Races</a>
           </div>
         </li>
-        <li class="topbarItem"><a href="calendar">Calendar</a></li>
+        <li class="topbarItem"><a href="/calendar">Calendar</a></li>
         </ul>
         <h2>@yield('subtitle')</h2>
         @yield('content')
