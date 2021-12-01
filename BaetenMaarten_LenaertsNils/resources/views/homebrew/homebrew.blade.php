@@ -1,5 +1,5 @@
 @extends('master')
-@section('subtitle')
+@section('subtitle','Homebrew')
 @section('content')
     <body class="homebrew">
         <h2 style="color: white">Welcome to D&amp;D&nbsp; 5e homebrew creator</h2>

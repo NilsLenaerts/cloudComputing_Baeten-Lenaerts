@@ -1,12 +1,7 @@
  @extends('master')
-@section('subtitle')
+@section('subtitle',"Home")
 @section('content')
-    <head>
-            <meta charset="UTF-8">
-            <title>Character @yield('subtitle')</title>
-            <script type="text/javascript" src="functions.js">
-            </script>
-    </head>
+
     <body class="home">
         <h1 class="blackRedShadow lucida center" >Home</h1>
         <h2 class="lucida center" >Welcome to D&amp;D&nbsp;</h2>
