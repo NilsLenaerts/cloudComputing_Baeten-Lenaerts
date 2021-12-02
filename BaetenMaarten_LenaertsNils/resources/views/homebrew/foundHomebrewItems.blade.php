@@ -1,5 +1,5 @@
 @extends("master")
-@section("pagina","Homebrew spells")
+@section("pagina","Homebrew items")
 
 @section("content")
     <body class="spellList">

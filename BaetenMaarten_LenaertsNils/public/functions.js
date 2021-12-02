@@ -52,3 +52,11 @@ function saveItem(){
         alert("Succes");
     }
 }
+
+function searchItem(){
+    var name = document.getElementById("name").value;
+    fetch("http://127.0.0.1:1200/searchspell/" + name)
+        .then(response => {if (response.ok) return response.json();
+                            else alert("kleine pie");})
+        .then(showData).catch(err => alert(err));
+}
