@@ -15,10 +15,10 @@ class homebrewController extends Controller{
     public function homebrew(){
         return view("homebrew/homebrew");
     }
-    
+    /*
     public function homebrewSpellCreator(){
         return view("homebrew/homebrewspellcreator");
-    }
+    }*/
     
     /*
      public function foundHomebrewSpells(){

@@ -28,10 +28,10 @@
             </li>
 
             <li class="dropdown" style=" float: left; ">
-              <a href="javascript:void(0)" class="dropbtn" style="font-size: 40px;" >Rules</a>
+              <a href="/rules" class="dropbtn" style="font-size: 40px;" >Rules</a>
               <div class="dropdown-content">
                 <a href="/spells">Spells</a>
-                <a href="/foundClasses">Classes</a>
+                <a href="/classes">Classes</a>
                 <a href="">Races</a>
               </div>
             </li>
@@ -47,7 +47,6 @@
               </div>
             </li>
         </ul>
-        <h2>@yield('subtitle')</h2>
         @yield('content')
 
     </body>

@@ -12,10 +12,10 @@ class RulesController extends Controller
     public function rules(){
         return view("rules/rules");
     }
-    
+    /*
     public function spells(){
         return view("rules/spells");
-    }
+    }*/
     /*
     public function classes(){
         return view("rules/classes");
@@ -40,13 +40,13 @@ class RulesController extends Controller
                 echo("No spell of level 9 or higher exists in this world");
             }elseif($level>0){
                 $spells= json_decode(file_get_contents("https://www.dnd5eapi.co/api/spells" . "?level=" . $level));
-                return view("rules/foundSpells")->with("spells",$spells->results);  
+                return view("rules/spells")->with("spells",$spells->results);  
             }else{
                 echo("wrong input");
             }
         }else{
             $spells= json_decode(file_get_contents("https://www.dnd5eapi.co/api/spells/"));
-            return view("rules/foundSpells")->with("spells",$spells->results);  
+            return view("rules/spells")->with("spells",$spells->results);  
         }
         
     }

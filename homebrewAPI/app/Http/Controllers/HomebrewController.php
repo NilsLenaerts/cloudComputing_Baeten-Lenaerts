@@ -34,4 +34,6 @@ class homebrewController extends Controller
         error_log(json_encode($homebrewSpell));
         echo(json_encode($homebrewSpell));
     }
+    
+    //-------------------------------------------------------------------------
 }

@@ -21,9 +21,7 @@ function saveSpell(){
 }
 
 
-
-function searchSpell()
-{
+function searchSpell(){
     var level = document.getElementById("level").value;
     fetch("http://127.0.0.1:1200/searchspell/" + level)
         .then(response => {if (response.ok) return response.json();
@@ -37,3 +35,20 @@ function showData(json){
     console.log(json);
 }
 
+//------------------------------------------------------------------------------
+
+function saveItem(){
+    var name = document.getElementById("name").value;
+    var price = document.getElementById("price").value;
+    var description = document.getElementById("description").value;
+    var url ="http://127.0.0.1:1200/api/saveItem/";
+    var params = "name=" + name + "&price=" + price +"&description=" + description;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    //Send the proper header information along with the request
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(params);
+    xhr.onload = () => {
+        alert("Succes");
+    }
+}

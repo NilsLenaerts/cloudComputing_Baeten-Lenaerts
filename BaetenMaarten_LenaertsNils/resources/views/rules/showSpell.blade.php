@@ -14,7 +14,7 @@
     <h4>Components:</h4>
         <ul>
             @foreach($spell->components as $component)
-            <li >{{$component}}</li>
+            <li>{{$component}}</li>
             @endforeach  
         </ul>
     @endif

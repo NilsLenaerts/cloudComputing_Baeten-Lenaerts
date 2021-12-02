@@ -1,14 +1,11 @@
 @extends('master')
-@section('subtitle', 'Spells')
+@section('subtitle', 'Classes')
 @section('content')
-    <body>
-        <h2>Welcome to D&amp;D&nbsp; 5e Rules Spells</h2>
-        <p>List of classes</p>
-        <form action="foundClasses" method="post">
-            <br/>
-            <button type="submit"><strong>zoek via submit</strong></button>
-        </form>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-    </body>
+<body class="classes">
+    <ul>
+        @foreach ($classes as $id)
+        <li><strong><a style="color: white;" href = "showClass/{{$id->index}}" >{{$id->name}}</a></strong></li>
+        @endforeach
+    </ul>
+</body>
 @stop

@@ -1,10 +1,12 @@
 @extends('master')
 @section('subtitle', 'Rules')
 @section('content')
-    <body>
-        <h2>Welcome to D&amp;D&nbsp; 5e Rules</h2>
-        <p>For list of spells press this link <a style="text-decoration: underline;" href="spells">link</a></p>
-        <p>For list of classes press this link <a style="text-decoration: underline;" href="foundClasses">link</a></p>
+    <body class="rules" >
+        <div style="text-align: center;">
+            <h2 style="color:white">Welcome to D&amp;D&nbsp; 5e Rules</h2>
+            <p style="color:white">For list of spells press <a style="color:white; text-decoration: underline;" href="spells">Spells</a></p>
+            <p style="color:white">For list of classes press <a style="color:white; text-decoration: underline;" href="classes">Classes</a></p>
+        </div>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
     </body>

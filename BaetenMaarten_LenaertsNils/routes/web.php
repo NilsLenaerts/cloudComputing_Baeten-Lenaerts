@@ -21,18 +21,18 @@ Route::get('/home', [CharacterController::class, 'home']);
 Route::get('/randomCharacterCreation', [CharacterController::class, 'RCC']);
 Route::get('/rules', [RulesController::class, 'rules']);
 
-Route::get('/spells', [RulesController::class, 'spells']);
-Route::post('/foundSpells', [RulesController::class, 'foundSpells']);
+Route::get('/spells', [RulesController::class, 'foundSpells']);
+//Route::post('/foundSpells', [RulesController::class, 'foundSpells']);
 Route::get('/showSpell/{name}', [RulesController::class, 'showSpell']);
 
-//Route::get('/classes', [RulesController::class, 'classes']);
-Route::get('/foundClasses', [RulesController::class, 'foundClasses']);
+Route::get('/classes', [RulesController::class, 'foundClasses']);
+//Route::get('/foundClasses', [RulesController::class, 'foundClasses']);
 Route::get('/showClass/{name}', [RulesController::class, 'showClass']);
 
 //Route::get('/character/{weight}/{lenght}', [CharacterController::class, 'showBMI']);
 
 // homebrew content
 Route::get('/homebrew', [homebrewController::class, 'homebrew']);
-Route::get('/homebrewspellcreator', [homebrewController::class, 'homebrewSpellCreator']);
+//Route::get('/homebrewspellcreator', [homebrewController::class, 'homebrewSpellCreator']);
 Route::get('/foundHomebrewSpells', [homebrewController::class, 'foundHomebrewSpells']);
 Route::get('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebrewSpell']);

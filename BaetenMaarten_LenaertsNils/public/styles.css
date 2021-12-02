@@ -64,9 +64,28 @@ li.color:before {
     font-family: "Lucida Handwriting", Lucida, Cursive;
 }
 
+ul.spellList {
+    -moz-column-count: 6;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 6;
+    -webkit-column-gap: 10px;
+    column-count: 6;
+    column-gap: 10px;
+}
+
 
 body.classes {
     background-image: url("https://i.pinimg.com/originals/0d/b6/a6/0db6a6b8f350497d0c8ca98c9ffac314.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+body.rules {
+    background-image: url("https://media.dnd.wizards.com/styles/story_banner/public/images/head-banner/HERO_PHB.jpg");
     background-color: #cccccc;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,4 +161,8 @@ body.homebrew {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+}
+
+ul li pin::before{
+    content: "📌";
 }

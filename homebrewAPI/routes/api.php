@@ -23,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/savespell', [homebrewController::class, 'saveSpell']);
 Route::get('/searchspell', [homebrewController::class, 'searchSpells']);
 Route::get('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebrewSpell']);
+
+Route::post('/saveItem', [homebrewController::class, 'saveItem']);
+Route::get('/searchItem', [homebrewController::class, 'searchItem']);
+Route::get('/showHombrewItem/{name}', [homebrewController::class, 'showHombrewItem']);
