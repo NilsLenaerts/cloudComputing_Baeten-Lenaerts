@@ -23,7 +23,7 @@
               <a href="/homebrew" class="dropbtn" style="font-size: 40px;">Homebrew</a>
               <div class="dropdown-content">
                 <a href="/foundHomebrewSpells">Homebrew spells</a>
-                <a href="">Homebrew Items</a>
+                <a href="/foundHomebrewItems">Homebrew Items</a>
               </div>
             </li>
 

@@ -36,4 +36,28 @@ class homebrewController extends Controller
     }
     
     //-------------------------------------------------------------------------
+        public function saveItem(Request $request){
+        error_log("we zitten hier");
+        DB::table('items')->insert([
+            'name' => $request->name,
+            'price' => $request->price, 
+            'description' => $request->description
+            ]);
+        echo("item saved");
+        //error_log($spells->results);
+    }
+    
+    public function searchItems(){
+        $homebrewItems= DB::table('items')->get();
+        return json_encode($homebrewItems);
+        //return $homebrewSpells;
+        //echo("spells retrieved");
+        //error_log($spells->results);
+    }
+    
+    public function showHomebrewItem($name){
+        $homebrewItem= DB::table('items')->where('name','=',$name)->first();
+        error_log(json_encode($homebrewItem));
+        echo(json_encode($homebrewItem));
+    }
 }
