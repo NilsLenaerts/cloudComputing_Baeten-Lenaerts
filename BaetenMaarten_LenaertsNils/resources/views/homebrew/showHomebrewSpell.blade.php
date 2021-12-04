@@ -8,5 +8,5 @@
     <h4>Casting Time: {{$homebrewSpell->castingTime}}</h4>
    
     <p>Spell Level: {{$homebrewSpell->level}}</p>
-    
+    <p>components: {{$homebrewSpell->components}}</p>
 @stop

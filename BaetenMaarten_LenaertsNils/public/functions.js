@@ -12,8 +12,18 @@ function saveSpell(){
     var name = document.getElementById("name").value;
     var castingTime = document.getElementById("castingTime").value;
     var level = document.getElementById("level").value;
+    var components = document.getElementById("components").value;
+    var materials = document.getElementById("materials").value;
+    var description = document.getElementById("description").value;
+    var school = document.getElementById("school").value;
+    var range = document.getElementById("range").value;
+    var ritual = document.getElementById("ritual").value;
+    var availability = document.getElementById("availability").value;
+
     var url ="http://127.0.0.1:1200/api/savespell/";
-    var params = "name=" + name + "&castingTime=" + castingTime +"&level=" + level;
+    var params = "name=" + name + "&castingTime=" + castingTime +"&level=" + level +"&components=" + components +
+                    "&materials=" + materials +"&description=" + description + "&school=" + school + "&range=" + range +
+                    "&ritual=" + ritual +"&availability=" + availability;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     //Send the proper header information along with the request
@@ -22,7 +32,7 @@ function saveSpell(){
     xhr.onload = () => {
         alert("Succes");
     }
-    location.reload();
+    //location.reload();
 }
 
 /*

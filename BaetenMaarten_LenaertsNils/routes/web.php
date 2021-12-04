@@ -39,3 +39,4 @@ Route::get('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebre
 
 Route::get('/foundHomebrewItems', [homebrewController::class, 'foundHomebrewItems']);
 Route::get('/showHomebrewItem/{name}', [homebrewController::class, 'showHomebrewItem']);
+

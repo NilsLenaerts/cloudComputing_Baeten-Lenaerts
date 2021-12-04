@@ -9,16 +9,22 @@ use App\Models\Spell;
 class homebrewController extends Controller
 {
     
-    
     public function saveSpell(Request $request){
         error_log("we zitten hier");
         DB::table('spells')->insert([
             'name' => $request->name,
             'castingTime' => $request->castingTime, 
-            'level' => $request->level
+            'level' => $request->level,
+            'components' => $request->components,
+            'materials' => $request->materials, 
+            'description' => $request->description,
+            'school' => $request->school,
+            'range' => $request->range, 
+            'ritual' => $request->ritual,
+            'availability' => $request->availability
             ]);
         echo("spell saved");
-        //error_log($spells->results);
+        error_log($spells->results);
     }
     
     public function searchSpells(){
