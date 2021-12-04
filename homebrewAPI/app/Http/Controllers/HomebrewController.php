@@ -36,7 +36,7 @@ class homebrewController extends Controller
     }
     
     //-------------------------------------------------------------------------
-        public function saveItem(Request $request){
+        public function saveItems(Request $request){
         error_log("we zitten hier");
         DB::table('items')->insert([
             'name' => $request->name,
@@ -49,7 +49,9 @@ class homebrewController extends Controller
     
     public function searchItems(){
         $homebrewItems= DB::table('items')->get();
-        return json_encode($homebrewItems);
+        if($homebrewItems!=null){
+            return json_encode($homebrewItems);
+        }
         //return $homebrewSpells;
         //echo("spells retrieved");
         //error_log($spells->results);

@@ -163,6 +163,3 @@ body.homebrew {
     width: 100%; /* Full width */
 }
 
-ul li pin::before{
-    content: "📌";
-}

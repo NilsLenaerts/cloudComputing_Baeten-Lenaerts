@@ -15,16 +15,10 @@ class homebrewController extends Controller{
     public function homebrew(){
         return view("homebrew/homebrew");
     }
-    /*
-    public function homebrewSpellCreator(){
-        return view("homebrew/homebrewspellcreator");
-    }*/
     
     /*
-     public function foundHomebrewSpells(){
-        return view("homebrew/foundhomebrewspells");
-    }*/
-    
+     * geeft de lijst met homebrew spells terug
+     */
     public function foundHomebrewSpells(Request $request){
         //$level=$request->level;
         error_log("hier");
@@ -55,15 +49,16 @@ class homebrewController extends Controller{
         return view("homebrew/showHomebrewSpell")->with("homebrewSpell",$homebrewSpell);  
     }
 
-    //--------------------
+    //-----------------------------------------------------
+        
     /*
-     * 
+     * geeft de lijst met homebrew items terug
      */
     public function foundHomebrewItems(Request $request){
         //$level=$request->level;
         error_log("hier");
         //$name=$request->name;
-        //error_log($spells->results);
+        //error_log($homebrewItems->results);
         error_log("hoer");
         $homebrewItems= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchitem"));
         return view("homebrew/foundHomebrewItems")->with("homebrewItems",$homebrewItems);          
