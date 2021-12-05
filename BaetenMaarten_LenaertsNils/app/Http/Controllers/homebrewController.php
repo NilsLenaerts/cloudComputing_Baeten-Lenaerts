@@ -26,25 +26,15 @@ class homebrewController extends Controller{
         //error_log($spells->results);
         error_log("hoer");
         $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell"));
-        return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
-        /*
-        if($name!=null){
-            
-            $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell/" . "?name=" . $name));
-            return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
-           
-        }else{
-            $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell"));
-            return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);  
-        }*/
-        
+        return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);    
     }
     
     /*
     * Haalt de inhoud van een spell op
     */
     public function showHomebrewSpell($name){
-        $homebrewSpell= json_decode(file_get_contents("http://127.0.0.1:1200/api/showHomebrewSpell/" . $name));
+        $name20 =rawurlencode($name);
+        $homebrewSpell= json_decode(file_get_contents("http://127.0.0.1:1200/api/showHomebrewSpell/" . $name20));
         error_log(json_encode($homebrewSpell));
         return view("homebrew/showHomebrewSpell")->with("homebrewSpell",$homebrewSpell);  
     }
@@ -68,7 +58,8 @@ class homebrewController extends Controller{
     * Haalt de inhoud van een item op
     */
     public function showHomebrewItem($name){
-        $homebrewItem= json_decode(file_get_contents("http://127.0.0.1:1200/api/showHomebrewItem/" . $name));
+        $name20 =rawurlencode($name);
+        $homebrewItem= json_decode(file_get_contents("http://127.0.0.1:1200/api/showHomebrewItem/" . $name20));
         error_log(json_encode($homebrewItem));
         return view("homebrew/showHomebrewItem")->with("homebrewItem",$homebrewItem);  
     }

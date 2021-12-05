@@ -10,6 +10,8 @@
  */
 function saveSpell(){
     var name = document.getElementById("name").value;
+    //var name20 = name.replace(/%20/g, " ");
+    var name20 = decodeURI(name);
     var castingTime = document.getElementById("castingTime").value;
     var level = document.getElementById("level").value;
     var components = document.getElementById("components").value;
@@ -21,7 +23,7 @@ function saveSpell(){
     var availability = document.getElementById("availability").value;
 
     var url ="http://127.0.0.1:1200/api/savespell/";
-    var params = "name=" + name + "&castingTime=" + castingTime +"&level=" + level +"&components=" + components +
+    var params = "name=" + name20 + "&castingTime=" + castingTime +"&level=" + level +"&components=" + components +
                     "&materials=" + materials +"&description=" + description + "&school=" + school + "&range=" + range +
                     "&ritual=" + ritual +"&availability=" + availability;
     var xhr = new XMLHttpRequest();
@@ -32,7 +34,7 @@ function saveSpell(){
     xhr.onload = () => {
         alert("Succes");
     }
-    //location.reload();
+    location.reload();
 }
 
 /*
@@ -57,10 +59,11 @@ function showData(json){
  */
 function saveItem(){
     var name = document.getElementById("name").value;
+    var name20 = decodeURI(name);
     var price = document.getElementById("price").value;
     var description = document.getElementById("description").value;
     var url ="http://127.0.0.1:1200/api/saveitem/";
-    var params = "name=" + name + "&price=" + price +"&description=" + description;
+    var params = "name=" + name20 + "&price=" + price +"&description=" + description;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     //Send the proper header information along with the request

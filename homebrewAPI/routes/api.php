@@ -26,4 +26,4 @@ Route::get('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebre
 
 Route::post('/saveitem', [homebrewController::class, 'saveItem']);
 Route::get('/searchitem', [homebrewController::class, 'searchItems']);
-Route::get('/showHombrewItem/{name}', [homebrewController::class, 'showHombrewItem']);
+Route::get('/showHomebrewItem/{name}', [homebrewController::class, 'showHomebrewItem']);
