@@ -1,0 +1,61 @@
+#logo {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* To Clean */
+.navbar {
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    list-style-type:none; 
+    overflow:visible; 
+    background-color:#333;
+    left: 0px;
+}
+
+.navbar a, .dropbtn  {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn  {
+    background-color: red;
+}
+
+.navbar.dropdown  {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding : 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+li.color:before {
+    content: counter(item, disc) " ";
+    color: pink;
+}

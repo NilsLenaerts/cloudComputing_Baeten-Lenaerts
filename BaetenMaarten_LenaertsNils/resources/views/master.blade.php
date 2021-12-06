@@ -2,33 +2,38 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <script type="text/javascript" src="functions.js">
-        </script>
-        <link rel="stylesheet" href="/styles.css"> 
-        <meta charset="UTF-8">
+        
+        <link rel="stylesheet" href="/styles/styles.css">
+        <link rel="stylesheet" href="/styles/backgrounds.css">
+        <link rel="stylesheet" href="/styles/navbar.css">
+
+        <link rel="icon" href="images/favicon.ico" sizes="any">   
+        
         <title>@yield('subtitle')</title>
+
         <script type="text/javascript" src="functions.js"></script>
     </head>
-    <body  style="margin-top:100px">
-        <ul class="navbar" style="list-style-type:none; margin-top:5px; margin-right:0;  padding:0; overflow:visible; background-color:#333;">
-            <li class="dropdown" style=" float: left;">
-                <div id="homeButtonLogo" style="width: 50px; margin-right:30px">
-                    <a  href="/" class="dropbtn">
-                    <img src="/images/logo.png" alt='logo' style="width:50px;height:50px;">
+
+    <body class="margin-0 background home-background-image">
+        <ul class="navbar margin-0 padding-0 height-10-vh">
+            <li class="dropdown float-left margin-right-1">
+                <div id="homeButtonLogo">
+                    <a  href="/" class="dropbtn no-bottom-padding">
+                    <img id="logo" src="/images/logo.png" alt='logo'>
                     </a>
                 </div>
             </li>    
 
-            <li class="dropdown" style=" float: left; ">
-              <a href="/homebrew" class="dropbtn" style="font-size: 40px;">Homebrew</a>
+            <li class="dropdown float-left">
+              <a href="/homebrew" class="dropbtn">Homebrew</a>
               <div class="dropdown-content">
                 <a href="/foundHomebrewSpells">Homebrew spells</a>
                 <a href="/foundHomebrewItems">Homebrew Items</a>
               </div>
             </li>
 
-            <li class="dropdown" style=" float: left; ">
-              <a href="/rules" class="dropbtn" style="font-size: 40px;" >Rules</a>
+            <li class="dropdown float-left">
+              <a href="/realm" class="dropbtn"> D&D Realm</a>
               <div class="dropdown-content">
                 <a href="/spells">Spells</a>
                 <a href="/classes">Classes</a>
@@ -36,20 +41,34 @@
                 <a href="/monsters">Monsters</a>
               </div>
             </li>
+            
+            <li class="dropdown float-left">
+              <a href="/rules" class="dropbtn">Rules</a>
+              <div class="dropdown-content">
+                <a href="/exhaustion">Exhaustion</a>
+                <a href="/conditions">Conditions</a>
+                <a href="/damageTypes">Damage Types</a>
+                <a href="/savingThrows">Saving Throws</a>
+                <a href="/abilityUses">Ability Uses</a>
+                <a href="/advDis">Advantage & Disadvantage</a>
+                <a href="/scoresMods">Ability Scores and Modifiers</a>
+                <a href="/profBonus">Proficiencie bonus</a>
+              </div>
+            </li>
 
-            <li class="dropdown" style=" float: left; ">
-              <a href="javascript:void(0)" class="dropbtn" style="font-size: 40px; " >Calendar</a>
+            <li class="dropdown float-left">
+              <a href="javascript:void(0)" class="dropbtn">Calendar</a>
             </li>
             
-            <li class="dropdown" style=" float: right; margin-right: 15px;">
-              <a href="/login" class="dropbtn" style="font-size: 40px;" >Login</a>
+            <li class="dropdown float-right" style="margin-right: 15px;">
+              <a href="/login" class="dropbtn">Login</a>
               <div class="dropdown-content">
                 <a href="">Sign out</a>
               </div>
             </li>
         </ul>
-        @yield('content')
-
+        <div class="main">
+            @yield('content')
+        </div>
     </body>
 </html>
-

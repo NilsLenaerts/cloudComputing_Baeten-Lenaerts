@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Draconis";
+    src: url("../fonts/Draconis.ttf") format('truetype');
+}
+
+* {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4rem;
+}
+
+.font-family-draconis {
+    font-family: "Draconis", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.margin-right-1{
+    margin-right: 1%;
+}
+
+.padding-2{
+    padding: 2%;
+}
+
+.no-bottom-padding {
+    padding-bottom: 0% !important;
+}
+
+.height-10-vh {
+    height: 10vh;
+}
+
+.height-90-vh {
+    height: 90vh;
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+/* ToDo */
+.blackRedShadow {
+    text-shadow:0px 5px 5px #ff0033;
+}
+.lucida {
+    font-family: "Lucida Handwriting", Lucida, Cursive;
+}
+
+ul.spellList {
+    -moz-column-count: 6;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 6;
+    -webkit-column-gap: 10px;
+    column-count: 6;
+    column-gap: 10px;
+}
+
+.center{
+   text-align: center; 
+}
+
+ul li pin::before{
+    content: "📌";
+}

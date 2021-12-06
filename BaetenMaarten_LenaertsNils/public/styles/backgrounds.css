@@ -1,0 +1,42 @@
+.background {
+    /*make the background full-screen*/
+    background-position: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /*in case the background doesn't load*/
+    background-color: #cccccc;
+}
+
+.home-background-image {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)), url("https://media.dnd.wizards.com/dnd_background_dia4.jpg");
+}
+
+.classes-background-image {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)), url("https://i.pinimg.com/originals/0d/b6/a6/0db6a6b8f350497d0c8ca98c9ffac314.jpg");
+}
+
+.rules-background-image {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)), url("https://media.dnd.wizards.com/styles/story_banner/public/images/head-banner/HERO_PHB.jpg");
+}
+
+.spellList-background-image {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)), url("https://preview.redd.it/ml5iaypp87t51.png?width=960&crop=smart&auto=webp&s=c893b5634e81f9854129cb7b068491da32f33509");
+}
+
+.spell-background-image {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)), url("https://www.worldanvil.com/media/cache/cover/uploads/images/431b8d39f46fc2107bcc1cd9afb32b3e.png");
+}
+
+.show-background-image {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8jxIaU-rc80h_v3gGjsMGnllSHnfTlgdIyw&usqp=CAU");
+}
+
+.login-background-image {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)), url("https://cdn.wallpapersafari.com/19/97/MfNw16.jpg");
+}
+
+.homebrew-background-image {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)), url("https://www.wargamer.com/wp-content/uploads/2021/09/dnd-backgrounds-5e-anthropologist.jpg");
+}

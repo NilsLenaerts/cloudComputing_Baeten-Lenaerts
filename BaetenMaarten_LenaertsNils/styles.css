@@ -1,0 +1,31 @@
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.blackRedShadow {
+    text-shadow:0px 5px 5px #ff0033;
+}
+.lucida {
+    font-family: "Lucida Handwriting", Lucida, Cursive;
+}
+
+ul.spellList {
+    -moz-column-count: 6;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 6;
+    -webkit-column-gap: 10px;
+    column-count: 6;
+    column-gap: 10px;
+}
+
+.center{
+   text-align: center; 
+}
+
+ul li pin::before{
+    content: "📌";
+}

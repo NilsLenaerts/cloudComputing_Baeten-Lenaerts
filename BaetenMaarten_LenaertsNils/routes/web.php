@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterController;
-use App\Http\Controllers\RulesController;     
+use App\Http\Controllers\RealmController;   
+use App\Http\Controllers\RulesController;    
 use App\Http\Controllers\homebrewController;     
 /*
 |--------------------------------------------------------------------------
@@ -20,26 +21,26 @@ Route::get('/', [CharacterController::class, 'home']);
 Route::get('/home', [CharacterController::class, 'home']);
 Route::get('/randomCharacterCreation', [CharacterController::class, 'RCC']);
 
-// ----- Rules
-Route::get('/rules', [RulesController::class, 'rules']);
-Route::get('/spells', [RulesController::class, 'foundSpells']);
+// ----- Realm
+Route::get('/realm', [RealmController::class, 'realm']);
+Route::get('/spells', [RealmController::class, 'foundSpells']);
 //Route::post('/foundSpells', [RulesController::class, 'foundSpells']);
-Route::get('/showSpell/{name}', [RulesController::class, 'showSpell']);
+Route::get('/showSpell/{name}', [RealmController::class, 'showSpell']);
 
-Route::get('/classes', [RulesController::class, 'foundClasses']);
+Route::get('/classes', [RealmController::class, 'foundClasses']);
 //Route::get('/foundClasses', [RulesController::class, 'foundClasses']);
-Route::get('/showClass/{name}', [RulesController::class, 'showClass']);
-Route::get('/showSubclass/{name}', [RulesController::class, 'showSubclass']);
+Route::get('/showClass/{name}', [RealmController::class, 'showClass']);
+Route::get('/showSubclass/{name}', [RealmController::class, 'showSubclass']);
 
-Route::get('/races', [RulesController::class, 'foundRaces']);
-Route::get('/showRace/{name}', [RulesController::class, 'showRace']);
-Route::get('/showSubrace/{name}', [RulesController::class, 'showSubrace']);
+Route::get('/races', [RealmController::class, 'foundRaces']);
+Route::get('/showRace/{name}', [RealmController::class, 'showRace']);
+Route::get('/showSubrace/{name}', [RealmController::class, 'showSubrace']);
 
-Route::get('/showTrait/{name}', [RulesController::class, 'showTrait']);
+Route::get('/showTrait/{name}', [RealmController::class, 'showTrait']);
 
-Route::get('/monsters', [RulesController::class, 'foundMonsters']);
+Route::get('/monsters', [RealmController::class, 'foundMonsters']);
 //Route::post('/foundSpells', [RulesController::class, 'foundSpells']);
-Route::get('/showMonster/{name}', [RulesController::class, 'showMonster']);
+Route::get('/showMonster/{name}', [RealmController::class, 'showMonster']);
 
 
 // ------ homebrew content
@@ -51,3 +52,8 @@ Route::get('/showHomebrewSpell/{name}', [homebrewController::class, 'showHomebre
 Route::get('/foundHomebrewItems', [homebrewController::class, 'foundHomebrewItems']);
 Route::get('/showHomebrewItem/{name}', [homebrewController::class, 'showHomebrewItem']);
 
+
+// ------ Rules
+Route::get('/rules', [RulesController::class, 'rules']);
+Route::get('/conditions', [RulesController::class, 'foundConditions']);
+Route::get('/showCondition/{name}', [RulesController::class, 'showCondition']);
