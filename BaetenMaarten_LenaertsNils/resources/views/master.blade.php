@@ -45,14 +45,12 @@
             <li class="dropdown float-left">
               <a href="/rules" class="dropbtn">Rules</a>
               <div class="dropdown-content">
-                <a href="/exhaustion">Exhaustion</a>
-                <a href="/conditions">Conditions</a>
-                <a href="/damageTypes">Damage Types</a>
-                <a href="/savingThrows">Saving Throws</a>
-                <a href="/abilityUses">Ability Uses</a>
-                <a href="/advDis">Advantage & Disadvantage</a>
-                <a href="/scoresMods">Ability Scores and Modifiers</a>
-                <a href="/profBonus">Proficiencie bonus</a>
+                <a href="/adventuring">Adventuring</a>
+                <a href="/appendix">Appendix</a>
+                <a href="/combat">Combat</a>
+                <a href="/equipment">Equipment</a>
+                <a href="/spellcasting">Spellcasting</a>
+                <a href="/using-abilitys-cores">Using Ability Scores</a>
               </div>
             </li>
 
@@ -67,8 +65,8 @@
               </div>
             </li>
         </ul>
-        <div class="main">
+        <main>
             @yield('content')
-        </div>
+        </main>
     </body>
 </html>

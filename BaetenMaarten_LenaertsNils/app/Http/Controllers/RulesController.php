@@ -4,32 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RulesController extends Controller
-{
+class RulesController extends Controller{
     //
     
     public function rules(){
-        return view("rules/rules");
+        $rules= json_decode(file_get_contents("https://www.dnd5eapi.co/api/rules/" ));
+        return view("rules/rules")->with("rules",$rules->results);  
     }
     
-    /*
-     * Haalt de classes op van de D&D5e api en geeft deze terug
-     */
-    public function foundConditions(Request $request){
-        $conditions= json_decode(file_get_contents("https://www.dnd5eapi.co/api/conditions/"));
-        return view("rules/conditions")->with("conditions",$conditions->results);  
+    public function adventuring(){
+        $subSections= json_decode(file_get_contents("https://www.dnd5eapi.co/api/rules/adventuring/")); // time, movement, the envirement, ...
+        $ruleSections= json_decode(file_get_contents("https://www.dnd5eapi.co/api/rule-sections/")); //bijv time, poisons,...
+        //error_log(json_encode($subSections->subsections));
+        error_log(json_encode($ruleSections->results));
+        return view("rules/adventuring/adventuring")->with("subSections",$subSections->subsections)
+                                                    ->with("ruleSections",$ruleSections->results);
     }
 
-    /*
-     * haalt de inhoud van een klasse op
-     */
-    public function showCondition($name){
-        $condition= json_decode(file_get_contents("https://www.dnd5eapi.co/api/conditions/" . $name));
-        return view("rules/showCondition")->with("condition",$condition);  
+    public function showDescription($name){
+        $ruleke= json_decode(file_get_contents("https://www.dnd5eapi.co/api/rule-sections/" . $name));
+        return view("rules/adventuring/adventuring")->with("ruleke",$ruleke);  
     }
-
-   
+    
+    
     //------------------------------------------------------------------------------------------
+    
+    
     
     
     
