@@ -14,9 +14,7 @@
     <p> From: 
         <ul>
             @foreach($prof_choice->from as $froms)
-
                     <li>{{$froms->name}}</li>
-
             @endforeach
         </ul>
     @endforeach  
@@ -43,12 +41,12 @@
     @endif
 
     @if(isset($class->subclasses))
-    <p>subclasses:</p>
-    <ul>
-    @foreach($class->subclasses as $sub)
-        <li>{{$sub->name}}</li>
-    @endforeach  
-    </ul>
+    <p> subclasses: </p>
+        <ul>
+        @foreach($class->subclasses as $subclass)
+            <li><a href="/showSubclass/{{$subclass->index}}">{{$subclass->name}} </a></li> 
+        @endforeach  
+        </ul>
     @endif
 
 </body>

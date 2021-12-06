@@ -1,6 +1,5 @@
 @extends("master")
-@section("pagina","...")
-
+@section("pagina","Spells")
 @section("content")
 
 <body class="spellList">

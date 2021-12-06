@@ -32,7 +32,7 @@
               <div class="dropdown-content">
                 <a href="/spells">Spells</a>
                 <a href="/classes">Classes</a>
-                <a href="">Races</a>
+                <a href="/races">Races</a>
               </div>
             </li>
 
