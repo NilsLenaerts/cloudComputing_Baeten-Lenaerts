@@ -45,10 +45,6 @@ body {
     padding-bottom: 0% !important;
 }
 
-.height-10-vh {
-    height: 10vh;
-}
-
 .height-90-vh {
     height: 90vh;
 }
@@ -56,6 +52,21 @@ body {
 .border-box {
     box-sizing: border-box;
 }
+
+.text-color-white {
+    color: white;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #20211D;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #20211D;
+}
+
 
 /* ToDo */
 .blackRedShadow {
