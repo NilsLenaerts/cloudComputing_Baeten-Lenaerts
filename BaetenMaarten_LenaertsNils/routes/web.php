@@ -29,13 +29,18 @@ Route::get('/showSpell/{name}', [RulesController::class, 'showSpell']);
 Route::get('/classes', [RulesController::class, 'foundClasses']);
 //Route::get('/foundClasses', [RulesController::class, 'foundClasses']);
 Route::get('/showClass/{name}', [RulesController::class, 'showClass']);
+Route::get('/showSubclass/{name}', [RulesController::class, 'showSubclass']);
 
 Route::get('/races', [RulesController::class, 'foundRaces']);
 Route::get('/showRace/{name}', [RulesController::class, 'showRace']);
+Route::get('/showSubrace/{name}', [RulesController::class, 'showSubrace']);
 
 Route::get('/showTrait/{name}', [RulesController::class, 'showTrait']);
-Route::get('/showSubrace/{name}', [RulesController::class, 'showSubrace']);
-Route::get('/showSubclass/{name}', [RulesController::class, 'showSubclass']);
+
+Route::get('/monsters', [RulesController::class, 'foundMonsters']);
+//Route::post('/foundSpells', [RulesController::class, 'foundSpells']);
+Route::get('/showMonster/{name}', [RulesController::class, 'showMonster']);
+
 
 // ------ homebrew content
 Route::get('/homebrew', [homebrewController::class, 'homebrew']);

@@ -33,6 +33,7 @@
                 <a href="/spells">Spells</a>
                 <a href="/classes">Classes</a>
                 <a href="/races">Races</a>
+                <a href="/monsters">Monsters</a>
               </div>
             </li>
 
