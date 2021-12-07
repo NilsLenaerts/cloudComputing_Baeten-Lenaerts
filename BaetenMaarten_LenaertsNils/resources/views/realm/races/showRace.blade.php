@@ -78,7 +78,7 @@
                         <ul class="no-bullets">       
                             <!-- display dan de desc of time -->
                             <div id="{{$trait->index}}"></div>
-                            <script>getTrait("{{$trait->index}}");</script>        
+                            <script>getTrait("{{$trait->index}}");</script>      
                         </ul>
                     </details>
                 </li>
