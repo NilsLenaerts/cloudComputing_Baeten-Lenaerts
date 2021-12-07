@@ -2,48 +2,83 @@
 @section("pagina","...")
 
 @section("content")
-    <body class="show-background-image background">
-        <h3>{{$spell->name}}</h3>
-        <h4><i>School of magic: {{$spell->school->name}}</i></h4>
-        <h4>Casting Time: {{$spell->casting_time}}</h4>
-        <h4>Range: {{$spell->range}}</h4>
-        @if(isset($spell->area_of_effect))
-            <h4>Area of effect: {{$spell->area_of_effect->size}} foot  {{$spell->area_of_effect->type}} </h4>
-        @endif
-        @if(isset($spell->components))
-        <h4>Components:</h4>
-            <ul>
-                @foreach($spell->components as $component)
-                <li>{{$component}}</li>
-                @endforeach  
-            </ul>
-        @endif
-        @if(isset($spell->material))
-            <p>Material: {{$spell->material}}</p>
-        @endif
+    <h1 class="center margin-0 padding-0 font-family-draconis">{{$spell->name}}</h1>
+    
+    <p class="text-right bold"><i class="fa fa-magic"></i> School of magic: {{$spell->school->name}}</p>
+    
+    <div class="display-flex">
+    
+        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+            <p class="bold">Casting time</p>
+            <p>{{$spell->casting_time}}</p>
+        </div>
+        
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-20 vertical-align-top">
+            <p class="bold">Range</p>
+            <p>{{$spell->range}}</p>
+            @if(isset($spell->area_of_effect))
+                <p class="bold">Area of effect:</p>
+                <p>{{$spell->area_of_effect->size}} foot  {{$spell->area_of_effect->type}}</p>
+            @endif
+        </div>
+    
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-20 vertical-align-top">
+            @if(isset($spell->components))
+            <p class="bold">Components</p>
+                <p class="spell-components">
+                    @foreach($spell->components as $component)
+                        <span>{{$component}}</span>
+                    @endforeach  
+                </p>
+            @endif
+            @if(isset($spell->material))
+                <div>
+                    <p class="bold">Material</p>
+                    <p>{{$spell->material}}</p>
+                </div>
+            @endif
+        </div>
+        
         @if($spell->ritual)
-        <p>Ritual</p>
+            <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-20 vertical-align-top bold">
+                <p>Ritual</p>
+            </div>
         @endif
-        <p>Duration: {{$spell->duration}}</p>
+    
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-20 vertical-align-top">
+            <p class="bold">Duration</p>
+            <p>{{$spell->duration}}</p>
+        </div>
+    
         @if($spell->concentration)
-        <p>Concentration</p>
+            <p class="margin-1 padding-1 light-background-color display-inline-block flex-basis-20 vertical-align-top bold">Concentration</p>
         @endif
-        <p>Spell Level: {{$spell->level}}</p>
-        @if(isset($spell->desc))
-        <p>Description:</p>
+    
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-20 vertical-align-top">
+            <p class="bold">Spell Level</p>
+            <p>{{$spell->level}}</p>
+        </div>
+    
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-20 vertical-align-top">
+            <p class="bold">Available to</p>
+            <ul>
+                @foreach($spell->classes as $class)
+                    <li>{{$class->name}}</li>
+                @endforeach
+            </ul>
+        </div>
+    
+    </div>
+    @if(isset($spell->desc))
+    <div class="margin-1 padding-1 light-background-color display-inline-block vertical-align-top">   
+        <p class="bold">Description</p>
             @foreach($spell->desc as $description)
-            {{$description}}
+                {{$description}}
             @endforeach  
         @endif
         @if(isset($spell->higher_level))
             <p>At higher level: {{$spell->higher_level[0]}}</p>
-        @endif
+        @endif    
+    </div>
 
-        <p>Available to:</p>
-        <ul>
-            @foreach($spell->classes as $class)
-                <li>{{$class->name}}</li>
-            @endforeach
-        </ul>
-    </body>
 @stop
