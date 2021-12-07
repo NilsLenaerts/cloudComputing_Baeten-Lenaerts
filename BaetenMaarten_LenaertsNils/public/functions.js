@@ -53,7 +53,7 @@ function showData(json){
     console.log(json);
 }
 
-//------------------------------------------------------------------------------
+
 /*
  * saving homebrew item
  */

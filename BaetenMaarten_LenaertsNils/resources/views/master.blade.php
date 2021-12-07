@@ -51,7 +51,7 @@
                 <a href="/combat">Combat</a>
                 <a href="/equipment">Equipment</a>
                 <a href="/spellcasting">Spellcasting</a>
-                <a href="/using-abilitys-cores">Using Ability Scores</a>
+                <a href="/using-ability-scores">Using Ability Scores</a>
               </div>
             </li>
 
