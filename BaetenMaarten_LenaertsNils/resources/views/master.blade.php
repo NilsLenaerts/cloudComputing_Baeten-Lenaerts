@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/styles/backgrounds.css">
         <link rel="stylesheet" href="/styles/navbar.css">
         <link rel="stylesheet" href="/styles/tiles.css">
+        <link rel="stylesheet" href="/styles/spellForms.css">
         <link rel="icon" href="images/favicon.ico" sizes="any">   
         
         

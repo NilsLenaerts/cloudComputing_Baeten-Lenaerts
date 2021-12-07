@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7 dec. 2021, 17:26:10
+    Author     : Maarten
+*/
+
+#spellform {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#spellform p {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+#spellform input {
+    background: rgb(156, 122, 96, 0.4);
+    border: hidden;
+    text-align: right;
+    width: 30%;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+#spellform button {
+    width: 30%;
+    background-color: #202110;
+    border: none;
+    color:#E6D0BE;
+    cursor: pointer;
+    border-radius: 4px;
+} 

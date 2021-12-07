@@ -3,10 +3,10 @@
 @section('content')
     <div>
         <h2 class="font-family-draconis center">5e Rules Spells</h2>
-            <form action="spells" method="get" class="center">
-                <p>Level:  <input type="number" min="1" name="level" value="1" id="level"/>
-                    <button type="submit"><strong>Filter</strong></button>
-                </p>
+            <form action="spells" method="get" class="margin-2" id="spellform">
+                <p class="margin-0 padding-1">Spells per level</p>
+                <input type="number" min="1" max="9" name="level" value="1" id="level" class="padding-1 margin-0"/>
+                <button type="submit" class="border-box padding-1 margin-1"><strong>Search</strong></button>
             </form>
         </div>
 

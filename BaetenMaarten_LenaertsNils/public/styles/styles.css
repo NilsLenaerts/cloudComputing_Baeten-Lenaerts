@@ -37,7 +37,15 @@ body {
     margin-right: 1%;
 }
 
-.padding-2{
+.margin-2 {
+    margin: 2%;
+}
+
+.padding-1 {
+    padding: 1%;
+}
+
+.padding-2 {
     padding: 2%;
 }
 
@@ -53,8 +61,28 @@ body {
     box-sizing: border-box;
 }
 
-.text-color-white {
-    color: white;
+.display-inline-block {
+    display: inline-block;
+}
+
+.width-30 {
+    width: 30%;
+}
+
+.vertical-align-top {
+    vertical-align:top;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.list-item-class {
+    list-style-type: none;
+}
+
+.text-left {
+    text-align: right;
 }
 
 h1 {
@@ -67,22 +95,8 @@ h2 {
     color: #20211D;
 }
 
-
-/* ToDo */
-.blackRedShadow {
-    text-shadow:0px 5px 5px #ff0033;
-}
-.lucida {
-    font-family: "Lucida Handwriting", Lucida, Cursive;
-}
-
-ul.spellList {
-    -moz-column-count: 6;
-    -moz-column-gap: 10px;
-    -webkit-column-count: 6;
-    -webkit-column-gap: 10px;
-    column-count: 6;
-    column-gap: 10px;
+p {
+    margin: 2%;
 }
 
 .center{
@@ -92,4 +106,3 @@ ul.spellList {
 ul li pin::before{
     content: "📌";
 }
-
