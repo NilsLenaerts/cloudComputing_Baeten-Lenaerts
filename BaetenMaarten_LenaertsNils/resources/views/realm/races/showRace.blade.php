@@ -1,7 +1,7 @@
 @extends("master")
 @section("pagina","...")
-
 @section("content")
+    <script src="{!! mix('app.js') !!}"></script>
 
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$race->name}}</h1>
     <h4 class="center margin-0 padding-0 font-family-draconis">{{$race->name}}</h4>
@@ -56,7 +56,7 @@
             </ul>
             @endif
         </div>
-        
+
         <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
             @if(isset($race->traits))
             <p class="bold">You have the following traits:</p>
@@ -68,6 +68,26 @@
             @endif
         </div>
         
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+            <p class="bold">You have the following traits:</p>
+            <ul>
+            @foreach ($race->traits as $trait)
+                <li style="list-style-type:none">
+                    <details class="details-example">
+                        <summary><strong>{{$trait->name}}</strong></summary>
+                        <ul class="no-bullets">       
+                            <!-- display dan de desc of time -->
+                            <div id="{{$trait->index}}"></div>
+                            <script>getTrait("{{$trait->index}}");</script>        
+                        </ul>
+                    </details>
+                </li>
+            @endforeach
+            </ul>
+        </div>
+
+             
+             
         <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
             @if(isset($race->subraces))
             <p class="bold">Subraces:</p>

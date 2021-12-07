@@ -14,7 +14,7 @@
         
         <title>@yield('subtitle')</title>
       
-        <script type="text/javascript" src="functions.js"></script>
+        <script type="text/javascript" src="/functions.js"></script>
     </head>
 
     <body class="margin-0 background home-background-image">
