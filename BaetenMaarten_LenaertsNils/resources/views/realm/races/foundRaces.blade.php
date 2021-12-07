@@ -1,8 +1,7 @@
-
 @extends("master")
 @section("pagina","...")
 @section("content")
-    <h2 class="font-family-draconis center">Classes</h2>
+    <h2 class="font-family-draconis center">Races</h2>
     <div class="tiles">
         @foreach ($races as $id)
             <div class="inner-tile">

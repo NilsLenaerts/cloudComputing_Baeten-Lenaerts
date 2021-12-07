@@ -1,7 +1,7 @@
 @extends('master')
 @section('subtitle', 'Rules')
 @section('content')
-    <h2 class="font-family-draconis center">Welcome to D&amp;D&nbsp; 5e Rules</h2>
+    <h2 class="font-family-draconis center">Welcome to the D&amp;D&nbsp; 5e Realm</h2>
     <div class="tiles center">
         <div class="inner-tile">
             <a href="spells">
