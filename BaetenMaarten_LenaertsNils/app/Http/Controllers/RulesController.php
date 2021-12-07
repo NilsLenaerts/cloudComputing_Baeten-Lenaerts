@@ -20,7 +20,7 @@ class RulesController extends Controller{
         //$viewUrl = "rules/".$uri."/".$uri;
         $fileUrl = "https://www.dnd5eapi.co/api/rules/".$uri."/";   
         $subSections= json_decode(file_get_contents($fileUrl)); // time, movement, the envirement, ...
-        return view("rules/sections")->with("subSections",$subSections->subsections);
+        return view("rules/sections")->with("subSections",$subSections->subsections)->with("sections",$uri);
     }
     //------------------------------------------------------------------------------------------
     
