@@ -1,6 +1,7 @@
 @extends('master')
 @section('subtitle', 'Rules')
 @section('content')
+<script src="{!! mix('app.js') !!}"></script>
     <h2 class ="font-family-draconis center">Welcome to D&amp;D&nbsp; 5e Rules</h2>
     <ul>
         @foreach ($subSections as $section)
@@ -11,7 +12,7 @@
                 <ul class="no-bullets">
                     <li>
                         <!-- display dan de desc of time -->
-                        <p id="{{$section->index}}"></p>
+                        <div id="{{$section->index}}"></div>
                         <script>getDescription("{{$section->index}}");</script>
                     </li>
                 </ul>
