@@ -15,12 +15,12 @@ class RulesController extends Controller{
 
     public function ruleInfo(Request $request){
         $uri = $request->route()->uri;
-        $route =json_encode($uri);
+        //$route =json_encode($uri);
         //error_log(json_encode($uri));       
         //$viewUrl = "rules/".$uri."/".$uri;
         $fileUrl = "https://www.dnd5eapi.co/api/rules/".$uri."/";   
         $subSections= json_decode(file_get_contents($fileUrl)); // time, movement, the envirement, ...
-        return view("rules/sections")->with("subSections",$subSections->subsections);
+        return view("rules/sections")->with("subSections",$subSections->subsections)->with("sections",$uri);
     }
     //------------------------------------------------------------------------------------------
     
