@@ -1,13 +1,31 @@
 @extends('master')
 @section('subtitle', 'Rules')
 @section('content')
-    <body class="rules-background-image background" >
-        <div style="text-align: center;">
-            <h2 style="color:white">Welcome to D&amp;D&nbsp; 5e Realm</h2>
-            <p style="color:white">For list of spells press <a style="color:white; text-decoration: underline;" href="spells">Spells</a></p>
-            <p style="color:white">For list of classes press <a style="color:white; text-decoration: underline;" href="classes">Classes</a></p>
+    <h2 class="font-family-draconis center">Welcome to D&amp;D&nbsp; 5e Rules</h2>
+    <div class="tiles center">
+        <div class="inner-tile">
+            <a href="spells">
+                <i class="fa fa-magic fa-3x"></i>
+                <p>All spells</p>
+            </a>
         </div>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-    </body>
+        <div class="inner-tile">
+            <a href="classes">
+                <i class="fa fa-bullseye fa-3x"></i>
+                <p>All classes</p>
+            </a>
+        </div>
+        <div class="inner-tile">
+            <a href="/">
+                <i class="fa fa-users  fa-3x"></i>
+                <p>All races</p>
+            </a>
+        </div>
+        <div class="inner-tile">
+            <a href="/">
+                <i class="fa fa-paw fa-3x"></i>
+                <p>All monsters</p>
+            </a>
+        </div>
+    </div>
 @stop

@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7 dec. 2021, 07:57:22
+    Author     : Maarten
+*/
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25%);
+}
+
+.inner-tile {
+    border-style: hidden;
+    background: rgb(156, 122, 96, 0.35);
+    padding: 5%;
+    margin: 2%;
+}
+
+.inner-tile a{
+    text-decoration: none;
+    color: #20211D;
+}

@@ -2,25 +2,24 @@
 @section('subtitle','Spells')
 @section('content')
     <div>
-        <!-- <div  style="position:fixed; margin-bottom: 50px; margin-left: 500px"> -->
-        <div class="center">
-        <h2 class="text-color-white">Welcome to D&amp;D&nbsp; 5e Rules Spells</h2>
-            <p class="text-color-white">List of spells</p>
-            <form action="spells" method="get">
-                <p class="text-color-white">Level:  <input type="int" name="level" value="" id="level"/>
+        <h2 class="font-family-draconis center">5e Rules Spells</h2>
+            <form action="spells" method="get" class="center">
+                <p>Level:  <input type="number" min="1" name="level" value="1" id="level"/>
                     <button type="submit"><strong>Filter</strong></button>
                 </p>
             </form>
         </div>
 
-        <div style="margin-top: 100px; ">
-            <ul class="spellList">
+            <div class="tiles center">
                 @if(isset($spells))
-                    @foreach ($spells as $id)
-                        <li><strong><a href = "showSpell/{{$id->index}}" >{{$id->name}}</a></strong></li>
-                    @endforeach
-                @endif
-            </ul>
-        </div>
+                @foreach ($spells as $id)
+                <div class="inner-tile">
+                            <a href="showSpell/{{$id->index}}">
+                            <p>{{$id->name}}</p>
+                        </a>
+                    </div>
+                        @endforeach
+                    @endif
+            </div>
 </div>
 @stop

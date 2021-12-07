@@ -2,15 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/styles/styles.css">
         <link rel="stylesheet" href="/styles/backgrounds.css">
         <link rel="stylesheet" href="/styles/navbar.css">
-
+        <link rel="stylesheet" href="/styles/tiles.css">
         <link rel="icon" href="images/favicon.ico" sizes="any">   
         
+        
         <title>@yield('subtitle')</title>
-
+      
         <script type="text/javascript" src="functions.js"></script>
     </head>
 
@@ -65,7 +66,7 @@
               </div>
             </li>
         </ul>
-        <main>
+        <main class="border-box padding-2">
             @yield('content')
         </main>
     </body>

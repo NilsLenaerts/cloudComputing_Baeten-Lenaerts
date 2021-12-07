@@ -52,8 +52,8 @@ Route::get('/showHomebrewItem/{name}', [homebrewController::class, 'showHomebrew
 // ------ Rules
 Route::get('/rules', [RulesController::class, 'rules']);
 Route::get('/adventuring', [RulesController::class, 'adventuring']);
-Route::get('/showDescription', [RulesController::class, 'showDescription']);
-
+Route::get('/appendix', [RulesController::class, 'adventuring']);
+Route::get('/combat', [RulesController::class, 'ruleInfo']);
 
 Route::get('/conditions', [RulesController::class, 'foundConditions']);
 Route::get('/showCondition/{name}', [RulesController::class, 'showCondition']);

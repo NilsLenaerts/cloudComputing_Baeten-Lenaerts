@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
 /*
  * saving homebrew spell
  * 
@@ -73,4 +74,13 @@ function saveItem(){
         alert("Succes");
     }
     location.reload();
+    
+}
+
+function getDescription(name){
+    var p = document.getElementById(name);
+    fetch("https://www.dnd5eapi.co/api/rule-sections/" + name)
+        .then(response => {if (response.ok) return response.json();
+                            else alert("error");})
+        .then(function(json){p.textContent += json.desc;console.log(json);}).catch(err => alert(err));
 }

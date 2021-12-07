@@ -1,12 +1,14 @@
 @extends("master")
 @section("pagina","...")
-
 @section("content")
-<body class="classes-background-image background">
-    <ul>
+    <h2 class="font-family-draconis center">Classes</h2>
+    <div class="tiles">
         @foreach ($classes as $id)
-        <li><strong><a style="color: white;" href = "showClass/{{$id->index}}" >{{$id->name}}</a></strong></li>
+            <div class="inner-tile">
+                <a href = "showClass/{{$id->index}}">
+                    <p class="center">{{$id->name}}</p>
+                </a>
+            </div>
         @endforeach
-    </ul>
-</body>
+    </div>
 @stop
