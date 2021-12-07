@@ -8,6 +8,10 @@
  * saving homebrew spell
  * 
  */
+
+
+
+
 function saveSpell(){
     var name = document.getElementById("name").value;
     //var name20 = name.replace(/%20/g, " ");
