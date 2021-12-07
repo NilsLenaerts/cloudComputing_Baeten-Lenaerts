@@ -1,11 +1,15 @@
+
 @extends("master")
-@section("pagina","Races")
+@section("pagina","...")
 @section("content")
-<body class="spellList">
-    <ul>
+    <h2 class="font-family-draconis center">Classes</h2>
+    <div class="tiles">
         @foreach ($monsters as $id)
-        <li><strong><a href = "showMonster/{{$id->index}}" >{{$id->name}}</a></strong></li>
+            <div class="inner-tile">
+                <a href = "showMonster/{{$id->index}}">
+                    <p class="center">{{$id->name}}</p>
+                </a>
+            </div>
         @endforeach
-    </ul>
-</body>
+    </div>
 @stop

@@ -16,13 +16,13 @@
             </a>
         </div>
         <div class="inner-tile">
-            <a href="/">
+            <a href="races">
                 <i class="fa fa-users  fa-3x"></i>
                 <p>All races</p>
             </a>
         </div>
         <div class="inner-tile">
-            <a href="/">
+            <a href="monsters">
                 <i class="fa fa-paw fa-3x"></i>
                 <p>All monsters</p>
             </a>
