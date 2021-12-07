@@ -1,5 +1,5 @@
 <?php
-
+Laravel\Socialite\SocialiteServiceProvider::class;
 return [
 
     /*
@@ -29,5 +29,11 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    
+    'google' => [
+        'client_id' => env('793738785273-m8nu3lnf033bl4n9i4l3eg5iq3t8jjp7.apps.googleusercontent.com'),
+        'client_secret' => env('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'),
+        'redirect' => 'http://127.0.0.1:8000/callback',
+],
 
 ];

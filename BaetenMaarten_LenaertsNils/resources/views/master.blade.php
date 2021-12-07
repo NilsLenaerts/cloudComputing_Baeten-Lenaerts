@@ -59,10 +59,11 @@
               <a href="javascript:void(0)" class="dropbtn">Calendar</a>
             </li>
             
-            <li class="dropdown float-right" style="margin-right: 15px;">
-              <a href="/login" class="dropbtn">Login</a>
+            <li class="dropdown float-right" style="margin-right: 150px;">
+              <a href="/redirect" class="dropbtn">Login</a>
               <div class="dropdown-content">
                 <a href="">Sign out</a>
+                <a href="">My characters</a>
               </div>
             </li>
         </ul>

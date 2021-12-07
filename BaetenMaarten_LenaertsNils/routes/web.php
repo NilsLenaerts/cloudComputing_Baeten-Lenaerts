@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\RealmController;   
 use App\Http\Controllers\RulesController;    
-use App\Http\Controllers\homebrewController;     
+use App\Http\Controllers\homebrewController;  
+use App\Http\Controllers\LoginController;  
+use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +63,8 @@ Route::get('/using-ability-scores', [RulesController::class, 'ruleInfo']);
 Route::get('/conditions', [RulesController::class, 'foundConditions']);
 Route::get('/showCondition/{name}', [RulesController::class, 'showCondition']);
 
+// ------- Login
+Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
+Route::get('/callback', [LoginController::class, 'handleProviderCallback']);
+
+ 

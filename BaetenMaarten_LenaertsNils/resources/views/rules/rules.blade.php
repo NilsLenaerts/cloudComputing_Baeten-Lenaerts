@@ -5,7 +5,7 @@
     <div class="tiles center">
         <div class="inner-tile">
             <a href="/adventuring">
-                <i class="fa fa-paw fa-3x"></i>
+                <i class="fa fa-gamepad fa-3x"></i>
                 <p>Adventuring</p>
             </a>
         </div>
@@ -17,13 +17,13 @@
         </div>
         <div class="inner-tile">
             <a href="/combat">
-                <i class="fa fa-bullseye  fa-3x"></i>
+                <i class="fa fa-crosshairs  fa-3x"></i>
                 <p>Combat</p>
             </a>
         </div>
         <div class="inner-tile">
             <a href="/equipment">
-                <i class="fa fa-paw fa-3x"></i>
+                <i class="fa fa-gavel fa-3x"></i>
                 <p>Equipment</p>
             </a>
         </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="inner-tile">
             <a href="/using-ability-scores">
-                <i class="fa fa-paw fa-3x"></i>
+                <i class="fa fa-paper-plane-o fa-3x"></i>
                 <p>Using ability scores</p>
             </a>
         </div>

@@ -1,11 +1,9 @@
-@extends("master")
-@section("pagina","Homebrew spells")
-
-@section("content")
-    <body class="spellList">
-        <h2>Welcome to D&amp;D&nbsp; 5e homebrew creator</h2>
-        <div class="row">
-            <div class="column" >
+@extends('master')
+@section('subtitle','Spells')
+@section('content')
+    <div>
+        <h2 class="font-family-draconis center">5e Homebrew Spell creator</h2>
+                        <div class="column" >
                 <p>Name:  <input type="string" name="name" value="magic missile" id="name"/></p>
                 <p>Casting Time:  <input type="string" name="castingTime" value="1 action" id="castingTime"/></p>
                 <p>Level:  <input type="int" name="level" value="1" id="level"/></p>  
@@ -25,18 +23,18 @@
                 <button type="button" onclick="saveSpell()"><strong>Save</strong></button> 
             </div>
         </div>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
 
-        <div>
-            <ul class="spellList">
+            <div class="tiles center">
                 @if(isset($homebrewSpells))
-                    @foreach ($homebrewSpells as $id)
-                        <li><strong><a href = "showHomebrewSpell/{{$id->name}}" >{{$id->name}}</a></strong></li>
-                    @endforeach
-                @endif
-            </ul>
-        </div>
-
-    </body>
+                @foreach ($homebrewSpells as $id)
+                <div class="inner-tile">
+                            <a href="showHomebrewSpell/{{$id->name}}">
+                            <p>{{$id->name}}</p>
+                        </a>
+                    </div>
+                        @endforeach
+                    @endif
+            </div>
+</div>
 @stop
+
