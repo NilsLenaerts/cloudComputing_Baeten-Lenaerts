@@ -68,7 +68,8 @@
             @foreach ($race->traits as $trait)
                 <li style="list-style-type:none">
                     <details class="details-example">
-                        <summary><strong><a href="/showTrait/{{$trait->index}}">{{$trait->name}} </a></strong></summary>
+                        <!-- <a href="/showTrait/{{$trait->index}}">{{$trait->name}} </a> -->
+                        <summary><strong>{{$trait->name}}</strong></summary>
                         <ul class="no-bullets">       
                             <!-- display dan de desc of time -->
                             <div id="{{$trait->index}}"></div>
@@ -80,8 +81,6 @@
             </ul>
         </div>
 
-             
-           
         <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
             @if(isset($race->subraces))
             <p class="bold">Subraces:</p>
