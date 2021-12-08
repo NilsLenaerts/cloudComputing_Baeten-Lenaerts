@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class CharacterController extends Controller
 {
     //
-    
     public function home(){
         $name = "guest";
         try{
@@ -25,7 +24,18 @@ class CharacterController extends Controller
         return view("home")->with("name", $name);
     }
     
-    public function RCC(){
-        return view("Characters/character");
+    
+    public function getMyCharacters(){
+        error_log("hier");
+        //$name=$request->name;
+        //error_log($spells->results);
+        error_log("hoer");
+        $characters= json_decode(file_get_contents("https://dungeonsanddorks-334411-default-rtdb.europe-west1.firebasedatabase.app/getCharacters"));
+        return view('/character/myCharacters')->with("characters",$characters);  
     }
+    
+    
+    
+
+
 }

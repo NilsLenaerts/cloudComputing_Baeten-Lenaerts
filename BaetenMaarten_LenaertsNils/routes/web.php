@@ -69,6 +69,9 @@ Route::get('/showCondition/{name}', [RulesController::class, 'showCondition']);
 Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
 Route::get('/callback', [LoginController::class, 'handleProviderCallback']);
 
-//Auth::routes();
+Auth::routes();
 
- 
+
+// ------ Firebase
+Route::get('/myCharacters', [CharacterController::class, 'getMyCharacters']);
+Route::get('/showMyCharacter/{name}', [CharacterController::class, 'getCharacter']);

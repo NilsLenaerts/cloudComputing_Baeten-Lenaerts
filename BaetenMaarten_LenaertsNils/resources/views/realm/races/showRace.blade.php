@@ -101,22 +101,6 @@
     </div>
     
     
-    
-    <!-- werkt nog niet 
-    @if(isset($race->starting_proficiency_options))
-    <ul>
-    @foreach($race->starting_proficiency_options as $prof_options)
-    <p> Choose: {{$prof_options->choose}} proficiencies</p>
-    <p> From: 
-        <ul>
-            @foreach($prof_options->from as $froms)
-                    <li>{{$froms->name}}</li>
-            @endforeach
-        </ul>
-    @endforeach  
-    </ul>
-    @endif
-    -->
 
 
 @stop
