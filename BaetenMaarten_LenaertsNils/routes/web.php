@@ -60,10 +60,6 @@ Route::get('/equipment', [RulesController::class, 'ruleInfo']);
 Route::get('/spellcasting', [RulesController::class, 'ruleInfo']);
 Route::get('/using-ability-scores', [RulesController::class, 'ruleInfo']);
 
-/*
-Route::get('/conditions', [RulesController::class, 'foundConditions']);
-Route::get('/showCondition/{name}', [RulesController::class, 'showCondition']);
-*/
 
 // ------- Login
 Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
