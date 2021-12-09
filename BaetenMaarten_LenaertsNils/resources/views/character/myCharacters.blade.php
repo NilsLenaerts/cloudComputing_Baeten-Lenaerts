@@ -8,7 +8,7 @@
             <p>Class:  <input type="string" name="class" value="class" id="class"/></p> 
             <p><button type="button" onclick="createCharacter()"><strong>Save</strong></button> </p>
         </div>
-            <!--<div class="tiles center">-->
+            <div class="tiles center">
                 @if(isset($characters))
                 @foreach ($characters as $char)
                 <div class="inner-tile">

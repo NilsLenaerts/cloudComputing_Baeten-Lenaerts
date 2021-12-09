@@ -24,16 +24,19 @@ class CharacterController extends Controller
         return view("home")->with("name", $name);
     }
     
-    
+    /*
     public function getMyCharacters(){
         error_log("hier");
         //$name=$request->name;
         //error_log($spells->results);
         error_log("hoer");
-        $characters= json_decode(file_get_contents("https://dungeonsanddorks-334411-default-rtdb.europe-west1.firebasedatabase.app/getCharacters"));
+        $characters= json_decode(file_get_contents("http://127.0.0.1:5000/character/"));
         return view('/character/myCharacters')->with("characters",$characters);  
-    }
+    }*/
     
+    public function getMyCharacters(){
+        return view('/character/myCharacters');
+    }
     
     
 
