@@ -17,23 +17,36 @@ from flask_cors import CORS
 ######################## FLASK ##############################
 app = Flask(__name__)
 CORS(app)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 api = Api(app)
 
-class Character(Resource):
-    def get(self, name):
-            ref = db.reference('character2')
-            print(ref.get())
 
-    def post(self, name, race, classe):
-        ref = db.reference('/')
+class Characters(Resource):
+    def get(self):
+        ref = db.reference('/characters')
+        return ref.get()
+
+    def post(self):
+        ref = db.reference('/characters')
+        json = request.get_json()
+        name = json['name']
+        race = json['race']
+        classe = json['classe']
+
         char_ref = ref.push({
             'name':name,
             'race':race,
             'class':classe
         })
 
-api.add_resource(Character,"/character/<name>/<race>/<classe>")
 
+class Character(Resource):
+    def get(self, name):
+        ref = db.reference('/characters/' + name)
+        return ref.get()
+
+api.add_resource(Characters,"/api/createCharacter", "/api/characters")
+api.add_resource(Character,"/api/getCharacter/<name>")
 
 if __name__ == "__main__":
     app.run(debug=True)

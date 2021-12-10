@@ -44,8 +44,4 @@ class User extends Authenticatable{
     ];
     
     
-    // has (1 or)  many characters
-    public function characters(){
-        return $this->hasMany(Character::class);
-    }
 }

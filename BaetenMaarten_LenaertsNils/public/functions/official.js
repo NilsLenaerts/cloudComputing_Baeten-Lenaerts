@@ -2,7 +2,7 @@
  * Promise
  * Searches and filters the spells on the official dnd 5th api on level
  * @param level
- */
+ *//*
 function searchSpell(){
     var level = document.getElementById("level").value;
     fetch("http://127.0.0.1:1200/searchspell/" + level)
@@ -10,7 +10,7 @@ function searchSpell(){
                             else alert("kleine pie");})
         .then(showData).catch(err => alert(err));
 }
-
+*/
 /*
  * Promise
  * Searches the description of rule sections on the official dnd 5th api

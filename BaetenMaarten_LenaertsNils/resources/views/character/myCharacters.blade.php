@@ -13,11 +13,11 @@
                 @foreach ($characters as $char)
                 <div class="inner-tile">
                             <a href="showMyCharacter/{{$char->name}}">
-                            <p>{{$id->name}}</p>
+                            <p>{{$char->name}}</p>
                         </a>
                     </div>
-                        @endforeach
-                    @endif
+                    @endforeach
+                @endif
             </div>
     </div>
 @stop

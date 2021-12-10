@@ -24,21 +24,39 @@ class CharacterController extends Controller
         return view("home")->with("name", $name);
     }
     
-    /*
+  
     public function getMyCharacters(){
         error_log("hier");
         //$name=$request->name;
         //error_log($spells->results);
         error_log("hoer");
-        $characters= json_decode(file_get_contents("http://127.0.0.1:5000/character/"));
+        $characters= json_decode(file_get_contents("http://127.0.0.1:5000/api/characters"));
+        error_log(json_encode($characters));
         return view('/character/myCharacters')->with("characters",$characters);  
-    }*/
-    
-    public function getMyCharacters(){
-        return view('/character/myCharacters');
     }
     
+    /*
+    * Haalt de inhoud van een character op
+    */
+    public function showCharacter($name){
+        $name20 =rawurlencode($name);
+        $character= json_decode(file_get_contents("http://127.0.0.1:5000/api/getCharacter/" . $name));
+        error_log(json_encode($character));
+        return view("character/showMyCharacter")->with("character",$character);  
+    }
     
+    /*
+    public function getMyCharacters($userId){
+        $characters= json_decode(file_get_contents("http://127.0.0.1:5000/api/characters/" . $userId));
+        error_log(json_encode($characters));
+        return view('/character/myCharacters')->with("characters",$characters);  
+    }
+    */
 
+    /*
+    public function showCharacter(){
+        return view('/character/showMyCharacter');
+    }
+*/
 
 }

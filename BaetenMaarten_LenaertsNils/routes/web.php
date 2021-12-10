@@ -70,4 +70,4 @@ Auth::routes();
 
 // ------ Firebase
 Route::get('/myCharacters', [CharacterController::class, 'getMyCharacters']);
-Route::get('/showMyCharacter/{name}', [CharacterController::class, 'getCharacter']);
+Route::get('/showMyCharacter/{name}', [CharacterController::class, 'showCharacter']);
