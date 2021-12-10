@@ -2,8 +2,9 @@
 @section('subtitle','')
 @section('content')
 
-    <h2 class="font-family-draconis center">{{$character}}</h2>
+    <h1 class="font-family-draconis center">{{$character->name}}</h1>
+    <h2 class="font-family-draconis center">{{$character->race}}  {{$character->classe}}</h2>
 
- 
+
 @stop
 

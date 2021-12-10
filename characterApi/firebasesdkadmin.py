@@ -36,14 +36,27 @@ class Characters(Resource):
         char_ref = ref.push({
             'name':name,
             'race':race,
-            'class':classe
+            'classe':classe
         })
 
 
 class Character(Resource):
     def get(self, name):
-        ref = db.reference('/characters/' + name)
-        return ref.get()
+        ref = db.reference('/characters')
+        # character . get children dna hebtge ID, en dan .name
+        characters = ref.get()
+        #print(characters) #{'-MqZy6bi26dBeZKKXITI': {'class': '123', 'name': 'test', 'race': 'test123'}, '-MqaWf9UEx23GskL7np0': {'class': 'Sorcerer', 'name': 'Ciana', 'race': 'Human'}}
+        
+        for charId in characters:
+            #print(char)  #-MqZy6bi26dBeZKKXITI & next lus -MqaWf9UEx23GskL7np0
+            #print(char[0]) # -
+            new_ref=db.reference('/characters/' + charId)
+            item = new_ref.get()
+            print(item) #{'class': '123', 'name': 'test', 'race': 'test123'} & next lus {'class': 'Sorcerer', 'name': 'Ciana', 'race': 'Human'}
+            #print(item['name']) #ciana
+            if(item['name'] == name):
+                #print(item)
+                return item
 
 api.add_resource(Characters,"/api/createCharacter", "/api/characters")
 api.add_resource(Character,"/api/getCharacter/<name>")

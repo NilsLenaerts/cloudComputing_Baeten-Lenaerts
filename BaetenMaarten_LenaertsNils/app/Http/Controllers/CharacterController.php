@@ -41,6 +41,7 @@ class CharacterController extends Controller
     public function showCharacter($name){
         $name20 =rawurlencode($name);
         $character= json_decode(file_get_contents("http://127.0.0.1:5000/api/getCharacter/" . $name));
+        //$jsonChar = json_decode($character);
         error_log(json_encode($character));
         return view("character/showMyCharacter")->with("character",$character);  
     }
