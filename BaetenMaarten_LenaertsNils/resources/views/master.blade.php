@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/styles/navbar.css">
         <link rel="stylesheet" href="/styles/tiles.css">
         <link rel="stylesheet" href="/styles/spellForms.css">
+        <link rel="stylesheet" href="/styles/characterCheet.css">
         <link rel="icon" href="/images/logo.png" sizes="any">   
         
         
