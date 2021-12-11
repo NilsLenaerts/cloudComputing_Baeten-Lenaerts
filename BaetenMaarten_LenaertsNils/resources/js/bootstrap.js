@@ -1,5 +1,8 @@
 window._ = require('lodash');
 
+try {
+    require('bootstrap');
+} catch (e) {}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -28,5 +31,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: true
 // });
 
-var markdown = require( "markdown" ).markdown;
+var markdown = require( "markdown-it" )({
+    breaks: true
+});
 window.markdown = markdown;

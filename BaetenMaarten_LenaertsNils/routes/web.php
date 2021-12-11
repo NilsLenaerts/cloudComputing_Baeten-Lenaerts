@@ -5,7 +5,8 @@ use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\RealmController;   
 use App\Http\Controllers\RulesController;    
 use App\Http\Controllers\homebrewController;  
-use App\Http\Controllers\LoginController;  
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
@@ -63,10 +64,16 @@ Route::get('/using-ability-scores', [RulesController::class, 'ruleInfo']);
 Route::get('/conditions', [RulesController::class, 'foundConditions']);
 Route::get('/showCondition/{name}', [RulesController::class, 'showCondition']);
 
-// ------- Login
-Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
-Route::get('/callback', [LoginController::class, 'handleProviderCallback']);
+// ------ Login
 
 Auth::routes();
 
- 
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Google login
+Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
+// Github login
+Route::get('login/github', [LoginController::class, 'redirectToGithub'])->name('login.github');
+Route::get('login/github/callback', [LoginController::class, 'handleGithubCallback']);
