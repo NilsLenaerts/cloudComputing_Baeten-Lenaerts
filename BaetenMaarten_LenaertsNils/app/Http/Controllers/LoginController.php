@@ -12,6 +12,8 @@ use Exception;
 use App\Models\User;
 
 class LoginController extends Controller{
+    
+
     /**
     * Redirect the user to the Google authentication page.
     *

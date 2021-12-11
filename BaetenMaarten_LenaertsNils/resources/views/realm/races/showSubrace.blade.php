@@ -17,16 +17,7 @@
             @endif
         </div>
         
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
-            @if(isset($subrace->racial_traits))
-            <p> You have the following racial traits: </p>
-                <ul>
-                @foreach($subrace->racial_traits as $trait)
-                    <li><a href="/showTrait/{{$trait->index}}">{{$trait->name}} </a></li> 
-                @endforeach  
-                </ul>
-            @endif
-        </div>
+
         
         <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
             @if(isset($subrace->racial_traits))

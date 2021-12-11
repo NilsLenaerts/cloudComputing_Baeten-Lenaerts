@@ -61,12 +61,11 @@ Route::get('/equipment', [RulesController::class, 'ruleInfo']);
 Route::get('/spellcasting', [RulesController::class, 'ruleInfo']);
 Route::get('/using-ability-scores', [RulesController::class, 'ruleInfo']);
 
-Route::get('/conditions', [RulesController::class, 'foundConditions']);
-Route::get('/showCondition/{name}', [RulesController::class, 'showCondition']);
 
 // ------ Login
 
 Auth::routes();
+
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -77,3 +76,9 @@ Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallba
 // Github login
 Route::get('login/github', [LoginController::class, 'redirectToGithub'])->name('login.github');
 Route::get('login/github/callback', [LoginController::class, 'handleGithubCallback']);
+
+
+// ------ Firebase
+Route::get('/myCharacters', [CharacterController::class, 'getMyCharacters']);
+Route::get('/showMyCharacter/{name}', [CharacterController::class, 'showCharacter']);
+

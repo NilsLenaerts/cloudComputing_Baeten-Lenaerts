@@ -2,13 +2,11 @@
 @section("pagina","...")
 @section("content")
     <script src="{!! mix('app.js') !!}"></script>
-
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$race->name}}</h1>
-    <h4 class="center margin-0 padding-0 font-family-draconis">{{$race->name}}</h4>
-    <h3 class="center margin-0 padding-0 font-family-draconis">Speed :{{$race->speed}}</h3>
+    <h3 class="center margin-0 padding-0 font-family-draconis">Speed: {{$race->speed}}ft</h3>
     
     <div class="display-flex">
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
             @if(isset($race->ability_bonuses))
             <p class="bold">Subclasses:</p>
             <ul>
@@ -19,23 +17,28 @@
             @endif
         </div>
         
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
-            <p class="bold"> Alignment: {{$race->alignment}}</p>
+        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+            <p class="bold"> Alignment:</p> 
+            <p>{{$race->alignment}}</p>
         </div>
         
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
-            <p class="bold"> Age: {{$race->age}}</p>
+        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+            <p class="bold"> Age:</p>
+            <p>{{$race->age}}</p>
         </div>
         
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
-            <p class="bold"> Size: {{$race->size}}</p>
+        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+            <p class="bold"> Size:</p>
+            <p>{{$race->size}}</p>
         </div>
         
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
-            <p class="bold"> size description: {{$race->size_description}}</p>
+        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+            <p class="bold">Size description:</p> 
+            <p>{{$race->size_description}}</p>
         </div>
         
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+
+        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
             @if(isset($race->starting_proficiencies))
             <p class="bold">You are proficient in:</p>
             <ul>
@@ -45,24 +48,15 @@
             </ul>
             @endif
         </div>
+
         
         <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
             @if(isset($race->languages))
-            <p class="bold">Language description: {{$race->language_desc}}</p>
+            <p class="bold">Language description:</p> 
+            <p>{{$race->language_desc}}</p>
             <ul>
                 @foreach($race->languages as $language)
                 <li>{{$language->name}}</li>
-                @endforeach  
-            </ul>
-            @endif
-        </div>
-
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
-            @if(isset($race->traits))
-            <p class="bold">You have the following traits:</p>
-            <ul>
-                @foreach($race->traits as $trait)
-                <li><a href="/showTrait/{{$trait->index}}">{{$trait->name}} </a></li>
                 @endforeach  
             </ul>
             @endif
@@ -74,6 +68,7 @@
             @foreach ($race->traits as $trait)
                 <li style="list-style-type:none">
                     <details class="details-example">
+                        <!-- <a href="/showTrait/{{$trait->index}}">{{$trait->name}} </a> -->
                         <summary><strong>{{$trait->name}}</strong></summary>
                         <ul class="no-bullets">       
                             <!-- display dan de desc of time -->
@@ -86,8 +81,6 @@
             </ul>
         </div>
 
-             
-             
         <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
             @if(isset($race->subraces))
             <p class="bold">Subraces:</p>
@@ -101,22 +94,6 @@
     </div>
     
     
-    
-    <!-- werkt nog niet 
-    @if(isset($race->starting_proficiency_options))
-    <ul>
-    @foreach($race->starting_proficiency_options as $prof_options)
-    <p> Choose: {{$prof_options->choose}} proficiencies</p>
-    <p> From: 
-        <ul>
-            @foreach($prof_options->from as $froms)
-                    <li>{{$froms->name}}</li>
-            @endforeach
-        </ul>
-    @endforeach  
-    </ul>
-    @endif
-    -->
 
 
 @stop

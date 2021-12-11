@@ -9,12 +9,15 @@
         <link rel="stylesheet" href="/styles/navbar.css">
         <link rel="stylesheet" href="/styles/tiles.css">
         <link rel="stylesheet" href="/styles/spellForms.css">
-        <link rel="icon" href="images/favicon.ico" sizes="any">   
+        <link rel="stylesheet" href="/styles/characterCheet.css">
+        <link rel="icon" href="/images/logo.png" sizes="any">   
         
         
         <title>@yield('subtitle')</title>
       
-        <script type="text/javascript" src="/functions.js"></script>
+        <script type="text/javascript" src="/functions/official.js"></script>
+        <script type="text/javascript" src="/functions/homebrew.js"></script>
+        <script type="text/javascript" src="/functions/firebase.js"></script>
     </head>
 
     <body class="margin-0 background home-background-image">
@@ -65,7 +68,15 @@
               <a href="/login" class="dropbtn">Login</a>
               <div class="dropdown-content">
               <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a> <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf</form>
-                <a href="">My characters</a>
+                <a href="/myCharacters">My characters</a>
+              </div>
+            </li>
+            
+            <li class="dropdown float-left">
+              <a href="/random" class="dropbtn">Random Creator</a>
+              <div class="dropdown-content">
+                <a href="/character">Random Character Creator</a>
+                <a href="/encounter">Random Encounter Creator</a>
               </div>
             </li>
         </ul>

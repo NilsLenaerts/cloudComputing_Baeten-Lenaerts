@@ -10,8 +10,8 @@
 
 </style>
 <script src="{!! mix('app.js') !!}"></script>
-    <h2 class ="font-family-draconis center">Welcome to D&amp;D&nbsp; 5e Rules</h2>
-    <h3 class ="font-family-draconis center">{{$sections}} </h3>
+
+    <h1 class ="font-family-draconis center">{{$sections}} </h3>
     <ul>
         @foreach ($subSections as $section)
         <li style="list-style-type:none">
