@@ -33,10 +33,36 @@ class Characters(Resource):
         race = json['race']
         classe = json['classe']
 
+        classlevel = json['classlevel']
+        background = json['background']
+        alignment = json['alignment']
+        xp = json['xp']
+
+        strscore = json['strscore']
+        dexscore = json['dexscore']
+        conscore = json['conscore']
+        intscore = json['intscore']
+        wisscore = json['wisscore']
+        chascore = json['chascore']
+
         char_ref = ref.push({
             'name':name,
             'race':race,
-            'classe':classe
+            'classe':classe,
+            'classlevel':classlevel,
+            'background':background,
+            'alignment':alignment,
+            'xp':xp,
+            'score':{
+                'strscore':strscore,
+                'dexscore':dexscore,
+                'conscore':conscore,
+                'intscore':intscore,
+                'wisscore':wisscore,
+                'chascore':chascore
+                }
+            
+
         })
 
 
@@ -52,14 +78,62 @@ class Character(Resource):
             #print(char[0]) # -
             new_ref=db.reference('/characters/' + charId)
             item = new_ref.get()
-            print(item) #{'class': '123', 'name': 'test', 'race': 'test123'} & next lus {'class': 'Sorcerer', 'name': 'Ciana', 'race': 'Human'}
+            #print(item) #{'class': '123', 'name': 'test', 'race': 'test123'} & next lus {'class': 'Sorcerer', 'name': 'Ciana', 'race': 'Human'}
             #print(item['name']) #ciana
             if(item['name'] == name):
                 #print(item)
                 return item
 
+
+class UpdateCharacter(Resource):
+    def post(self):
+        ref = db.reference('/characters')
+        json = request.get_json()
+
+        name = json['name']
+        race = json['race']
+        classe = json['classe']
+
+        classlevel = json['classlevel']
+        background = json['background']
+        alignment = json['alignment']
+        xp = json['xp']
+
+        strscore = json['strscore']
+        dexscore = json['dexscore']
+        conscore = json['conscore']
+        intscore = json['intscore']
+        wisscore = json['wisscore']
+        chascore = json['chascore']
+                
+        characters = ref.get()
+        print(characters)
+        for charId in characters:
+            new_ref=db.reference('/characters/' + charId)
+            item = new_ref.get()
+            if(item['name'] == name):
+                item.update({
+                    'name':name,
+                    'race':race,
+                    'classe':classe,
+                    'classlevel':classlevel,
+                    'background':background,
+                    'alignment':alignment,
+                    'xp':xp,
+                    'score':{
+                        'strscore':strscore,
+                        'dexscore':dexscore,
+                        'conscore':conscore,
+                        'intscore':intscore,
+                        'wisscore':wisscore,
+                        'chascore':chascore
+                        }
+                })
+
+
 api.add_resource(Characters,"/api/createCharacter", "/api/characters")
 api.add_resource(Character,"/api/getCharacter/<name>")
+api.add_resource(UpdateCharacter,"/api/updateCharacter")
 
 if __name__ == "__main__":
     app.run(debug=True)
