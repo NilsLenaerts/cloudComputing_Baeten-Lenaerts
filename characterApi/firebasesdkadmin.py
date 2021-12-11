@@ -29,6 +29,9 @@ class Characters(Resource):
     def post(self):
         ref = db.reference('/characters')
         json = request.get_json()
+
+        email=json['email' ]
+        print(email)
         name = json['name']
         race = json['race']
         classe = json['classe']
@@ -46,6 +49,8 @@ class Characters(Resource):
         chascore = json['chascore']
 
         char_ref = ref.push({
+            'email':email,
+
             'name':name,
             'race':race,
             'classe':classe,
@@ -130,9 +135,27 @@ class UpdateCharacter(Resource):
                         }
                 })
 
+class MyCharacters(Resource):
+    def get(self, email):
+        jsontot=[]
+        ref = db.reference('/characters')
+        characters = ref.get()
+
+        for charId in characters:
+            new_ref=db.reference('/characters/' + charId)
+            item = new_ref.get()
+            
+            if(item['email'] == email):
+                #print(item)
+                jsontot.append(item)
+        return jsontot
+
+
+
 
 api.add_resource(Characters,"/api/createCharacter", "/api/characters")
 api.add_resource(Character,"/api/getCharacter/<name>")
+api.add_resource(MyCharacters,"/api/getMyCharacters/<email>")
 api.add_resource(UpdateCharacter,"/api/updateCharacter")
 
 if __name__ == "__main__":
