@@ -140,7 +140,9 @@ def getChar(name):
         if(item['name'] == name):
             #print(item)
             return item
+
 @app.route("/api/updateCharacter", methods=['POST'])
+
 @cross_origin(origin='*')
 def updateChar():
     ref = db.reference('/characters')
@@ -153,6 +155,7 @@ def updateChar():
     classlevel = json['classlevel']
     background = json['background']
     alignment = json['alignment']
+    print(alignment)
     xp = json['xp']
 
     strscore = json['strscore']
@@ -163,16 +166,12 @@ def updateChar():
     chascore = json['chascore']
             
     characters = ref.get()
-    print(characters)
-    for charId in characters:
-        new_ref=db.reference('/characters/' + charId)
+    #print(characters)
+    for key,val in characters.items():
+        if(val['name'] == name):
+            update_ref = ref.child(key)
+            update_ref.update({
 
-        item = new_ref.get()
-
-        if(item['name'] == name):
-            print("gevonden")
-            print(background)
-            new_ref.update({
                 'name':name,
                 'race':race,
                 'classe':classe,

@@ -114,7 +114,7 @@ function updateCharacter(){
             .then(response => response.json())
             
             .then(alert("Saved"))
-            //.catch(err => alert(err));
+            .catch(err => alert(err));
 }
 
 
