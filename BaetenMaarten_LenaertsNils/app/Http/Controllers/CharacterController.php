@@ -26,11 +26,12 @@ class CharacterController extends Controller
     
 
     public function getMyCharacters(){
+        $email = Auth::user()->email;
         error_log("hier");
         //$name=$request->name;
         //error_log($spells->results);
         error_log("hoer");
-        $characters= json_decode(file_get_contents("http://127.0.0.1:5000/api/characters"));
+        $characters= json_decode(file_get_contents("http://127.0.0.1:5000/api/getMyCharacters/" . $email));
         error_log(json_encode($characters));
         return view('/character/myCharacters')->with("characters",$characters);  
 

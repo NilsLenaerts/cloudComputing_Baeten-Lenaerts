@@ -1,4 +1,7 @@
+/* global Auth */
+
 function createCharacter(){
+    var email = document.getElementById("email").value;
     var name = document.getElementById("name").value;
     var name20 = decodeURI(name);
     var race = document.getElementById("race").value;
@@ -18,6 +21,7 @@ function createCharacter(){
 
 
     let content = {
+        "email":email,
         "name": name20, 
         "race": race, 
         "classe": classe,
