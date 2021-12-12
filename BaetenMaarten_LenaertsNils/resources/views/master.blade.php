@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="/styles/spellForms.css">
         <link rel="stylesheet" href="/styles/characterCheet.css">
         <link rel="stylesheet" href="/styles/modal.css">
+        <link rel="stylesheet" href="/styles/myCharacters.css">
         <link rel="icon" href="/images/logo.png" sizes="any">   
         
         

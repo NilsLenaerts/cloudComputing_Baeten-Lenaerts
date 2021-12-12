@@ -4,23 +4,21 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 7 dec. 2021, 17:26:10
+    Created on : 12 dec. 2021, 22:45:50
     Author     : Maarten
 */
 
-#spellform {
-    width: 70%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-#spellform p {
+button{
     width: 30%;
-    display: inline-block;
-    text-align: center;
+    background-color: #202110;
+    border: none;
+    color:#E6D0BE;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-#spellform input {
+widthe{
+    width: 100%;
     background: rgb(156, 122, 96, 0.4);
     border: hidden;
     text-align: right;
@@ -28,11 +26,10 @@ and open the template in the editor.
     border-radius: 4px;
 }
 
-#spellform button {
-    width: 30%;
-    background-color: #202110;
-    border: none;
-    color:#E6D0BE;
-    cursor: pointer;
-    border-radius: 4px;
-} 
+.container{  
+text-align: center;  
+border: 7px solid red;  
+width: 300px;  
+height: 200px;  
+padding-top: 100px;  
+}  
