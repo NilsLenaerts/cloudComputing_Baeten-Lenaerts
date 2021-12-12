@@ -191,7 +191,6 @@ def updateChar():
 
 @app.route("/api/getMyCharacters/<name>")
 @cross_origin(origin='*')
-
 def getCharacters(name):
     jsontot=[]
     ref = db.reference('/characters')
@@ -227,19 +226,25 @@ class MyCharacters(Resource):
         print("endOfList")
         return jsonify(jsontot == list)
 
-
-class DeleteCharacter(Resource):
-    def post(self):
-        ref = db.reference('/characters')
-        characters = ref.get()
-        json = request.get_json()
-        name = json['name']
-        #print(name)
-        for key,val in characters.items():
-            if(val['name'] == name):
-                delete_ref = ref.child(key)
-                delete_ref.delete()
-    
+@app.route("/api/deleteCharacter", methods = ['POST'])
+@cross_origin(origin='*')
+def DeleteCharacter():
+    ref = db.reference('/characters')
+    characters = ref.get()
+    json = request.get_json()
+    name = json['name']
+    print(json)
+    print(name)
+    print("1")
+    for key,val in characters.items():
+        print("2")
+        print(val['name'])
+        if(val['name'] == name):
+            print('3')
+            delete_ref = ref.child(key)
+            delete_ref.delete()
+            print('4')
+    return "succes"
 
 
 

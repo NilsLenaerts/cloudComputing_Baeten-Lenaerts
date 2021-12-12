@@ -39,21 +39,21 @@
                         <p>{{$char->name}}</p>
                     </a>
                     
-                    <button onclick="document.getElementById('id01').style.display='block'" class="button" {{$char->name}}> 
-                        Delete {{$char->name}}
+                    <button onclick="document.getElementById('{{$char->name}}').style.display='block'" class="button" > 
+                        Delete
                     </button>
 
-                    <div id="id01" class="modal">
-                      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <div id="{{$char->name}}" class="modal">
+                      <span onclick="document.getElementById('{{$char->name}}').style.display='none'" class="close" title="Close Modal">&times;</span>
                       <form class="modal-content" action="/action_page.php">
                         <div class="container">
-                          <h1>Delete Character</h1>
-                          <p>Are you sure you want to delete your character?</p>
+                          <h1>Delete {{$char->name}}?</h1>
+                          <p>Are you sure you want to delete your character? </p>
 
                           <div class="clearfix">
-                                <button type="button" class="cancelbtn" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
-                                <button type="button" onclick="deleteCharacter()" class="deletebtn" data-dismiss="modal">
-                                    Delete                                 
+                                <button type="button" class="cancelbtn" onclick="document.getElementById('{{$char->name}}').style.display='none'">Cancel</button>
+                                <button type="button" onclick="deleteCharacter('{{$char->name}}')" class="deletebtn" data-dismiss="modal">
+                                    Delete                         
                                 </button>
                           </div>
                         </div>
@@ -62,7 +62,7 @@
                     
                     <script>
                         // Get the modal
-                        var modal = document.getElementById('id01');
+                        var modal = document.getElementById({{$char->name}});
 
                         // When the user clicks anywhere outside of the modal, close it
                         window.onclick = function(event) {

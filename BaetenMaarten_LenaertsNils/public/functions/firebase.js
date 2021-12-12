@@ -52,10 +52,9 @@ function createCharacter(){
 }
 
 function deleteCharacter(name){
-    var name20 = decodeURI(name);
     console.log(name)
     let content = {
-        "name": name20, 
+        "name": name, 
     }
     url = "http://127.0.0.1:5000/api/deleteCharacter";
     fetch(url, {
@@ -112,7 +111,7 @@ function updateCharacter(){
         body: JSON.stringify(content)  
     })
             .then(response => response.json())
-            .then(location.reload())
+            .then(/*location.reload()*/)
             .then(alert("Saved"))
             .catch(err => alert(err));
 }
