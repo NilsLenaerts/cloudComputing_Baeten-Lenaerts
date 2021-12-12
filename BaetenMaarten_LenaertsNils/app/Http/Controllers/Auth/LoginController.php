@@ -84,7 +84,7 @@ class LoginController extends Controller
         $user = User::where('email', '=', $data->email)->first();
         if (!$user) {
             $user = new User();
-            if($user->name){
+            if($data->name){
                 $user->name = $data->name;
             }else{
                 $user->name = $data->nickname;
