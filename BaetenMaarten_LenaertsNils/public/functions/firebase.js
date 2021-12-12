@@ -1,7 +1,9 @@
 /* global Auth */
 
 function createCharacter(){
-    var email = document.getElementById("email").value;
+
+    var mail = document.getElementById("email").innerHTML;
+    console.log(mail);
     var name = document.getElementById("name").value;
     var name20 = decodeURI(name);
     var race = document.getElementById("race").value;
@@ -21,7 +23,7 @@ function createCharacter(){
 
 
     let content = {
-        "email":email,
+        "email":mail,
         "name": name20, 
         "race": race, 
         "classe": classe,
@@ -36,6 +38,7 @@ function createCharacter(){
         'wisscore':wisscore,
         'chascore':chascore
     };
+    console.log(content);
     url = "http://127.0.0.1:5000/api/createCharacter";
     fetch(url, {
         method: "post",
@@ -43,8 +46,8 @@ function createCharacter(){
         body: JSON.stringify(content)  
     })
             .then(response => response.json())
-            .then(location.reload())
-            .then(alert("Noice"));
+            .then(alert("Noice"))
+            .then(location.reload());
             /*.catch(err => alert(err))*/;
 }
 

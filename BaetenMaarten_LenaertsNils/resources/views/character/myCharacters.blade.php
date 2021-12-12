@@ -5,7 +5,8 @@
         <div>
             <h2 class="font-family-draconis center">My characters</h2>
             <h3 class="font-family-draconis center">Owner: {{ Auth::user()->name }}</h3>
-            <p class="font-family-draconis center">Email: {{ Auth::user()->email }}</p>
+            <p class="font-family-draconis center">Email: </p>
+            <p class="font-family-draconis center" id="email" value="{{ Auth::user()->email }}">{{ Auth::user()->email }}</p>
             <div  class="margin-2" id="spellform">
                 <p>Name:  <input type="string" name="name" value="Anna" id="name"/></p>
                 <p>Race:  <input type="string" name="race" value="Human" id="race"/></p>
