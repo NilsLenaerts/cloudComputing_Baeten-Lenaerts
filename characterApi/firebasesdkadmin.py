@@ -141,7 +141,8 @@ def getChar(name):
             #print(item)
             return item
 
-@app.route("/api/updateCharacter")
+@app.route("/api/updateCharacter", methods=['POST'])
+
 @cross_origin(origin='*')
 def updateChar():
     ref = db.reference('/characters')
@@ -168,8 +169,9 @@ def updateChar():
     #print(characters)
     for key,val in characters.items():
         if(val['name'] == name):
-            delete_ref = ref.child(key)
-            delete_ref.update({
+            update_ref = ref.child(key)
+            update_ref.update({
+
                 'name':name,
                 'race':race,
                 'classe':classe,
