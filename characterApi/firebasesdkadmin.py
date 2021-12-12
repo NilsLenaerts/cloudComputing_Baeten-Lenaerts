@@ -140,7 +140,7 @@ def getChar(name):
         if(item['name'] == name):
             #print(item)
             return item
-@app.route("/api/updateCharacter")
+@app.route("/api/updateCharacter", methods=['POST'])
 @cross_origin(origin='*')
 def updateChar():
     ref = db.reference('/characters')
@@ -166,9 +166,13 @@ def updateChar():
     print(characters)
     for charId in characters:
         new_ref=db.reference('/characters/' + charId)
+
         item = new_ref.get()
+
         if(item['name'] == name):
-            item.update({
+            print("gevonden")
+            print(background)
+            new_ref.update({
                 'name':name,
                 'race':race,
                 'classe':classe,

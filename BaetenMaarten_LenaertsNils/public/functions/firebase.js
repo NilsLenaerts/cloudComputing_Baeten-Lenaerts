@@ -112,7 +112,7 @@ function updateCharacter(){
         body: JSON.stringify(content)  
     })
             .then(response => response.json())
-            .then(location.reload())
+            
             .then(alert("Saved"))
             //.catch(err => alert(err));
 }
