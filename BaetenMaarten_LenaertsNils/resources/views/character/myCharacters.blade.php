@@ -5,8 +5,10 @@
         <div>
             <h2 class="font-family-draconis center">My characters</h2>
             <h3 class="font-family-draconis center">Owner: {{ Auth::user()->name }}</h3>
-            <p class="font-family-draconis center">Email: {{ Auth::user()->email }}</p>
+
+            
             <div  class="margin-2" id="spellform">
+                <p>E-mail <input type="string" name="email" value="{{Auth::user()->email}}" id="email" disabled="disabled"/></p>
                 <p>Name:  <input type="string" name="name" value="Anna" id="name"/></p>
                 <p>Race:  <input type="string" name="race" value="Human" id="race"/></p>
                 <p>Class:  <input type="string" name="class" value="Cleric" id="classe"/></p> 
@@ -28,12 +30,49 @@
             <p><button type="button" onclick="createCharacter()" class="border-box padding-1 margin-1" ><strong>Save</strong></button> </p>
         <div>    
         <div class="tiles center">
+
             @if(isset($characters))
             @foreach ($characters as $char)
                 <div class="inner-tile">
+                    
                     <a href="showMyCharacter/{{$char->name}}">
                         <p>{{$char->name}}</p>
                     </a>
+                    
+                    <button onclick="document.getElementById('id01').style.display='block'" class="button" {{$char->name}}> 
+                        Delete {{$char->name}}
+                    </button>
+
+                    <div id="id01" class="modal">
+                      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                      <form class="modal-content" action="/action_page.php">
+                        <div class="container">
+                          <h1>Delete Character</h1>
+                          <p>Are you sure you want to delete your character?</p>
+
+                          <div class="clearfix">
+                                <button type="button" class="cancelbtn" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
+                                <button type="button" onclick="deleteCharacter()" class="deletebtn" data-dismiss="modal">
+                                    Delete                                 
+                                </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    
+                    <script>
+                        // Get the modal
+                        var modal = document.getElementById('id01');
+
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function(event) {
+                          if (event.target == modal) {
+                            modal.style.display = "none";
+                          }
+                        }
+                    </script>
+  
+
                 </div>
             @endforeach
             @endif
