@@ -112,12 +112,11 @@ class UpdateCharacter(Resource):
         chascore = json['chascore']
                 
         characters = ref.get()
-        print(characters)
-        for charId in characters:
-            new_ref=db.reference('/characters/' + charId)
-            item = new_ref.get()
-            if(item['name'] == name):
-                item.update({
+        #print(characters)
+        for key,val in characters.items():
+            if(val['name'] == name):
+                delete_ref = ref.child(key)
+                delete_ref.update({
                     'name':name,
                     'race':race,
                     'classe':classe,
@@ -134,6 +133,7 @@ class UpdateCharacter(Resource):
                         'chascore':chascore
                         }
                 })
+
 
 class MyCharacters(Resource):
     def get(self, email):
@@ -157,7 +157,7 @@ class DeleteCharacter(Resource):
         characters = ref.get()
         json = request.get_json()
         name = json['name']
-        print(name)
+        #print(name)
         for key,val in characters.items():
             if(val['name'] == name):
                 delete_ref = ref.child(key)

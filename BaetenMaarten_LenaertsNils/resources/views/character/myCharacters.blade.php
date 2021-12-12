@@ -12,14 +12,13 @@
                 <p>Name:  <input type="string" name="name" value="Anna" id="name"/></p>
                 <p>Race:  <input type="string" name="race" value="Human" id="race"/></p>
                 <p>Class:  <input type="string" name="class" value="Cleric" id="classe"/></p> 
-            </div>   
-            <div  class="margin-2" id="spellform">
+
                 <p>Class level:  <input type="int" name="classlevel" value="8" id="classlevel"/></p>
                 <p>Background:  <input type="string" name="background" value="Traveler" id="background"/></p>
                 <p>Alignment:  <input type="string" name="alignment" value="LG" id="alignment"/></p> 
                 <p>Xp:  <input type="string" name="xp" value="5200" id="xp"/></p> 
-            </div>
-            <div  class="margin-2" id="spellform">
+
+
                 <p>Str Score:  <input type="int" name="strscore" value="15" id="strscore"/></p>
                 <p>Dex Score:  <input type="int" name="dexscore" value="9" id="dexscore"/></p>
                 <p>Con Score:  <input type="int" name="conscore" value="18" id="conscore"/></p>

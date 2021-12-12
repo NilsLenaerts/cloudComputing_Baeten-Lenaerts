@@ -34,7 +34,7 @@
               </ul>
             </section>
             </header>
-          <main>
+            <main>
             <section>
               <section class="attributes">
                 <div class="scores">
@@ -44,7 +44,7 @@
                         <label for="Strengthscore">Strength</label><input name="Strengthscore" placeholder="10" class="stat" value="{{$character->score->strscore}}" id="strscore"/>
                       </div>
                       <div class="modifier">
-                        <input name="Strengthmod" placeholder="+0" class="statmod"/>
+                        <input name="Strengthmod" placeholder="+0"  class="statmod"/>
                       </div>
                     </li>
                     <li>
