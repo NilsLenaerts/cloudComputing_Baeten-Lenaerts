@@ -39,7 +39,7 @@
                         <p>{{$char->name}}</p>
                     </a>
                     
-                    <button onclick="document.getElementById('{{$char->name}}').style.display='block'" class="button" > 
+                    <button onclick="document.getElementById('{{$char->name}}').style.display='block'" class="button1" > 
                         Delete
                     </button>
 

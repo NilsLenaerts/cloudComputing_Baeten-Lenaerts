@@ -45,7 +45,6 @@ function createCharacter(){
         headers: {"Content-type": "application/json"},
         body: JSON.stringify(content)  
     })
-            .then(response => response.json())
             .then(alert("Noice"))
             .then(location.reload());
             /*.catch(err => alert(err))*/;
@@ -62,7 +61,6 @@ function deleteCharacter(name){
         headers: {"Content-type": "application/json"},
         body: JSON.stringify(content)  
     })
-            .then(response => response.json())
             .then(location.reload())
             .then(alert("Deleted"))
             //.catch(err => alert(err));
@@ -110,11 +108,7 @@ function updateCharacter(){
         headers: {"Content-type": "application/json"},
         body: JSON.stringify(content)  
     })
-            .then(response => response.json())
-
-            .then(/*location.reload()*/)
-
-
+            .then(location.reload())
             .then(alert("Saved"))
             .catch(err => alert(err));
 }
