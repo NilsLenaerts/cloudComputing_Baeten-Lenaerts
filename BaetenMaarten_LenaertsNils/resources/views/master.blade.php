@@ -68,11 +68,15 @@
             </li>
             
             <li class="dropdown float-right" style="margin-right: 150px;">
+              @guest
               <a href="/login" class="dropbtn">Login</a>
+              @else
+              <a href="/profile" class="dropbtn">{{ Auth::user()->name }}</a>
               <div class="dropdown-content">
               <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a> <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf</form>
                 <a href="/myCharacters">My characters</a>
               </div>
+              @endguest
             </li>
             
             <li class="dropdown float-left">
