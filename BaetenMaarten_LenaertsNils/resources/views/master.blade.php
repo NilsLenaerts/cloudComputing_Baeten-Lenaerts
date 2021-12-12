@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="/styles/tiles.css">
         <link rel="stylesheet" href="/styles/spellForms.css">
         <link rel="stylesheet" href="/styles/characterCheet.css">
+        <link rel="stylesheet" href="/styles/modal.css">
         <link rel="icon" href="/images/logo.png" sizes="any">   
         
         
@@ -18,6 +19,8 @@
         <script type="text/javascript" src="/functions/official.js"></script>
         <script type="text/javascript" src="/functions/homebrew.js"></script>
         <script type="text/javascript" src="/functions/firebase.js"></script>
+        <script type="text/javascript" src="/functions/characterCheet.js"></script>
+
     </head>
 
     <body class="margin-0 background home-background-image">

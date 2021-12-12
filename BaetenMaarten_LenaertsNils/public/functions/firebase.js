@@ -51,6 +51,26 @@ function createCharacter(){
             /*.catch(err => alert(err))*/;
 }
 
+function deleteCharacter(name){
+    var name20 = decodeURI(name);
+    console.log(name)
+    let content = {
+        "name": name20, 
+    }
+    url = "http://127.0.0.1:5000/api/deleteCharacter";
+    fetch(url, {
+        method: "post",
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify(content)  
+    })
+            .then(response => response.json())
+            .then(location.reload())
+            .then(alert("Deleted"))
+            //.catch(err => alert(err));
+}
+
+
+
 function updateCharacter(){
     var name = document.getElementById("name").value;
     var name20 = decodeURI(name);
@@ -94,7 +114,7 @@ function updateCharacter(){
             .then(response => response.json())
             .then(location.reload())
             .then(alert("Saved"))
-            .catch(err => alert(err));
+            //.catch(err => alert(err));
 }
 
 

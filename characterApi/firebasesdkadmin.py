@@ -36,8 +36,8 @@ class Characters(Resource):
         ref = db.reference('/characters')
         json = request.get_json()
 
-        email=json['email' ]
-        print(email)
+        email = json['email']
+        #print(email)
         name = json['name']
         race = json['race']
         classe = json['classe']
@@ -54,9 +54,9 @@ class Characters(Resource):
         wisscore = json['wisscore']
         chascore = json['chascore']
 
-        char_ref = ref.push({
+        
+        ref.push({
             'email':email,
-
             'name':name,
             'race':race,
             'classe':classe,
@@ -208,7 +208,6 @@ def getCharacters(name):
     print("endOfList")
     return jsonify(jsontot)
 
-
 class MyCharacters(Resource):
     def get(self, email):
         jsontot=[]
@@ -228,12 +227,27 @@ class MyCharacters(Resource):
         return jsonify(jsontot == list)
 
 
+class DeleteCharacter(Resource):
+    def post(self):
+        ref = db.reference('/characters')
+        characters = ref.get()
+        json = request.get_json()
+        name = json['name']
+        #print(name)
+        for key,val in characters.items():
+            if(val['name'] == name):
+                delete_ref = ref.child(key)
+                delete_ref.delete()
+    
+
 
 
 #api.add_resource(Characters,"/api/createCharacter", "/api/characters")
 #api.add_resource(Character,"/api/getCharacter/<name>")
 #api.add_resource(MyCharacters,"/api/getMyCharacters/<email>")
+#api.add_resource(DeleteCharacter,"/api/deleteCharacter")
 #api.add_resource(UpdateCharacter,"/api/updateCharacter")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

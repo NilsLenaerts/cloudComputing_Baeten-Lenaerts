@@ -21,7 +21,7 @@ function getDescription(name){
     fetch("https://www.dnd5eapi.co/api/rule-sections/" + name)
         .then(response => {if (response.ok) return response.json();
                             else alert("error");})
-        .then(function(json){p.innerHTML += markdown.toHTML(json.desc);console.log(json);}).catch(err => console.log(err));
+        .then(function(json){p.innerHTML += markdown.render(json.desc);console.log(json);}).catch(err => console.log(err));
 }
 
 /*
@@ -34,5 +34,5 @@ function getTrait(name){
     fetch("https://www.dnd5eapi.co/api/traits/" + name)
         .then(response => {if (response.ok) return response.json();
                             else alert("error");})
-        .then(function(json){p.innerHTML += markdown.toHTML(json.desc[0]);console.log(json.desc);}).catch(err => console.log(err));
+        .then(function(json){p.innerHTML += markdown.render(json.desc[0]);console.log(json.desc);}).catch(err => console.log(err));
 }
