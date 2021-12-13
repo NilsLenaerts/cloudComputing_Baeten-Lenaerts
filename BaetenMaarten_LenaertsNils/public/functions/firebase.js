@@ -83,7 +83,7 @@ function deleteCharacter(name){
         body: JSON.stringify(content)  
     })
             .then(location.reload())
-            .then(alert("Deleted"))
+            /*.then(alert("Deleted"))*/
             //.catch(err => alert(err));
 }
 
@@ -246,9 +246,9 @@ function scoreToMod(score){
     }if(score==4 || score ==5){
         return -3;
     }if(score==6 || score ==7){
-        return -3;
+        return -2;
     }if(score==8 || score ==9){
-        return -3;
+        return -1;
     }if(score==10 || score ==11){
         return 0;
     }if(score==12 || score ==13){
