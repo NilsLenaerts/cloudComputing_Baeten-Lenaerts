@@ -136,6 +136,34 @@ function updateCharacter(email){
     var intsaveprofcient = document.getElementById("intelligencesaveprof").checked;
     var chasaveprofcient = document.getElementById("charismasaveprof").checked;
     
+    var acrobatics = document.getElementById("acrobatics").value;
+    var animal = document.getElementById("animal").value;
+    var arcana = document.getElementById("arcana").value;
+    var athletics= document.getElementById("athletics").value;
+    var deception= document.getElementById("deception").value;
+    var history= document.getElementById("history").value;
+    var insight= document.getElementById("strsave").value;
+    var intimidation= document.getElementById("intimidation").value;
+    var investigation= document.getElementById("investigation").value;
+    var medicine= document.getElementById("medicine").value;
+    var nature= document.getElementById("nature").value;
+    var perception= document.getElementById("perception").value;
+    var performance= document.getElementById("performance").value;
+    var persuasion= document.getElementById("persuasion").value;
+    var religion= document.getElementById("religion").value;
+    var sleight= document.getElementById("sleight").value;
+    var stealth= document.getElementById("stealth").value;
+    var survival= document.getElementById("survival").value;
+    
+    var otherprof = document.getElementById("otherprof").innerHTML;
+    var ac=document.getElementById("ac").value;
+    var pp=document.getElementById("pp").value;
+    var speed=document.getElementById("speed").value;
+    
+    var maxhp=document.getElementById("maxhp").value;
+    var currenthp=document.getElementById("currenthp").value;
+    var temphp=document.getElementById("temphp").value;
+    
     let content = {
         "email":email,
         "name": name, 
@@ -166,6 +194,35 @@ function updateCharacter(email){
         'wissaveprofcient':wissaveprofcient,
         'intsaveprofcient':intsaveprofcient,
         'chasaveprofcient':chasaveprofcient,
+        
+        'acrobatics':acrobatics,
+        'animal':animal,
+        'arcana':arcana,
+        'athletics':athletics,
+        'deception':deception,
+        'history':history,
+        'insight':insight,
+        'intimidation':intimidation,
+        'investigation':investigation,
+        'medicine':medicine,
+        'nature':nature,
+        'perception':perception,
+        'performance':performance,
+        'persuasion':persuasion,
+        'religion':religion,
+        'sleight':sleight,
+        'stealth':stealth,
+        'survival':survival,
+        
+        'otherprof':otherprof,/*werkt nog niet*/
+        
+        'ac':ac,
+        'pp':pp,
+        'speed':speed,
+        
+        'maxhp':maxhp,
+        'currenthp':currenthp,
+        'temphp':temphp,   
         
         
     };

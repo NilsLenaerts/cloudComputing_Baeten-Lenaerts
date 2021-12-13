@@ -151,6 +151,35 @@ def createChar():
             'wissaveprofcient':'false',
             'intsaveprofcient':'false',
             'chasaveprofcient':'false'
+        },
+        'skill':{
+            'acrobatics' :'',
+            'animal' :'',
+            'arcana':'',
+            'athletics':'',
+            'deception':'',
+            'history':'',
+            'insight':'',
+            'intimidation':'',
+            'investigation':'',
+            'medicine':'',
+            'nature':'',
+            'perception':'',
+            'performance':'',
+            'persuasion':'',
+            'religion':'',
+            'sleight':'',
+            'stealth':'',
+            'survival':''
+        },
+        'ac':'',
+        'pp':'',
+        'speed':'',
+        'otherprof':'',
+        'hp':{
+            'maxhp':'',
+            'currenthp':'',
+            'temphp':''
         }
 
     })
@@ -214,6 +243,34 @@ def updateChar():
     intsaveprofcient=json['intsaveprofcient']
     chasaveprofcient=json['chasaveprofcient']
 
+    acrobatics =json['acrobatics']
+    animal =json['animal']
+    arcana=json['arcana']
+    athletics=json['athletics']
+    deception=json['deception']
+    history=json['history']
+    insight=json['insight']
+    intimidation=json['intimidation']
+    investigation=json['investigation']
+    medicine=json['medicine']
+    nature=json['nature']
+    perception=json['perception']
+    performance=json['performance']
+    persuasion=json['persuasion']
+    religion=json['religion']
+    sleight=json['sleight']
+    stealth=json['stealth']
+    survival=json['survival']
+
+    otherprof=json['otherprof']
+    ac=json['ac']
+    pp=json['pp']
+    speed=json['speed']
+
+    maxhp=json['maxhp']
+    currenthp=json['currenthp']
+    temphp=json['temphp']
+
     characters = ref.get()
     #print(characters)
     for key,val in characters.items():
@@ -251,7 +308,37 @@ def updateChar():
                     'intsaveprofcient':intsaveprofcient,
                     'chasaveprofcient':chasaveprofcient
 
+                },        
+                'skill':{
+                    'acrobatics' :acrobatics,
+                    'animal' :animal,
+                    'arcana':arcana,
+                    'athletics':athletics,
+                    'deception':deception,
+                    'history':history,
+                    'insight':insight,
+                    'intimidation':intimidation,
+                    'investigation':investigation,
+                    'medicine':medicine,
+                    'nature':nature,
+                    'perception':perception,
+                    'performance':performance,
+                    'persuasion':persuasion,
+                    'religion':religion,
+                    'sleight':sleight,
+                    'stealth':stealth,
+                    'survival':survival
+                },
+                'otherprof':otherprof,
+                'ac':ac,
+                'pp':pp,
+                'speed':speed,
+                'hp':{
+                    'maxhp':maxhp,
+                    'currenthp':currenthp,
+                    'temphp':temphp,
                 }
+
             })
     return "Succes"
 
