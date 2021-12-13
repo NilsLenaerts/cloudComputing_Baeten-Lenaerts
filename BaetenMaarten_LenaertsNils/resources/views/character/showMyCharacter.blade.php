@@ -14,13 +14,13 @@
             <section class="misc" >
               <ul>
                 <li>
-                  <label for="classlevel">Class & Level</label><input name="classlevel" placeholder="Paladin 2" value="{{$character->classlevel}}" id="classlevel" />
+                  <label for="classlevel">Class & Level</label><input name="classlevel" placeholder="Paladin 2" value="{{$character->classe}}: {{$character->classlevel}}" id="classlevel" />
                 </li>
                 <li>
                   <label for="background">Background</label><input name="background" placeholder="Acolyte" value="{{$character->background}}" id="background"/>
                 </li>
                 <li>
-                  <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface" value="{{$character->classe}}" id="classe"/>
+                  <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface" value="{{Auth::user()->name}}" id="classe"/>
                 </li>
                 <li>
                   <label for="race">Race</label><input name="race" placeholder="Half-elf" value="{{$character->race}}" id="race"/>
