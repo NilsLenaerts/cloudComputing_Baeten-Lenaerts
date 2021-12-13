@@ -44,7 +44,7 @@
                         <label for="Strengthscore">Strength</label><input name="Strengthscore" placeholder="10" class="stat" value="{{$character->score->strscore}}" id="strscore"/>
                       </div>
                       <div class="modifier">
-                        <input name="Strengthmod" placeholder="+0"  class="statmod"/>
+                        <input name="Strengthmod" placeholder="+0"  value="{{$character->mod->strmod}}" class="statmod"/>
                       </div>
                     </li>
                     <li>
@@ -52,7 +52,7 @@
                         <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" placeholder="10" class="stat" value="{{$character->score->dexscore}}" id="dexscore"/>
                       </div>
                       <div class="modifier">
-                        <input name="Dexteritymod" placeholder="+0" class=statmod/>
+                        <input name="Dexteritymod" placeholder="+0" value="{{$character->mod->dexmod}}" class=statmod/>
                       </div>
                     </li>
                     <li>
@@ -60,7 +60,7 @@
                         <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" placeholder="10" class="stat" value="{{$character->score->conscore}}" id="conscore"/>
                       </div>
                       <div class="modifier">
-                        <input name="Constitutionmod" placeholder="+0" class="statmod"/>
+                        <input name="Constitutionmod" placeholder="+0" value="{{$character->mod->conmod}}" class="statmod"/>
                       </div>
                     </li>
                     <li>
@@ -68,7 +68,7 @@
                         <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" placeholder="10" class="stat" value="{{$character->score->wisscore}}" id="wisscore"/>
                       </div>
                       <div class="modifier">
-                        <input name="Wisdommod" placeholder="+0" />
+                        <input name="Wisdommod" placeholder="+0" value="{{$character->mod->wismod}}" />
                       </div>
                     </li>
                     <li>
@@ -76,7 +76,7 @@
                         <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" placeholder="10" class="stat" value="{{$character->score->intscore}}" id="intscore"/>
                       </div>
                       <div class="modifier">
-                        <input name="Intelligencemod" placeholder="+0" class="statmod"/>
+                        <input name="Intelligencemod" placeholder="+0" value="{{$character->mod->intmod}}" class="statmod"/>
                       </div>
                     </li>
                     <li>
@@ -84,7 +84,7 @@
                         <label for="Charismascore">Charisma</label><input name="Charismascore" placeholder="10" class="stat" value="{{$character->score->chascore}}" id="chascore"/>
                       </div>
                       <div class="modifier">
-                        <input name="Charismamod" placeholder="+0" class="statmod"/>
+                        <input name="Charismamod" placeholder="+0" value="{{$character->mod->chamod}}" class="statmod"/>
                       </div>
                     </li>
                   </ul>
@@ -100,12 +100,12 @@
                     <div class="label-container">
                       <label for="proficiencybonus">Proficiency Bonus</label>
                     </div>
-                    <input name="proficiencybonus" placeholder="+2" />
+                    <input name="proficiencybonus" placeholder="+2" value="{{$character->profbonus}}"/>
                   </div>
                   <div class="saves list-section box">
                     <ul>
                       <li>
-                        <label for="Strength-save">Strength</label><input name="Strength-save" placeholder="+0" type="text" /><input name="Strength-save-prof" type="checkbox" />
+                        <label for="Strength-save">Strength</label><input name="Strength-save" placeholder="+ {{$character->mod->strmod}}" type="text" value="+ {{$character->save->strsavebonus}}"/><input name="Strength-save-prof"  type="checkbox"  id="strengthsaveprof" />
                       </li>
                       <li>
                         <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save" placeholder="+0" type="text" /><input name="Dexterity-save-prof" type="checkbox" />

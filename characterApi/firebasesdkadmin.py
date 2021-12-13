@@ -100,6 +100,15 @@ def createChar():
     wisscore = json['wisscore']
     chascore = json['chascore']
 
+    strmod = json['strmod']
+    dexmod = json['dexmod']
+    conmod = json['conmod']
+    intmod = json['intmod']
+    wismod = json['wismod']
+    chamod = json['chamod']
+
+    profbonus = json['profbonus']
+    
     char_ref = ref.push({
         'email':email,
         'name':name,
@@ -116,8 +125,19 @@ def createChar():
             'intscore':intscore,
             'wisscore':wisscore,
             'chascore':chascore
-            }
-        
+        },
+        'mod':{
+            'strmod':strmod,
+            'dexmod':dexmod,
+            'conmod':conmod,
+            'intmod':intmod,
+            'wismod':wismod,
+            'chamod':chamod
+        },
+        'profbonus':profbonus,
+        'save':{
+            'strsavebonus':''
+        }
 
     })
     return "succes"
@@ -165,7 +185,8 @@ def updateChar():
     intscore = json['intscore']
     wisscore = json['wisscore']
     chascore = json['chascore']
-            
+    strsavebonus = json['strsavebonus']
+
     characters = ref.get()
     #print(characters)
     for key,val in characters.items():
@@ -186,7 +207,10 @@ def updateChar():
                     'intscore':intscore,
                     'wisscore':wisscore,
                     'chascore':chascore
-                    }
+                    },
+                'save':{
+                    'strsavebonus':strsavebonus
+                }
             })
     return "Succes"
 

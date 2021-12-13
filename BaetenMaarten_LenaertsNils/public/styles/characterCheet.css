@@ -69,14 +69,14 @@ form.charsheet ul li {
   display: block;
 }
 form.charsheet ::-moz-placeholder {
-  color: #bbb;
+  color: #000;
   
 }
 form.charsheet :-ms-input-placeholder {
-  color: #bbb;
+  color: #000;
 }
 form.charsheet ::placeholder {
-  color: #bbb;
+  color: #000;
 }
 form.charsheet label {
   text-transform: uppercase;

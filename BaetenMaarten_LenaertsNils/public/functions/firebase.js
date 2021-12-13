@@ -20,7 +20,16 @@ function createCharacter(){
     var wisscore = document.getElementById("wisscore").value;
     var chascore = document.getElementById("chascore").value;
 
-
+    var strmod = scoreToMod(strscore);
+    var dexmod = scoreToMod(dexscore);
+    var conmod = scoreToMod(conscore);
+    var intmod = scoreToMod(intscore);
+    var wismod = scoreToMod(wisscore);
+    var chamod = scoreToMod(chascore);
+    
+    var profbonus = levelToProf(classlevel);
+        
+    
     let content = {
         "email":email,
         "name": name20, 
@@ -30,12 +39,24 @@ function createCharacter(){
         "background":background,
         "alignment":alignment,
         "xp":xp,
+        
         'strscore':strscore,
         'dexscore':dexscore,
         'conscore':conscore,
         'intscore':intscore,
         'wisscore':wisscore,
-        'chascore':chascore
+        'chascore':chascore,
+        
+        'strmod':strmod,
+        'dexmod':dexmod,
+        'intmod':intmod,
+        'conmod':conmod,
+        'wismod':wismod,
+        'chamod':chamod,
+        
+        'profbonus':profbonus,
+        
+
     };
     console.log(content);
     url = "http://127.0.0.1:5000/api/createCharacter";
@@ -86,6 +107,15 @@ function updateCharacter(email){
     var wisscore = document.getElementById("wisscore").value;
     var chascore = document.getElementById("chascore").value;
 
+    
+    var strmod = scoreToMod(strscore);
+    var dexmod = scoreToMod(dexscore);
+    var conmod = scoreToMod(conscore);
+    var intmod = scoreToMod(intscore);
+    var wismod = scoreToMod(wisscore);
+    var chamod = scoreToMod(chascore);
+    
+    var strsavebonus = checkProficiency("strengthsaveprof",strmod,classlevel);
 
     let content = {
         "email":email,
@@ -101,7 +131,8 @@ function updateCharacter(email){
         'conscore':conscore,
         'intscore':intscore,
         'wisscore':wisscore,
-        'chascore':chascore
+        'chascore':chascore,
+        'strsavebonus':strsavebonus,
     };
     url = "http://127.0.0.1:5000/api/updateCharacter";
     fetch(url, {
@@ -115,4 +146,59 @@ function updateCharacter(email){
 }
 
 
+function scoreToMod(score){
+    if(score==1) {
+        return -5;
+    }if(score==2 || score ==3){
+        return -4;
+    }if(score==4 || score ==5){
+        return -3;
+    }if(score==6 || score ==7){
+        return -3;
+    }if(score==8 || score ==9){
+        return -3;
+    }if(score==10 || score ==11){
+        return 0;
+    }if(score==12 || score ==13){
+        return 1;
+    }if(score==14 || score ==15){
+        return 2;
+    }if(score==16 || score ==17){
+        return 3;
+    }if(score==18 || score ==19){
+        return 4;
+    }if(score==20 || score ==21){
+        return 5;
+    }
+    
+}
+
+
+function levelToProf(level){
+    if(level >= 1 && level <= 4){
+        return 2;
+    }
+    if(level >= 5 && level <= 8){
+        return 3;
+    }
+    if(level >= 9 && level <= 12){
+        return 4;
+    }
+    if(level >= 13 && level <= 16){
+        return 5;
+    }
+    if(level >= 17 && level <= 20){
+        return 6;
+    }
+}
+
+
+function checkProficiency(id,mod,level){
+    if (document.getElementById(id).checked == true) {
+        document.getElementById(id).checked = true;
+        return totmod = mod + levelToProf(level);
+    }else{
+        return totmod = mod;
+    }
+}
 
