@@ -102,7 +102,6 @@ def createChar():
 
     char_ref = ref.push({
         'email':email,
-
         'name':name,
         'race':race,
         'classe':classe,
@@ -122,9 +121,9 @@ def createChar():
 
     })
     return "succes"
-@app.route("/api/getCharacter/<name>")
+@app.route("/api/getCharacter/<name>/<email>")
 @cross_origin(origin='*')
-def getChar(name):
+def getChar(name,email):
     ref = db.reference('/characters')
     # character . get children dna hebtge ID, en dan .name
     characters = ref.get()
@@ -137,7 +136,7 @@ def getChar(name):
         item = new_ref.get()
         #print(item) #{'class': '123', 'name': 'test', 'race': 'test123'} & next lus {'class': 'Sorcerer', 'name': 'Ciana', 'race': 'Human'}
         #print(item['name']) #ciana
-        if(item['name'] == name):
+        if(item['name'] == name and item['email'] == email):
             #print(item)
             return item
 
@@ -149,13 +148,15 @@ def updateChar():
     json = request.get_json()
 
     name = json['name']
+    email=json['email']
     race = json['race']
     classe = json['classe']
 
     classlevel = json['classlevel']
     background = json['background']
     alignment = json['alignment']
-    print(alignment)
+    print(json)
+    print("email:" + email)
     xp = json['xp']
 
     strscore = json['strscore']
@@ -168,10 +169,9 @@ def updateChar():
     characters = ref.get()
     #print(characters)
     for key,val in characters.items():
-        if(val['name'] == name):
+        if(val['name'] == name and val['email']== email):
             update_ref = ref.child(key)
             update_ref.update({
-
                 'name':name,
                 'race':race,
                 'classe':classe,
@@ -191,9 +191,9 @@ def updateChar():
     return "Succes"
 
 
-@app.route("/api/getMyCharacters/<name>")
+@app.route("/api/getMyCharacters/<email>")
 @cross_origin(origin='*')
-def getCharacters(name):
+def getCharacters(email):
     jsontot=[]
     ref = db.reference('/characters')
     characters = ref.get()
@@ -202,7 +202,7 @@ def getCharacters(name):
         new_ref=db.reference('/characters/' + charId)
         item = new_ref.get()
         
-        if(item['email'] == name):
+        if(item['email'] == email):
             #print(item)
             jsontot.append(item)
     print("list")
@@ -235,13 +235,14 @@ def DeleteCharacter():
     characters = ref.get()
     json = request.get_json()
     name = json['name']
+    email = json['email']
     print(json)
-    print(name)
+    print(email)
     print("1")
     for key,val in characters.items():
         print("2")
         print(val['name'])
-        if(val['name'] == name):
+        if(val['name'] == name and val['email'] == email):
             print('3')
             delete_ref = ref.child(key)
             delete_ref.delete()

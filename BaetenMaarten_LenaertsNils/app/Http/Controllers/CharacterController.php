@@ -41,8 +41,9 @@ class CharacterController extends Controller
     * Haalt de inhoud van een character op
     */
     public function showCharacter($name){
+        $email = Auth::user()->email;
         $name20 =rawurlencode($name);
-        $character= json_decode(file_get_contents("http://127.0.0.1:5000/api/getCharacter/" . $name20));
+        $character= json_decode(file_get_contents("http://127.0.0.1:5000/api/getCharacter/" . $name20 ."/" . $email));
         //$jsonChar = json_decode($character);
         error_log(json_encode($character));
         return view("character/showMyCharacter")->with("character",$character);  

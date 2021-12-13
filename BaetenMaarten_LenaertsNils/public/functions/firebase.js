@@ -1,9 +1,8 @@
 /* global Auth */
 
 function createCharacter(){
-
-    var mail = document.getElementById("email").innerHTML;
-    console.log(mail);
+    var email = document.getElementById("email").innerHTML;
+    console.log(email);
     var name = document.getElementById("name").value;
     var name20 = decodeURI(name);
     var race = document.getElementById("race").value;
@@ -23,7 +22,7 @@ function createCharacter(){
 
 
     let content = {
-        "email":mail,
+        "email":email,
         "name": name20, 
         "race": race, 
         "classe": classe,
@@ -52,7 +51,9 @@ function createCharacter(){
 
 function deleteCharacter(name){
     console.log(name)
+    var email = document.getElementById("email").innerHTML;
     let content = {
+        "email": email,
         "name": name, 
     }
     url = "http://127.0.0.1:5000/api/deleteCharacter";
@@ -68,9 +69,8 @@ function deleteCharacter(name){
 
 
 
-function updateCharacter(){
+function updateCharacter(email){
     var name = document.getElementById("name").value;
-    var name20 = decodeURI(name);
     var race = document.getElementById("race").value;
     var classe = document.getElementById("classe").value;
     
@@ -88,7 +88,8 @@ function updateCharacter(){
 
 
     let content = {
-        "name": name20, 
+        "email":email,
+        "name": name, 
         "race": race, 
         "classe": classe,
         "classlevel":classlevel,

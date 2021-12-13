@@ -5,7 +5,7 @@
     <h1 class="font-family-draconis center">{{$character->name}}</h1>
     <h2 class="font-family-draconis center">{{$character->race}}  {{$character->classe}}</h2>
     <div>
-        <p><button type="button" onclick="updateCharacter()"><strong>Update</strong></button></p> 
+        <p><button type="button" onclick="updateCharacter('{{Auth::user()->email}}')"><strong>Update</strong></button></p> 
         <form class="charsheet margin-2" >
             <header >
             <section class="charname border-box " id="">
