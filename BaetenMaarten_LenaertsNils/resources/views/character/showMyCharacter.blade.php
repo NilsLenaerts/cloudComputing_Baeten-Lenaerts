@@ -134,19 +134,19 @@
                     <ul>
                       <li>
                         <label for="Acrobatics">Acrobatics <span class="skill"></span></label>
-                        <input name="Acrobatics"  type="text" id="acrobatics"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->acrobatics}}"/><input name="Acrobatics-prof" type="checkbox" />
+                        <input name="Acrobatics"  type="text" id="acrobatics"  placeholder="{{$character->mod->dexmod}}" value="{{$character->skill->acrobatics}}"/><input name="Acrobatics-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Animal Handling">Animal Handling <span class="skill"></span></label>
-                        <input name="Animal Handling"  type="text" id="animal"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->animal}}"/><input name="Animal Handling-prof" type="checkbox" />
+                        <input name="Animal Handling"  type="text" id="animal"  placeholder="{{$character->mod->wismod}}" value="{{$character->skill->animal}}"/><input name="Animal Handling-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Arcana">Arcana <span class="skill"></span></label>
-                        <input name="Arcana"  type="text" id="arcana"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->arcana}}"/><input name="Arcana-prof" type="checkbox" />
+                        <input name="Arcana"  type="text" id="arcana"  placeholder="{{$character->mod->intmod}}" value="{{$character->skill->arcana}}"/><input name="Arcana-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Athletics">Athletics <span class="skill"></span></label>
-                        <input name="Athletics"  type="text" id="athletics"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->athletics}}"/><input name="Athletics-prof" type="checkbox" />
+                        <input name="Athletics"  type="text" id="athletics"  placeholder="{{$character->mod->strmod}}" value="{{$character->skill->athletics}}"/><input name="Athletics-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Deception">Deception <span class="skill"></span></label>
@@ -154,11 +154,11 @@
                       </li>
                       <li>
                         <label for="History">History <span class="skill"></span></label>
-                        <input name="History" type="text" id="history"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->history}}"/><input name="History-prof" type="checkbox" />
+                        <input name="History" type="text" id="history"  placeholder="{{$character->mod->intmod}}" value="{{$character->skill->history}}"/><input name="History-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Insight">Insight <span class="skill"></span></label>
-                        <input name="Insight"  type="text" id="insight"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->insight}}"/><input name="Insight-prof" type="checkbox" />
+                        <input name="Insight"  type="text" id="insight"  placeholder="{{$character->mod->wismod}}" value="{{$character->skill->insight}}"/><input name="Insight-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Intimidation">Intimidation <span class="skill"></span></label>
@@ -166,19 +166,19 @@
                       </li>
                       <li>
                         <label for="Investigation">Investigation <span class="skill"></span></label>
-                        <input name="Investigation"  type="text" id="investigation"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->investigation}}"/><input name="Investigation-prof" type="checkbox" />
+                        <input name="Investigation"  type="text" id="investigation"  placeholder="{{$character->mod->intmod}}" value="{{$character->skill->investigation}}"/><input name="Investigation-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Medicine">Medicine <span class="skill"></span></label>
-                        <input name="Medicine"  type="text" id="medicine"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->medicine}}"/><input name="Medicine-prof" type="checkbox" />
+                        <input name="Medicine"  type="text" id="medicine"  placeholder="{{$character->mod->wismod}}" value="{{$character->skill->medicine}}"/><input name="Medicine-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Nature">Nature <span class="skill"></span></label>
-                        <input name="Nature"  type="text" id="nature"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->nature}}"/><input name="Nature-prof" type="checkbox" />
+                        <input name="Nature"  type="text" id="nature"  placeholder="{{$character->mod->intmod}}" value="{{$character->skill->nature}}"/><input name="Nature-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Perception">Perception <span class="skill"></span></label>
-                        <input name="Perception" type="text" id="perception"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->perception}}"/><input name="Perception-prof" type="checkbox" />
+                        <input name="Perception" type="text" id="perception"  placeholder="{{$character->mod->wismod}}" value="{{$character->skill->perception}}"/><input name="Perception-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Performance">Performance <span class="skill"></span></label>
@@ -190,19 +190,19 @@
                       </li>
                       <li>
                         <label for="Religion">Religion <span class="skill"></span></label>
-                        <input name="Religion"  type="text" id="religion"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->religion}}"/><input name="Religion-prof" type="checkbox" />
+                        <input name="Religion"  type="text" id="religion"  placeholder="{{$character->mod->intmod}}" value="{{$character->skill->religion}}"/><input name="Religion-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Sleight of Hand">Sleight of Hand <span class="skill"></span></label>
-                        <input name="Sleight of Hand"  type="text" id="sleight"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->sleight}}"/><input name="Sleight of Hand-prof" type="checkbox" />
+                        <input name="Sleight of Hand"  type="text" id="sleight"  placeholder="{{$character->mod->dexmod}}" value="{{$character->skill->sleight}}"/><input name="Sleight of Hand-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Stealth">Stealth <span class="skill"></span></label>
-                        <input name="Stealth" type="text" id="stealth"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->stealth}}"/><input name="Stealth-prof" type="checkbox" />
+                        <input name="Stealth" type="text" id="stealth"  placeholder="{{$character->mod->dexmod}}" value="{{$character->skill->stealth}}"/><input name="Stealth-prof" type="checkbox" />
                       </li>
                       <li>
                         <label for="Survival">Survival <span class="skill"></span></label>
-                        <input name="Survival"  type="text" id="survival"  placeholder="{{$character->mod->chamod}}" value="{{$character->skill->survival}}"/><input name="Survival-prof" type="checkbox" />
+                        <input name="Survival"  type="text" id="survival"  placeholder="{{$character->mod->wismod}}" value="{{$character->skill->survival}}"/><input name="Survival-prof" type="checkbox" />
                       </li>
                     </ul>
                     <div class="label">
