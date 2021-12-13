@@ -1,3 +1,5 @@
+class info inladen in char cheet
+
 homebrew items/spells toekennen aan user
 homebrew items/spells kunnen deleten en update/editen
 char cheet inhoud inladen afmaken

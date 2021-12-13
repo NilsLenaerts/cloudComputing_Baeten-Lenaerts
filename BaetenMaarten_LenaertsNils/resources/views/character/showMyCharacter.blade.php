@@ -386,7 +386,23 @@
               </section>
               <section class="features">
                 <div>
-                  <label for="features">Features & Traits</label><textarea name="features"></textarea>
+                  <label for="features">Features & Traits</label>
+                  <textarea name="features"></textarea>
+                    <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+                      <ul>
+                      @foreach ($race->traits as $trait)
+                          <li style="list-style-type:none">
+                              <details class="details-example">
+                                  <summary>{{$trait->name}}</summary>
+                                  <ul class="no-bullets">       
+                                      <div id="{{$trait->index}}"></div>
+                                      <script>getTrait("{{$trait->index}}");</script>      
+                                  </ul>
+                              </details>
+                          </li>
+                      @endforeach
+                      </ul>
+                  </div>
                 </div>
               </section>
             </section>

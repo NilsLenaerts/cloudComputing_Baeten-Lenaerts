@@ -40,15 +40,25 @@ class CharacterController extends Controller
     /*
     * Haalt de inhoud van een character op
     */
-    public function showCharacter($name){
+    public function showCharacter($name,$race){
         $email = Auth::user()->email;
         $name20 =rawurlencode($name);
+        $race20=strtolower($race);
         $character= json_decode(file_get_contents("http://127.0.0.1:5000/api/getCharacter/" . $name20 ."/" . $email));
+        $race= json_decode(file_get_contents("https://www.dnd5eapi.co/api/races/" . $race20));
         //$jsonChar = json_decode($character);
         error_log(json_encode($character));
-        return view("character/showMyCharacter")->with("character",$character);  
+        return view("character/showMyCharacter")->with("character",$character)
+                                                ->with("race",$race);  
     }
     
-
+    
+    /*
+     * haalt de inhoud van een klasse op
+    */
+    public function showTrait($name){
+        $trait= json_decode(file_get_contents("https://www.dnd5eapi.co/api/traits/" . $name));
+        return view("character/showMyCharacter")->with("trait",$trait);  
+    }
 
 }
