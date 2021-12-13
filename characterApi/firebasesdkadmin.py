@@ -136,7 +136,21 @@ def createChar():
         },
         'profbonus':profbonus,
         'save':{
-            'strsavebonus':''
+            'strsavebonus':'',
+            'strsavebonus':'',
+            'dexsavebonus':'',
+            'consavebonus':'',
+            'wissavebonus':'',
+            'intsavebonus':'',
+            'chasavebonus':''
+        },
+        'saveproficient':{
+            'strsaveprofcient':'false',
+            'dexsaveprofcient':'false',
+            'consaveprofcient':'false',
+            'wissaveprofcient':'false',
+            'intsaveprofcient':'false',
+            'chasaveprofcient':'false'
         }
 
     })
@@ -185,7 +199,20 @@ def updateChar():
     intscore = json['intscore']
     wisscore = json['wisscore']
     chascore = json['chascore']
+
     strsavebonus = json['strsavebonus']
+    dexsavebonus = json['dexsavebonus']
+    consavebonus = json['consavebonus']
+    wissavebonus = json['wissavebonus']
+    intsavebonus = json['intsavebonus']
+    chasavebonus = json['chasavebonus']
+
+    strsaveprofcient=json['strsaveprofcient']
+    dexsaveprofcient=json['dexsaveprofcient']
+    consaveprofcient=json['consaveprofcient']
+    wissaveprofcient=json['wissaveprofcient']
+    intsaveprofcient=json['intsaveprofcient']
+    chasaveprofcient=json['chasaveprofcient']
 
     characters = ref.get()
     #print(characters)
@@ -209,7 +236,21 @@ def updateChar():
                     'chascore':chascore
                     },
                 'save':{
-                    'strsavebonus':strsavebonus
+                    'strsavebonus':strsavebonus,
+                    'dexsavebonus':dexsavebonus,
+                    'consavebonus':consavebonus,
+                    'wissavebonus':wissavebonus,
+                    'intsavebonus':intsavebonus,
+                    'chasavebonus':chasavebonus
+                },
+                'saveproficient':{
+                    'strsaveprofcient':strsaveprofcient,
+                    'dexsaveprofcient':dexsaveprofcient,
+                    'consaveprofcient':consaveprofcient,
+                    'wissaveprofcient':wissaveprofcient,
+                    'intsaveprofcient':intsaveprofcient,
+                    'chasaveprofcient':chasaveprofcient
+
                 }
             })
     return "Succes"

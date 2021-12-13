@@ -29,7 +29,6 @@ function createCharacter(){
     
     var profbonus = levelToProf(classlevel);
         
-    
     let content = {
         "email":email,
         "name": name20, 
@@ -107,16 +106,36 @@ function updateCharacter(email){
     var wisscore = document.getElementById("wisscore").value;
     var chascore = document.getElementById("chascore").value;
 
-    
+    /*
     var strmod = scoreToMod(strscore);
     var dexmod = scoreToMod(dexscore);
     var conmod = scoreToMod(conscore);
     var intmod = scoreToMod(intscore);
     var wismod = scoreToMod(wisscore);
-    var chamod = scoreToMod(chascore);
-    
+    var chamod = scoreToMod(chascore);*/
+ /*   
     var strsavebonus = checkProficiency("strengthsaveprof",strmod,classlevel);
-
+    var dexsavebonus = checkProficiency("dexteritysaveprof",dexmod,classlevel);
+    var consavebonus = checkProficiency("constitutionsaveprof",conmod,classlevel);
+    var wissavebonus = checkProficiency("wisdomsaveprof",wismod,classlevel);
+    var intsavebonus = checkProficiency("intelligencesaveprof",intmod,classlevel);
+    var chasavebonus = checkProficiency("charismasaveprof",chamod,classlevel);
+    */
+   
+    var strsavebonus = document.getElementById("strsave").value;
+    var dexsavebonus = document.getElementById("dexsave").value;
+    var consavebonus = document.getElementById("consave").value;
+    var wissavebonus = document.getElementById("wissave").value;
+    var intsavebonus = document.getElementById("intsave").value;
+    var chasavebonus = document.getElementById("chasave").value;
+    
+    var strsaveprofcient = document.getElementById("strengthsaveprof").checked;
+    var dexsaveprofcient = document.getElementById("dexteritysaveprof").checked;
+    var consaveprofcient = document.getElementById("constitutionsaveprof").checked;
+    var wissaveprofcient = document.getElementById("wisdomsaveprof").checked;
+    var intsaveprofcient = document.getElementById("intelligencesaveprof").checked;
+    var chasaveprofcient = document.getElementById("charismasaveprof").checked;
+    
     let content = {
         "email":email,
         "name": name, 
@@ -126,13 +145,29 @@ function updateCharacter(email){
         "background":background,
         "alignment":alignment,
         "xp":xp,
+        
         'strscore':strscore,
         'dexscore':dexscore,
         'conscore':conscore,
         'intscore':intscore,
         'wisscore':wisscore,
         'chascore':chascore,
+        
         'strsavebonus':strsavebonus,
+        'dexsavebonus':dexsavebonus,
+        'consavebonus':consavebonus,
+        'wissavebonus':wissavebonus,
+        'intsavebonus':intsavebonus,
+        'chasavebonus':chasavebonus,
+        
+        'strsaveprofcient':strsaveprofcient,
+        'dexsaveprofcient':dexsaveprofcient,
+        'consaveprofcient':consaveprofcient,
+        'wissaveprofcient':wissaveprofcient,
+        'intsaveprofcient':intsaveprofcient,
+        'chasaveprofcient':chasaveprofcient,
+        
+        
     };
     url = "http://127.0.0.1:5000/api/updateCharacter";
     fetch(url, {
@@ -192,7 +227,7 @@ function levelToProf(level){
     }
 }
 
-
+/*
 function checkProficiency(id,mod,level){
     if (document.getElementById(id).checked == true) {
         document.getElementById(id).checked = true;
@@ -201,4 +236,4 @@ function checkProficiency(id,mod,level){
         return totmod = mod;
     }
 }
-
+*/

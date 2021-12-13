@@ -105,22 +105,28 @@
                   <div class="saves list-section box">
                     <ul>
                       <li>
-                        <label for="Strength-save">Strength</label><input name="Strength-save" placeholder="+ {{$character->mod->strmod}}" type="text" value="+ {{$character->save->strsavebonus}}"/><input name="Strength-save-prof"  type="checkbox"  id="strengthsaveprof" />
+                        <label for="Strength-save">Strength</label><input name="Strength-save" id= "strsave" placeholder="{{$character->mod->strmod}}" type="text" value="{{$character->save->strsavebonus}}"/>
+                            <input name="Strength-save-prof"  type="checkbox"  id="strengthsaveprof" checked="{{$character->saveproficient->strsaveprofcient}}"/>
                       </li>
                       <li>
-                        <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save" placeholder="+0" type="text" /><input name="Dexterity-save-prof" type="checkbox" />
+                        <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save"  id= "dexsave" placeholder="{{$character->mod->dexmod}}" type="text" value="{{$character->save->dexsavebonus}}"/>
+                            <input name="Dexterity-save-prof" type="checkbox" id="dexteritysaveprof" checked="{{$character->saveproficient->dexsaveprofcient}}"/>
                       </li>
                       <li>
-                        <label for="Constitution-save">Constitution</label><input name="Constitution-save" placeholder="+0" type="text" /><input name="Constitution-save-prof" type="checkbox" />
+                        <label for="Constitution-save">Constitution</label><input name="Constitution-save"  id= "consave" placeholder="{{$character->mod->conmod}}" type="text" value="{{$character->save->consavebonus}}" />
+                            <input name="Constitution-save-prof" type="checkbox" id="constitutionsaveprof" checked="{{$character->saveproficient->consaveprofcient}}"/>
                       </li>
                       <li>
-                        <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save" placeholder="+0" type="text" /><input name="Wisdom-save-prof" type="checkbox" />
+                        <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save"  id= "wissave" placeholder="{{$character->mod->wismod}}" type="text" value="{{$character->save->wissavebonus}}"/>
+                            <input name="Wisdom-save-prof" type="checkbox" id="wisdomsaveprof" checked="{{$character->saveproficient->wissaveprofcient}}"/>
                       </li>
                       <li>
-                        <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save" placeholder="+0" type="text" /><input name="Intelligence-save-prof" type="checkbox" />
+                        <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save"   id= "intsave" placeholder="{{$character->mod->intmod}}" type="text"  value="{{$character->save->intsavebonus}}"/>
+                            <input name="Intelligence-save-prof" type="checkbox" id="intelligencesaveprof" checked="{{$character->saveproficient->intsaveprofcient}}"/>
                       </li>
                       <li>
-                        <label for="Charisma-save">Charisma</label><input name="Charisma-save" placeholder="+0" type="text" /><input name="Charisma-save-prof" type="checkbox" />
+                        <label for="Charisma-save">Charisma</label><input name="Charisma-save"  id= "chasave" placeholder="{{$character->mod->chamod}}" type="text" value="{{$character->save->chasavebonus}}"/>
+                            <input name="Charisma-save-prof" type="checkbox" id="charismasaveprof" checked="{{$character->saveproficient->chasaveprofcient}}"/>
                       </li>
                     </ul>
                     <div class="label">
