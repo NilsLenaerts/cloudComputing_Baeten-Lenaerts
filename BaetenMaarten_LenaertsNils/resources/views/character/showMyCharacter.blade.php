@@ -9,7 +9,7 @@
         <form class="charsheet margin-2" >
             <header >
             <section class="charname border-box " id="">
-              <label for="charname">Character Name</label> <input name="charname" placeholder="Thoradin Fireforge" value="{{$character->name}}" id="name" />
+              <label for="charname">Character Name</label> <input readonly name="charname" placeholder="Thoradin Fireforge" value="{{$character->name}}" id="name" />
             </section>
             <section class="misc" >
               <ul>
