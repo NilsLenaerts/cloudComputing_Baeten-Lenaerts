@@ -1,7 +1,7 @@
 @extends("master")
 @section("pagina","...")
-
 @section("content")
+    <script src="{!! mix('app.js') !!}"></script>
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$class->name}}</h1>
    
     <p class="text-right bold">Hit die: d{{$class->hit_die}}</p>

@@ -80,5 +80,5 @@ Route::get('login/github/callback', [LoginController::class, 'handleGithubCallba
 
 // ------ Firebase
 Route::get('/myCharacters', [CharacterController::class, 'getMyCharacters']);
-Route::get('/showMyCharacter/{name}/{race}', [CharacterController::class, 'showCharacter']);
+Route::get('/showMyCharacter/{name}/{race}/{classe}', [CharacterController::class, 'showCharacter']);
 

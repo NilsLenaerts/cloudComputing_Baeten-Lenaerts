@@ -2,6 +2,7 @@
 @section('subtitle','')
 @section('content')
     <div>
+        <script src="{!! mix('app.js') !!}"></script>
         <p><button type="button" onclick="updateCharacter('{{Auth::user()->email}}')"><strong>Update</strong></button></p> 
         <form class="charsheet margin-2" >
             <header >
@@ -11,22 +12,25 @@
             <section class="misc" >
               <ul>
                 <li>
-                  <label for="classlevel">Class & Level</label><input name="classlevel" placeholder="Paladin 2" value="{{$character->classe}}: {{$character->classlevel}}" id="classlevel" />
+                  <label for="classe">Class</label><input readonly name="classe" placeholder="Paladin" value="{{$character->classe}}" id="classe" />
+                </li>
+                <li>
+                  <label for="classlevel">Level</label><input name="classlevel" placeholder="2" value="{{$character->classlevel}}" id="classlevel" />
                 </li>
                 <li>
                   <label for="background">Background</label><input name="background" placeholder="Acolyte" value="{{$character->background}}" id="background"/>
                 </li>
                 <li>
-                  <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface" value="{{Auth::user()->name}}" id="classe"/>
-                </li>
-                <li>
-                  <label for="race">Race</label><input name="race" placeholder="Half-elf" value="{{$character->race}}" id="race"/>
+                  <label for="race">Race</label><input readonly name="race" placeholder="Half-elf" value="{{$character->race}}" id="race"/>
                 </li>
                 <li>
                   <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" value="{{$character->alignment}}" id="alignment"/>
                 </li>
                 <li>
                   <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="3240" value="{{$character->xp}}" id="xp"/>
+                </li>
+                <li>
+                  <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface" value="{{Auth::user()->name}}" id="classe"/>
                 </li>
               </ul>
             </section>
@@ -231,6 +235,14 @@
                             Weapons: {{$profs->name}}
                         @endforeach  
                     @endif
+
+
+                    @if(isset($classe->proficiencies))
+                        @foreach ($classe->proficiencies as $proficiencies)
+                              class: {{$proficiencies->name}}  
+                        @endforeach
+                    @endif
+
                 </textarea>
               </div>
             </section>
@@ -416,6 +428,39 @@
                       @endforeach
                       </ul>
                   </div>
+                  
+                    <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+                        <ul>
+                        @foreach($classlevelfeatures as $classlevel)
+                            @if($classlevel->level <= $character->classlevel)
+                            <li style="list-style-type:none">
+                                <details class="details-example">
+                                    <summary><strong>{{$classlevel->level}}</strong></summary>
+                                    <ul class="no-bullets">       
+                                        @if(isset($classlevel->features))
+                                            @foreach($classlevel->features as $feature)
+                                            <details class="details-example">
+                                                <summary><strong>{{$feature->name}}</strong></summary>
+                                                <ul class="no-bullets"> 
+                                                    <div id="{{$feature->index}}"></div>
+                                                    <script>getFeatures("{{$feature->index}}");</script>     
+                                                </ul>
+                                            </details>
+                                            @endforeach
+                                        @endif
+                                        @if(isset($classlevel->class_specific))
+                                            @foreach($classlevel->class_specific as $key=>$value)
+                                            <li>{{$key}}: {{$value}}</li>
+                                            @endforeach
+                                        @endif
+                                    </ul>
+                                </details>
+                            </li>
+                            @endif
+                        @endforeach
+                        </ul>
+                    </div>
+                  
                 </div>
               </section>
             </section>

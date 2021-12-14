@@ -40,25 +40,26 @@ class CharacterController extends Controller
     /*
     * Haalt de inhoud van een character op
     */
-    public function showCharacter($name,$race){
+    public function showCharacter($name,$race,$classe){
         $email = Auth::user()->email;
         $name20 =rawurlencode($name);
-        $race20=strtolower($race);
+        $racel=strtolower($race);
+        $race20=rawurlencode($racel);
+        
+        $classel=strtolower($classe);
+        $classe20=rawurlencode($classel);
+        
         $character= json_decode(file_get_contents("http://127.0.0.1:5000/api/getCharacter/" . $name20 ."/" . $email));
         $race= json_decode(file_get_contents("https://www.dnd5eapi.co/api/races/" . $race20));
+        $classe = json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $classe20));
+        $classlevels= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/". $classe20 . "/levels"));
         //$jsonChar = json_decode($character);
-        error_log(json_encode($character));
+        error_log(json_encode($classlevels));
         return view("character/showMyCharacter")->with("character",$character)
-                                                ->with("race",$race);  
+                                                ->with("race",$race)
+                                                ->with("classe",$classe)
+                                                ->with("classlevelfeatures",$classlevels);
     }
     
-    
-    /*
-     * haalt de inhoud van een klasse op
-    */
-    public function showTrait($name){
-        $trait= json_decode(file_get_contents("https://www.dnd5eapi.co/api/traits/" . $name));
-        return view("character/showMyCharacter")->with("trait",$trait);  
-    }
 
 }

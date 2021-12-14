@@ -5,9 +5,6 @@
     table, th, td{
         padding: 15px;
             }
-
-
-
 </style>
 <script src="{!! mix('app.js') !!}"></script>
 

@@ -45,3 +45,4 @@ function getFeatures(name){
                             else alert("error");})
         .then(function(json){p.innerHTML += markdown.render(json.desc[0]);console.log(json.desc);}).catch(err => console.log(err));
 }
+

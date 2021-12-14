@@ -4,7 +4,7 @@ function createCharacter(){
     var email = document.getElementById("email").innerHTML;
     console.log(email);
     var name = document.getElementById("name").value;
-    var name20 = decodeURI(name);
+    //var name20 = decodeURI(name);
     var race = document.getElementById("race").value;
     var classe = document.getElementById("classe").value;
     
@@ -12,6 +12,19 @@ function createCharacter(){
     var background = document.getElementById("background").value;
     var alignment = document.getElementById("alignment").value;
     var xp = document.getElementById("xp").value;
+    /*
+    var classChosen = getClass(classe);
+    for (classChosen['saving_throws'] : savin){
+        
+    }
+    */
+    /*
+    var strsavebonus = profBonus(strsaveprofcient,strmod,classlevel);
+    var dexsavebonus = profBonus(dexsaveprofcient,dexmod,classlevel);
+    var consavebonus = profBonus(consaveprofcient,conmod,classlevel);
+    var wissavebonus = profBonus(wissaveprofcient,wismod,classlevel);
+    var intsavebonus = profBonus(intsaveprofcient,intmod,classlevel);
+    var chasavebonus = profBonus(chasaveprofcient,chamod,classlevel);*/
     
     var strscore = document.getElementById("strscore").value;
     var dexscore = document.getElementById("dexscore").value;
@@ -31,13 +44,20 @@ function createCharacter(){
         
     let content = {
         "email":email,
-        "name": name20, 
+        "name": name, 
         "race": race, 
         "classe": classe,
         "classlevel":classlevel,
         "background":background,
         "alignment":alignment,
         "xp":xp,
+        /*
+        'strsavebonus':strsavebonus,
+        'dexsavebonus':dexsavebonus,
+        'consavebonus':consavebonus,
+        'wissavebonus':wissavebonus,
+        'intsavebonus':intsavebonus,
+        'chasavebonus':chasavebonus,*/
         
         'strscore':strscore,
         'dexscore':dexscore,
@@ -105,15 +125,15 @@ function updateCharacter(email){
     var intscore = document.getElementById("intscore").value;
     var wisscore = document.getElementById("wisscore").value;
     var chascore = document.getElementById("chascore").value;
-
-    /*
+/*
+    
     var strmod = scoreToMod(strscore);
     var dexmod = scoreToMod(dexscore);
     var conmod = scoreToMod(conscore);
     var intmod = scoreToMod(intscore);
     var wismod = scoreToMod(wisscore);
     var chamod = scoreToMod(chascore);*/
- /*   
+ /*
     var strsavebonus = checkProficiency("strengthsaveprof",strmod,classlevel);
     var dexsavebonus = checkProficiency("dexteritysaveprof",dexmod,classlevel);
     var consavebonus = checkProficiency("constitutionsaveprof",conmod,classlevel);
@@ -284,13 +304,20 @@ function levelToProf(level){
     }
 }
 
-/*
+
 function checkProficiency(id,mod,level){
     if (document.getElementById(id).checked == true) {
         document.getElementById(id).checked = true;
-        return totmod = mod + levelToProf(level);
+        return mod + levelToProf(level);
     }else{
-        return totmod = mod;
+        return mod;
     }
 }
-*/
+
+function profBonus(prof,mod,level){
+    if (prof == true) {
+        return mod + levelToProf(level);
+    }else{
+        return mod;
+    }
+}

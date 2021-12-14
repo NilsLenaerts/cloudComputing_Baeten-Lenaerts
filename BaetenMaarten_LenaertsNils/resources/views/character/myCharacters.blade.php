@@ -36,7 +36,7 @@
             @foreach ($characters as $char)
                 <div class="inner-tile">
                     
-                    <a href="showMyCharacter/{{$char->name}}/{{$char->race}}">
+                    <a href="showMyCharacter/{{$char->name}}/{{$char->race}}/{{$char->classe}}">
                         <p>{{$char->name}}</p>
                     </a>
                     
