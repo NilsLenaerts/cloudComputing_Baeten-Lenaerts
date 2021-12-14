@@ -52,5 +52,41 @@
             </ul>
             @endif
         </div>
+        
+                
+
+        
+        
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+            <p class="bold">Your levelling traits</p>
+            <ul>
+            @foreach ($classlevels as $classlevel)
+                <li style="list-style-type:none">
+                    <details class="details-example">
+                        <summary><strong>{{$classlevel->level}}</strong></summary>
+                        <ul class="no-bullets">       
+                            @if(isset($classlevel->features))
+                                @foreach($classlevel->features as $feature)
+                                <details class="details-example">
+                                    <summary><strong>{{$feature->name}}</strong></summary>
+                                    <ul class="no-bullets"> 
+                                        <div id="{{$feature->index}}"></div>
+                                        <script>getFeatures("{{$feature->index}}");</script>     
+                                    </ul>
+                                </details>
+                                @endforeach
+                            @endif
+                            @if(isset($classlevel->class_specific))
+                                @foreach($classlevel->class_specific as $key=>$value)
+                                <li>{{$key}}: {{$value}}</li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </details>
+                </li>
+            @endforeach
+            </ul>
+        </div>
+        
     </div>
 @stop

@@ -62,6 +62,8 @@ class RealmController extends Controller
         $monsters= json_decode(file_get_contents("https://www.dnd5eapi.co/api/monsters/"));
         return view("realm/monsters/foundMonsters")->with("monsters",$monsters->results);  
     }
+   
+    
     
     /*
      * Haalt de inhoud van een spell op
@@ -78,8 +80,18 @@ class RealmController extends Controller
      */
     public function showClass($name){
         $class= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $name));
-        return view("realm/classes/showClass")->with("class",$class);  
+        $classlevels= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/". $name . "/levels"));
+        return view("realm/classes/showClass")->with("class",$class)
+                                              ->with("classlevels",$classlevels);  
     }
+    
+    /*
+    * Haalt de classes op van de D&D5e api en geeft deze terug
+    *//*
+    public function showClassLevels($name){
+        $classlevels= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/". $name . "/levels"));
+        return view("realm/classes/showClass")->with("classlevels",$classlevels);  
+    }*/
 
     /*
      * haalt de inhoud van een klasse op

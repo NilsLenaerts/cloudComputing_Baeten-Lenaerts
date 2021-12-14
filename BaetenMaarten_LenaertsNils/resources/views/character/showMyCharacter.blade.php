@@ -218,7 +218,20 @@
                 <input name="passiveperception" placeholder="10" id="pp" value="{{$character->pp}}" />
               </div>
               <div class="otherprofs box textblock">
-                <label for="otherprofs">Other Proficiencies and Languages</label><textarea name="otherprofs" id="otherprof" value="{{$character->otherprof}}"></textarea>
+                <label for="otherprofs">Other Proficiencies and Languages</label>
+                <textarea name="otherprofs" id="otherprof" value="{{$character->otherprof}}">
+                    @if(isset($race->languages))
+                            @foreach($race->languages as $language)
+                                Language: {{$language->name}}
+                            @endforeach  
+                    @endif
+
+                    @if(isset($race->starting_proficiencies))
+                        @foreach($race->starting_proficiencies as $profs)
+                            Weapons: {{$profs->name}}
+                        @endforeach  
+                    @endif
+                </textarea>
               </div>
             </section>
             <section>
