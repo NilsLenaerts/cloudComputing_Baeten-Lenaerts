@@ -5,8 +5,6 @@
         
         <script src="{!! mix('app.js') !!}"></script>
         <p><button type="button" onclick="updateCharacter('{{Auth::user()->email}}')"><strong>Update</strong></button></p> 
-       
-        
         <form class="charsheet margin-2" id="cheet" onchange="updateCharacter('{{Auth::user()->email}}')">
             <header >
             <section class="charname border-box " id="">
@@ -438,11 +436,8 @@
                                             </details>
                                             @endforeach
                                         @endif
-                                        @if(isset($classlevel->class_specific))
-                                            @foreach($classlevel->class_specific as $key=>$value)
-                                            <li>{{$key}}: {{$value}}</li>
-                                            @endforeach
-                                        @endif
+                                        <!-- class specific, let op! monk en rogua, ...? anders -->
+
                                     </ul>
                                 </details>
                             </li>

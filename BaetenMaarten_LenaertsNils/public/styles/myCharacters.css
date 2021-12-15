@@ -21,6 +21,14 @@ and open the template in the editor.
     text-align: center;
 }
 
+#myCharacters select {
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+    background: rgb(156, 122, 96, 0.4);
+    border-radius: 4px;
+}
+
 #myCharacters input {
     background: rgb(156, 122, 96, 0.4);
     border: hidden;

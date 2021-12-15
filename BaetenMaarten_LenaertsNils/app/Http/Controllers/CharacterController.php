@@ -50,16 +50,25 @@ class CharacterController extends Controller
         $classe20=rawurlencode($classel);
         
         $character= json_decode(file_get_contents("http://127.0.0.1:5000/api/getCharacter/" . $name20 ."/" . $email));
-        $race= json_decode(file_get_contents("https://www.dnd5eapi.co/api/races/" . $race20));
-        $classe = json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $classe20));
+        $races= json_decode(file_get_contents("https://www.dnd5eapi.co/api/races/" . $race20));
+        $classes = json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $classe20));
         $classlevels= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/". $classe20 . "/levels"));
         //$jsonChar = json_decode($character);
         //error_log(json_encode($classlevels));
         return view("character/showMyCharacter")->with("character",$character)
-                                                ->with("race",$race)
-                                                ->with("classe",$classe)
+                                                ->with("race",$races)
+                                                ->with("classe",$classes)
                                                 ->with("classlevelfeatures",$classlevels);
     }
     
 
 }
+
+/*
+ * 
+                                        @if(isset($classlevel->class_specific))
+                                            @foreach($classlevel->class_specific as $key=>$value)
+                                            <li>{{$key}}: {{$value}}</li>
+                                            @endforeach
+                                        @endif
+ */

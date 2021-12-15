@@ -1,4 +1,3 @@
-#firebase import
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
@@ -442,18 +441,18 @@ def getCharacters(email):
     jsontot=[]
     ref = db.reference('/characters')
     characters = ref.get()
-
-    for charId in characters:
-        new_ref=db.reference('/characters/' + charId)
-        item = new_ref.get()
-        
-        if(item['email'] == email):
-            #print(item)
-            jsontot.append(item)
-    print("list")
-    print(jsontot)
-    print("endOfList")
-    return jsonify(jsontot)
+    if(characters):
+        for charId in characters:
+            new_ref=db.reference('/characters/' + charId)
+            item = new_ref.get()
+            
+            if(item['email'] == email):
+                #print(item)
+                jsontot.append(item)
+        print("list")
+        print(jsontot)
+        print("endOfList")
+        return jsonify(jsontot)
 
 class MyCharacters(Resource):
     def get(self, email):
@@ -526,8 +525,6 @@ def setCharacter():
         }
         }
     })
-
-
 def updateCharacter():
 #updating data
     ref = db.reference('character')
@@ -535,7 +532,6 @@ def updateCharacter():
     char_ref.update({
         'name':'Faker'
     })
-
 def multipleUpdate():
 #multiple update
     ref = db.reference('character')
@@ -543,8 +539,6 @@ def multipleUpdate():
         'char1/class':'warlock',
         'char2/race':'dwarf'
     })
-
-
 def pushCharacter():
 #adding value using push
     ref = db.reference('character2')
@@ -555,8 +549,6 @@ def pushCharacter():
         'age':'21'
     })
     print(char_ref.key)
-
-
 def getCharacter():
     #retrieving data
     ref = db.reference('character2')

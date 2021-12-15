@@ -11,9 +11,36 @@
             <form  class="margin-2" id="myCharacters">
                 <p>E-mail <input type="string" name="email" value="{{Auth::user()->email}}" id="email" disabled="disabled"/></p>
                 <p>Name:  <input type="string" name="name" value="Anna" id="name"/></p>
-                <p>Race:  <input type="string" name="race" value="Human" id="race"/></p>
-                <p>Class:  <input type="string" name="class" value="Cleric" id="classe"/></p> 
-
+                <p>Race:                  
+                    <select id="race">
+                        <option value="Dragonborn">Dragonborn</option>
+                        <option value="Dwarf">Dwarf</option>
+                        <option value="Elf">Elf</option>
+                        <option value="Gnome">Gnome</option>
+                        <option value="Half-elf">Half-elf</option>
+                        <option value="Half-orc">Half-orc</option>
+                        <option value="Halfling">Halfling</option>
+                        <option value="Human">Human</option>
+                        <option value="Tiefling">Tiefling</option>
+                    </select>
+                </p>
+                <p>Class: 
+                    <select id="classe">
+                        <option value="Barbarian">Barbarian</option>
+                        <option value="Bard">Bard</option>
+                        <option value="Cleric">Cleric</option>
+                        <option value="Druid">Druid</option>
+                        <option value="Fighter">Fighter</option>
+                        <option value="Monk">Monk</option>
+                        <option value="Paladin">Paladin</option>
+                        <option value="Ranger">Ranger</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Sorcerer">Sorcerer</option>
+                        <option value="Warlock">Warlock</option>
+                        <option value="Wizard">Wizard</option>
+                    </select>
+                </p> 
+                
                 <p>Class level:  <input type="int" name="classlevel" value="8" id="classlevel"/></p>
                 <p>Background:  <input type="string" name="background" value="Traveler" id="background"/></p>
                 <p>Alignment:  <input type="string" name="alignment" value="LG" id="alignment"/></p> 
@@ -63,7 +90,6 @@
                     <script>
                         // Get the modal
                         var modal = document.getElementById({{$char->name}});
-
                         // When the user clicks anywhere outside of the modal, close it
                         window.onclick = function(event) {
                           if (event.target == modal) {
@@ -79,4 +105,3 @@
         </div>
     </div>
 @stop
-
