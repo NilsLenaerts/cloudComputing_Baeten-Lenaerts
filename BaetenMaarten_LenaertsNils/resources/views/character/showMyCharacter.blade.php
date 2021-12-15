@@ -7,7 +7,7 @@
         <p><button type="button" onclick="updateCharacter('{{Auth::user()->email}}')"><strong>Update</strong></button></p> 
        
         
-        <form class="charsheet margin-2" >
+        <form class="charsheet margin-2" id="cheet" onchange="updateCharacter('{{Auth::user()->email}}')">
             <header >
             <section class="charname border-box " id="">
               <label for="charname">Character Name</label> <input readonly name="charname" placeholder="Thoradin Fireforge" value="{{$character->name}}" id="name" />

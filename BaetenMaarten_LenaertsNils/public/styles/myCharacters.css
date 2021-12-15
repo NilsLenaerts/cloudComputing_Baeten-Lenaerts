@@ -8,12 +8,32 @@ and open the template in the editor.
     Author     : Maarten
 */
 
-button{
+
+#myCharacters {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#myCharacters p {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+#myCharacters input {
+    background: rgb(156, 122, 96, 0.4);
+    border: hidden;
+    text-align: right;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+#myCharacters button {
     width: 30%;
     background-color: #202110;
     border: none;
     color:#E6D0BE;
     cursor: pointer;
     border-radius: 4px;
-}
-
+} 

@@ -7,8 +7,8 @@
 
             <p class="font-family-draconis center">Email: </p>
             <p class="font-family-draconis center" id="email" value="{{ Auth::user()->email }}">{{ Auth::user()->email }}</p>
-
-            <div  class="margin-2" id="spellform">
+            
+            <form  class="margin-2" id="myCharacters">
                 <p>E-mail <input type="string" name="email" value="{{Auth::user()->email}}" id="email" disabled="disabled"/></p>
                 <p>Name:  <input type="string" name="name" value="Anna" id="name"/></p>
                 <p>Race:  <input type="string" name="race" value="Human" id="race"/></p>
@@ -26,9 +26,8 @@
                 <p>Int Score:  <input type="int" name="intscore" value="13" id="intscore"/></p>
                 <p>Wis Score:  <input type="int" name="wisscore" value="20" id="wisscore"/></p> 
                 <p>Cha Score:  <input type="int" name="chascore" value="11" id="chascore"/></p> 
-            </div>
-            
-            <p><button type="button" onclick="createCharacter()" class=" padding-1 margin-1 center" ><strong>Save</strong></button> </p>
+                <p><button type="button" onclick="createCharacter()" class=" padding-1 margin-1 center" ><strong>Save</strong></button> </p>
+            </form>
         <div>    
         <div class="tiles center">
 

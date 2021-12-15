@@ -355,7 +355,7 @@ function updateCharacter(email){
         body: JSON.stringify(content)  
     })
             .then(location.reload())
-            .then(alert("Saved"))
+            .then(/*alert("Saved")*/)
             .catch(err => alert(err));
 
 }
@@ -433,4 +433,3 @@ function setCorrect(id,val){
     document.getElementById(id).checked = false;
     }
 }
-

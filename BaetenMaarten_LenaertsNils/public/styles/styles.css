@@ -131,3 +131,11 @@ h2 {
 }
 
 
+button {
+    width: 10%;
+    background-color: #202110;
+    border: none;
+    color:#E6D0BE;
+    cursor: pointer;
+    border-radius: 4px;
+} 
