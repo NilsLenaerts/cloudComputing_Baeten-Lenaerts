@@ -2,8 +2,11 @@
 @section('subtitle','')
 @section('content')
     <div>
+        
         <script src="{!! mix('app.js') !!}"></script>
         <p><button type="button" onclick="updateCharacter('{{Auth::user()->email}}')"><strong>Update</strong></button></p> 
+       
+        
         <form class="charsheet margin-2" >
             <header >
             <section class="charname border-box " id="">
@@ -30,7 +33,7 @@
                   <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="3240" value="{{$character->xp}}" id="xp"/>
                 </li>
                 <li>
-                  <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface" value="{{Auth::user()->name}}" id="classe"/>
+                  <label for="playername">Player Name</label><input readonly name="playername" placeholder="Player McPlayerface" value="{{Auth::user()->name}}" id="classe"/>
                 </li>
               </ul>
             </section>
@@ -107,27 +110,27 @@
                     <ul>
                       <li>
                         <label for="Strength-save">Strength</label><input name="Strength-save" id= "strsave" placeholder="{{$character->mod->strmod}}" type="text" value="{{$character->save->strsavebonus}}"/>
-                            <input name="Strength-save-prof"  type="checkbox"  id="strengthsaveprof" checked="{{$character->saveproficient->strsaveprofcient}}"/>
+                            <input name="Strength-save-prof"  type="checkbox"  id="strengthsaveprof" />
                       </li>
                       <li>
                         <label for="Dexterity-save">Dexterity</label><input name="Dexterity-save"  id= "dexsave" placeholder="{{$character->mod->dexmod}}" type="text" value="{{$character->save->dexsavebonus}}"/>
-                            <input name="Dexterity-save-prof" type="checkbox" id="dexteritysaveprof" checked="{{$character->saveproficient->dexsaveprofcient}}"/>
+                        <input name="Dexterity-save-prof" type="checkbox" id="dexteritysaveprof" />
                       </li>
                       <li>
                         <label for="Constitution-save">Constitution</label><input name="Constitution-save"  id= "consave" placeholder="{{$character->mod->conmod}}" type="text" value="{{$character->save->consavebonus}}" />
-                            <input name="Constitution-save-prof" type="checkbox" id="constitutionsaveprof" checked="{{$character->saveproficient->consaveprofcient}}"/>
+                            <input name="Constitution-save-prof" type="checkbox" id="constitutionsaveprof" />
                       </li>
                       <li>
                         <label for="Wisdom-save">Wisdom</label><input name="Wisdom-save"  id= "wissave" placeholder="{{$character->mod->wismod}}" type="text" value="{{$character->save->wissavebonus}}"/>
-                            <input name="Wisdom-save-prof" type="checkbox" id="wisdomsaveprof" checked="{{$character->saveproficient->wissaveprofcient}}"/>
+                            <input name="Wisdom-save-prof" type="checkbox" id="wisdomsaveprof"  />
                       </li>
                       <li>
                         <label for="Intelligence-save">Intelligence</label><input name="Intelligence-save"   id= "intsave" placeholder="{{$character->mod->intmod}}" type="text"  value="{{$character->save->intsavebonus}}"/>
-                            <input name="Intelligence-save-prof" type="checkbox" id="intelligencesaveprof" checked="{{$character->saveproficient->intsaveprofcient}}"/>
+                            <input name="Intelligence-save-prof" type="checkbox" id="intelligencesaveprof" />
                       </li>
                       <li>
                         <label for="Charisma-save">Charisma</label><input name="Charisma-save"  id= "chasave" placeholder="{{$character->mod->chamod}}" type="text" value="{{$character->save->chasavebonus}}"/>
-                            <input name="Charisma-save-prof" type="checkbox" id="charismasaveprof" checked="{{$character->saveproficient->chasaveprofcient}}"/>
+                            <input name="Charisma-save-prof" type="checkbox" id="charismasaveprof"  />
                       </li>
                     </ul>
                     <div class="label">
@@ -219,30 +222,15 @@
                 <div class="label-container">
                   <label for="passiveperception">Passive Wisdom (Perception)</label>
                 </div>
-                <input name="passiveperception" placeholder="10" id="pp" value="{{$character->pp}}" />
+                <input name="passiveperception" placeholder="10" id="pap" value="{{$character->pap}}" />
               </div>
               <div class="otherprofs box textblock">
                 <label for="otherprofs">Other Proficiencies and Languages</label>
-                <textarea name="otherprofs" id="otherprof" value="{{$character->otherprof}}">
-                    @if(isset($race->languages))
-                            @foreach($race->languages as $language)
-                                Language: {{$language->name}}
-                            @endforeach  
-                    @endif
-
-                    @if(isset($race->starting_proficiencies))
-                        @foreach($race->starting_proficiencies as $profs)
-                            Weapons: {{$profs->name}}
-                        @endforeach  
-                    @endif
-
-
-                    @if(isset($classe->proficiencies))
-                        @foreach ($classe->proficiencies as $proficiencies)
-                              class: {{$proficiencies->name}}  
-                        @endforeach
-                    @endif
-
+                <textarea name="otherprofs" id="otherprofs">
+                    @if(isset($race->languages))@foreach($race->languages as $language) {{$language->name}},@endforeach @endif
+                    @if(isset($race->starting_proficiencies))@foreach($race->starting_proficiencies as $profs)  {{$profs->name}}, @endforeach  @endif
+                    @if(isset($classe->proficiencies))@foreach ($classe->proficiencies as $proficiencies)   {{$proficiencies->name}},  @endforeach @endif
+                    {{$character->otherprofs}}
                 </textarea>
               </div>
             </section>
@@ -279,10 +267,12 @@
                 <div class="hitdice">
                   <div>
                     <div class="total">
-                      <label onclick="totalhd_clicked()" for="totalhd">Total</label><input name="totalhd" placeholder="2d10" type="text" />
+                      <label onclick="totalhd_clicked()" for="totalhd">Total</label>
+                      <input name="totalhd" placeholder="2d10" type="text" value="{{$character->classlevel}}d{{$classe->hit_die}}"/>
                     </div>
                     <div class="remaining">
-                      <label for="remaininghd">Hit Dice</label><input name="remaininghd" type="text" />
+                      <label for="remaininghd">Hit Dice</label>
+                      <input name="remaininghd" id="remaininghd" type="text" placeholder="{{$character->classlevel}}d{{$classe->hit_die}}" value="{{$character->hp->remaininghd}}"/>
                     </div>
                   </div>
                 </div>
@@ -332,40 +322,40 @@
                     <tbody>
                       <tr>
                         <td>
-                          <input name="atkname1" type="text" />
+                          <input name="atkname1" type="text" id="atkname1" value="{{$character->combat->atkname1}}"/>
                         </td>
                         <td>
-                          <input name="atkbonus1" type="text" />
+                          <input name="atkbonus1" type="text" id="atkbonus1" value="{{$character->combat->atkname1}}"/>
                         </td>
                         <td>
-                          <input name="atkdamage1" type="text" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input name="atkname2" type="text" />
-                        </td>
-                        <td>
-                          <input name="atkbonus2" type="text" />
-                        </td>
-                        <td>
-                          <input name="atkdamage2" type="text" />
+                          <input name="atkdamage1" type="text" id="atkdamage1" value="{{$character->combat->atkname1}}"/>
                         </td>
                       </tr>
                       <tr>
                         <td>
-                          <input name="atkname3" type="text" />
+                          <input name="atkname2" type="text" id="atkname2" value="{{$character->combat->atkname2}}"/>
                         </td>
                         <td>
-                          <input name="atkbonus3" type="text" />
+                          <input name="atkbonus2" type="text" id="atkbonus2" value="{{$character->combat->atkname2}}"/>
                         </td>
                         <td>
-                          <input name="atkdamage3" type="text" />
+                          <input name="atkdamage2" type="text" id="atkdamage2" value="{{$character->combat->atkname2}}"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input name="atkname3" type="text" id="atkname3" value="{{$character->combat->atkname3}}"/>
+                        </td>
+                        <td>
+                          <input name="atkbonus3" type="text" id="atkbonus3" value="{{$character->combat->atkname3}}"/>
+                        </td>
+                        <td>
+                          <input name="atkdamage3" type="text" id="atkdamage3" value="{{$character->combat->atkname3}}"/>
                         </td>
                       </tr>
                     </tbody>
                   </table>
-                  <textarea></textarea>
+                  <textarea id="textareacombat">{{$character->combat->textareacombat}} </textarea>
                 </div>
               </section>
               <section class="equipment">
@@ -374,45 +364,45 @@
                   <div class="money">
                     <ul>
                       <li>
-                        <label for="cp">cp</label><input name="cp" />
+                        <label for="cp">cp</label><input name="cp" id="cp" value="{{$character->money->cp}}"/>
                       </li>
                       <li>
-                        <label for="sp">sp</label><input name="sp" />
+                        <label for="sp">sp</label><input name="sp" id="sp" value="{{$character->money->sp}}"/>
                       </li>
                       <li>
-                        <label for="ep">ep</label><input name="ep" />
+                        <label for="ep">ep</label><input name="ep" id="ep" value="{{$character->money->ep}}"/>
                       </li>
                       <li>
-                        <label for="gp">gp</label><input name="gp" />
+                        <label for="gp">gp</label><input name="gp" id="gp" value="{{$character->money->gp}}"/>
                       </li>
                       <li>
-                        <label for="pp">pp</label><input name="pp" />
+                        <label for="pp">pp</label><input name="pp" id="pp" value="{{$character->money->pp}}"/>
                       </li>
                     </ul>
                   </div>
-                  <textarea placeholder="Equipment list here"></textarea>
+                  <textarea placeholder="Equipment list here" id="equipment">{{$character->equipment}}</textarea>
                 </div>
               </section>
             </section>
             <section>
               <section class="flavor">
                 <div class="personality">
-                  <label for="personality">Personality</label><textarea name="personality"></textarea>
+                  <label for="personality">Personality</label><textarea name="personality" id="personality">{{$character->flavor->personality}}</textarea>
                 </div>
                 <div class="ideals">
-                  <label for="ideals">Ideals</label><textarea name="ideals"></textarea>
+                  <label for="ideals">Ideals</label><textarea name="ideals" id="ideals">{{$character->flavor->ideals}}</textarea>
                 </div>
                 <div class="bonds">
-                  <label for="bonds">Bonds</label><textarea name="bonds"></textarea>
+                  <label for="bonds">Bonds</label><textarea name="bonds" id="bonds">{{$character->flavor->bonds}}</textarea>
                 </div>
                 <div class="flaws">
-                  <label for="flaws">Flaws</label><textarea name="flaws"></textarea>
+                  <label for="flaws">Flaws</label><textarea name="flaws" id="flaws">{{$character->flavor->flaws}}</textarea>
                 </div>
               </section>
               <section class="features">
                 <div>
                   <label for="features">Features & Traits</label>
-                  <textarea name="features"></textarea>
+                  <textarea name="features" id="features">{{$character->features}}</textarea>
                     <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
                       <ul>
                       @foreach ($race->traits as $trait)

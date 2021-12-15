@@ -32,7 +32,7 @@ class CharacterController extends Controller
         //error_log($spells->results);
         error_log("hoer");
         $characters= json_decode(file_get_contents("http://127.0.0.1:5000/api/getMyCharacters/" . $email));
-        error_log(json_encode($characters));
+        //error_log(json_encode($characters));
         return view('/character/myCharacters')->with("characters",$characters);  
 
     }
@@ -54,7 +54,7 @@ class CharacterController extends Controller
         $classe = json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $classe20));
         $classlevels= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/". $classe20 . "/levels"));
         //$jsonChar = json_decode($character);
-        error_log(json_encode($classlevels));
+        //error_log(json_encode($classlevels));
         return view("character/showMyCharacter")->with("character",$character)
                                                 ->with("race",$race)
                                                 ->with("classe",$classe)

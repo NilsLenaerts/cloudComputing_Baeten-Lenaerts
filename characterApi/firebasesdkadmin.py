@@ -108,7 +108,8 @@ def createChar():
     chamod = json['chamod']
 
     profbonus = json['profbonus']
-    
+    #otherprofs=json['otherprofs']
+
     char_ref = ref.push({
         'email':email,
         'name':name,
@@ -137,7 +138,6 @@ def createChar():
         'profbonus':profbonus,
         'save':{
             'strsavebonus':'',
-            'strsavebonus':'',
             'dexsavebonus':'',
             'consavebonus':'',
             'wissavebonus':'',
@@ -145,12 +145,12 @@ def createChar():
             'chasavebonus':''
         },
         'saveproficient':{
-            'strsaveprofcient':'false',
-            'dexsaveprofcient':'false',
-            'consaveprofcient':'false',
-            'wissaveprofcient':'false',
-            'intsaveprofcient':'false',
-            'chasaveprofcient':'false'
+            'strsaveproficient':'',
+            'dexsaveproficient':'',
+            'consaveproficient':'',
+            'wissaveproficient':'',
+            'intsaveproficient':'',
+            'chasaveproficient':''
         },
         'skill':{
             'acrobatics' :'',
@@ -173,14 +173,44 @@ def createChar():
             'survival':''
         },
         'ac':'',
-        'pp':'',
+        'pap':'',
         'speed':'',
-        'otherprof':'',
+        'otherprofs':'',
         'hp':{
             'maxhp':'',
             'currenthp':'',
-            'temphp':''
-        }
+            'temphp':'',
+            'remaininghd':''
+        },
+        'combat':{
+            'atkname1':'',
+            'atkbonus1':'',
+            'atkdamage1':'',
+
+            'atkname2':'',
+            'atkbonus2':'',
+            'atkdamage2':'',
+
+            'atkname3':'',
+            'atkbonus3':'',
+            'atkdamage3':'',
+            'textareacombat':''
+        },
+        'money':{
+            'cp':'',
+            'sp':'',
+            'ep':'',
+            'gp':'',
+            'pp':''
+        },
+        'equipment':'',
+        'flavor':{
+            'personality':'',
+            'ideals':'',
+            'bonds':'',
+            'flaws':'',
+        },
+        'features':'',    
 
     })
     return "succes"
@@ -236,12 +266,12 @@ def updateChar():
     intsavebonus = json['intsavebonus']
     chasavebonus = json['chasavebonus']
 
-    strsaveprofcient=json['strsaveprofcient']
-    dexsaveprofcient=json['dexsaveprofcient']
-    consaveprofcient=json['consaveprofcient']
-    wissaveprofcient=json['wissaveprofcient']
-    intsaveprofcient=json['intsaveprofcient']
-    chasaveprofcient=json['chasaveprofcient']
+    strsaveproficient=json['strsaveproficient']
+    dexsaveproficient=json['dexsaveproficient']
+    consaveproficient=json['consaveproficient']
+    wissaveproficient=json['wissaveproficient']
+    intsaveproficient=json['intsaveproficient']
+    chasaveproficient=json['chasaveproficient']
 
     acrobatics =json['acrobatics']
     animal =json['animal']
@@ -262,14 +292,45 @@ def updateChar():
     stealth=json['stealth']
     survival=json['survival']
 
-    otherprof=json['otherprof']
+
     ac=json['ac']
-    pp=json['pp']
+    pap=json['pap']
     speed=json['speed']
 
     maxhp=json['maxhp']
     currenthp=json['currenthp']
     temphp=json['temphp']
+    remaininghd=json['remaininghd']
+
+    otherprofs=json['otherprofs']
+
+    atkname1=json['atkname1']
+    atkbonus1=json['atkbonus1']
+    atkdamage1=json['atkdamage1']
+
+    atkname2=json['atkname2']
+    atkbonus2=json['atkbonus2']
+    atkdamage2=json['atkdamage2']
+
+    atkname3=json['atkname3']
+    atkbonus3=json['atkbonus3']
+    atkdamage3=json['atkdamage3']
+    textareacombat=json['textareacombat']
+
+    cp=json['cp']
+    sp=json['sp']
+    ep=json['ep']
+    gp=json['gp']
+    pp=json['pp']
+
+    equipment=json['equipment']
+
+    personality=json['personality']
+    ideals=json['ideals']
+    bonds=json['bonds']
+    flaws=json['flaws']
+
+    features=json['features']
 
     characters = ref.get()
     #print(characters)
@@ -301,12 +362,12 @@ def updateChar():
                     'chasavebonus':chasavebonus
                 },
                 'saveproficient':{
-                    'strsaveprofcient':strsaveprofcient,
-                    'dexsaveprofcient':dexsaveprofcient,
-                    'consaveprofcient':consaveprofcient,
-                    'wissaveprofcient':wissaveprofcient,
-                    'intsaveprofcient':intsaveprofcient,
-                    'chasaveprofcient':chasaveprofcient
+                    'strsaveproficient':strsaveproficient,
+                    'dexsaveproficient':dexsaveproficient,
+                    'consaveproficient':consaveproficient,
+                    'wissaveproficient':wissaveproficient,
+                    'intsaveproficient':intsaveproficient,
+                    'chasaveproficient':chasaveproficient
 
                 },        
                 'skill':{
@@ -329,15 +390,47 @@ def updateChar():
                     'stealth':stealth,
                     'survival':survival
                 },
-                'otherprof':otherprof,
+                'otherprofs':otherprofs,
                 'ac':ac,
-                'pp':pp,
+                'pap':pap,
                 'speed':speed,
                 'hp':{
                     'maxhp':maxhp,
                     'currenthp':currenthp,
                     'temphp':temphp,
-                }
+                    'remaininghd':remaininghd
+                },
+
+                'combat':{
+
+                    'atkname1':atkname1,
+                    'atkbonus1':atkbonus1,
+                    'atkdamage1':atkdamage1,
+
+                    'atkname2':atkname2,
+                    'atkbonus2':atkbonus2,
+                    'atkdamage2':atkdamage2,
+
+                    'atkname3':atkname3,
+                    'atkbonus3':atkbonus3,
+                    'atkdamage3':atkdamage3,
+                    'textareacombat':textareacombat,
+                },
+                'money':{
+                    'cp':cp,
+                    'sp':sp,
+                    'ep':ep,
+                    'gp':gp,
+                    'pp':pp,
+                },
+                'equipment':equipment,
+                'flavor':{
+                    'personality':personality,
+                    'ideals':ideals,
+                    'bonds':bonds,
+                    'flaws':flaws,
+                },
+                'features':features,   
 
             })
     return "Succes"

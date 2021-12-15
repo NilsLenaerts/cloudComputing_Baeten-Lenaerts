@@ -53,9 +53,6 @@
             @endif
         </div>
         
-                
-
-        
         
         <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
             <p class="bold">Your levelling traits</p>

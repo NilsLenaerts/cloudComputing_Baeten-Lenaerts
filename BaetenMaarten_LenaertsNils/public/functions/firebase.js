@@ -2,7 +2,7 @@
 
 function createCharacter(){
     var email = document.getElementById("email").innerHTML;
-    console.log(email);
+    //console.log(email);
     var name = document.getElementById("name").value;
     //var name20 = decodeURI(name);
     var race = document.getElementById("race").value;
@@ -18,6 +18,8 @@ function createCharacter(){
         
     }
     */
+   
+   
     /*
     var strsavebonus = profBonus(strsaveprofcient,strmod,classlevel);
     var dexsavebonus = profBonus(dexsaveprofcient,dexmod,classlevel);
@@ -42,6 +44,46 @@ function createCharacter(){
     
     var profbonus = levelToProf(classlevel);
         
+    /*
+    var classeinput = classe.toLowerCase();
+    var raceinput = race.toLowerCase();
+    var str="";
+    
+    var races = fetch("https://www.dnd5eapi.co/api/classes/" + classeinput)
+        .then(response => {if (response.ok) return response.json();
+                            else alert("error");})
+        .then()
+        .catch(err => console.log(err));
+
+
+    var classes = fetch("https://www.dnd5eapi.co/api/races/" + raceinput)
+        .then(response => {if (response.ok) return response.json();
+                            else alert("error");})
+        .then()
+        .catch(err => console.log(err));
+
+    $str = "";
+
+    if(races['languages']){
+        for(races['languages'] in races ){
+            str.concat(races['languages'],", ");
+        }
+    }
+    console.log(str)
+    if(races['starting_proficiencies']){
+        for(races['starting_proficiencies'] in races ){
+            str.concat(races['starting_proficiencies'],", ");
+        }
+    }
+    console.log(str)
+    if(classes['proficiencies']){
+        for(classes['proficiencies'] in classes ){
+            str.concat(classes['proficiencies'],", ");
+        }
+    }
+    console.log(str)
+    var otherprofs = str;
+    */
     let content = {
         "email":email,
         "name": name, 
@@ -75,6 +117,8 @@ function createCharacter(){
         
         'profbonus':profbonus,
         
+        /*'otherprofs':otherprofs,*/
+        
 
     };
     console.log(content);
@@ -90,7 +134,7 @@ function createCharacter(){
 }
 
 function deleteCharacter(name){
-    console.log(name)
+    //console.log(name)
     var email = document.getElementById("email").innerHTML;
     let content = {
         "email": email,
@@ -125,14 +169,14 @@ function updateCharacter(email){
     var intscore = document.getElementById("intscore").value;
     var wisscore = document.getElementById("wisscore").value;
     var chascore = document.getElementById("chascore").value;
-/*
+
     
     var strmod = scoreToMod(strscore);
     var dexmod = scoreToMod(dexscore);
     var conmod = scoreToMod(conscore);
     var intmod = scoreToMod(intscore);
     var wismod = scoreToMod(wisscore);
-    var chamod = scoreToMod(chascore);*/
+    var chamod = scoreToMod(chascore);
  /*
     var strsavebonus = checkProficiency("strengthsaveprof",strmod,classlevel);
     var dexsavebonus = checkProficiency("dexteritysaveprof",dexmod,classlevel);
@@ -141,7 +185,7 @@ function updateCharacter(email){
     var intsavebonus = checkProficiency("intelligencesaveprof",intmod,classlevel);
     var chasavebonus = checkProficiency("charismasaveprof",chamod,classlevel);
     */
-   
+
     var strsavebonus = document.getElementById("strsave").value;
     var dexsavebonus = document.getElementById("dexsave").value;
     var consavebonus = document.getElementById("consave").value;
@@ -149,12 +193,12 @@ function updateCharacter(email){
     var intsavebonus = document.getElementById("intsave").value;
     var chasavebonus = document.getElementById("chasave").value;
     
-    var strsaveprofcient = document.getElementById("strengthsaveprof").checked;
-    var dexsaveprofcient = document.getElementById("dexteritysaveprof").checked;
-    var consaveprofcient = document.getElementById("constitutionsaveprof").checked;
-    var wissaveprofcient = document.getElementById("wisdomsaveprof").checked;
-    var intsaveprofcient = document.getElementById("intelligencesaveprof").checked;
-    var chasaveprofcient = document.getElementById("charismasaveprof").checked;
+    var strsaveproficient = document.getElementById("strengthsaveprof").checked;
+    var dexsaveproficient = document.getElementById("dexteritysaveprof").checked;
+    var consaveproficient = document.getElementById("constitutionsaveprof").checked;
+    var wissaveproficient = document.getElementById("wisdomsaveprof").checked;
+    var intsaveproficient = document.getElementById("intelligencesaveprof").checked;
+    var chasaveproficient = document.getElementById("charismasaveprof").checked;
     
     var acrobatics = document.getElementById("acrobatics").value;
     var animal = document.getElementById("animal").value;
@@ -175,14 +219,46 @@ function updateCharacter(email){
     var stealth= document.getElementById("stealth").value;
     var survival= document.getElementById("survival").value;
     
-    var otherprof = document.getElementById("otherprof").innerHTML;
     var ac=document.getElementById("ac").value;
-    var pp=document.getElementById("pp").value;
+    var pap=document.getElementById("pap").value;
     var speed=document.getElementById("speed").value;
     
     var maxhp=document.getElementById("maxhp").value;
     var currenthp=document.getElementById("currenthp").value;
     var temphp=document.getElementById("temphp").value;
+    var remaininghd = document.getElementById("remaininghd").value;
+    
+    var otherprofs = document.getElementById("otherprofs").value;
+    console.log(otherprofs);
+    
+    var atkname1 = document.getElementById("atkname1").value;
+    var atkbonus1 = document.getElementById("atkbonus1").value;
+    var atkdamage1 = document.getElementById("atkdamage1").value;
+    
+    var atkname2 = document.getElementById("atkname2").value;
+    var atkbonus2 = document.getElementById("atkbonus2").value;
+    var atkdamage2 = document.getElementById("atkdamage2").value;
+    
+    var atkname3 = document.getElementById("atkname3").value;
+    var atkbonus3 = document.getElementById("atkbonus3").value;
+    var atkdamage3 = document.getElementById("atkdamage3").value;
+    
+    var textareacombat=document.getElementById("textareacombat").value;
+
+    var cp=document.getElementById("cp").value;
+    var sp=document.getElementById("sp").value;
+    var ep=document.getElementById("ep").value;  
+    var gp=document.getElementById("gp").value;
+    var pp=document.getElementById("pp").value;
+    
+    var equipment=document.getElementById("equipment").value;
+    
+    var personality=document.getElementById("personality").value;
+    var ideals=document.getElementById("ideals").value;
+    var bonds =document.getElementById("bonds").value;
+    var flaws =document.getElementById("flaws").value;
+    
+    var features=document.getElementById("features").value;
     
     let content = {
         "email":email,
@@ -208,12 +284,12 @@ function updateCharacter(email){
         'intsavebonus':intsavebonus,
         'chasavebonus':chasavebonus,
         
-        'strsaveprofcient':strsaveprofcient,
-        'dexsaveprofcient':dexsaveprofcient,
-        'consaveprofcient':consaveprofcient,
-        'wissaveprofcient':wissaveprofcient,
-        'intsaveprofcient':intsaveprofcient,
-        'chasaveprofcient':chasaveprofcient,
+        'strsaveproficient':strsaveproficient,
+        'dexsaveproficient':dexsaveproficient,
+        'consaveproficient':consaveproficient,
+        'wissaveproficient':wissaveproficient,
+        'intsaveproficient':intsaveproficient,
+        'chasaveproficient':chasaveproficient,
         
         'acrobatics':acrobatics,
         'animal':animal,
@@ -234,16 +310,42 @@ function updateCharacter(email){
         'stealth':stealth,
         'survival':survival,
         
-        'otherprof':otherprof,/*werkt nog niet*/
+        'otherprofs':otherprofs,
         
         'ac':ac,
-        'pp':pp,
+        'pap':pap,
         'speed':speed,
         
         'maxhp':maxhp,
         'currenthp':currenthp,
-        'temphp':temphp,   
+        'temphp':temphp,
+        'remaininghd':remaininghd,
         
+        'atkname1':atkname1,
+        'atkbonus1':atkbonus1,
+        'atkdamage1':atkdamage1,
+        'atkname2':atkname2,
+        'atkbonus2':atkbonus2,
+        'atkdamage2':atkdamage2,
+        'atkname3':atkname3,
+        'atkbonus3':atkbonus3,
+        'atkdamage3':atkdamage3,
+        'textareacombat':textareacombat,
+        
+        'cp':cp,
+        'sp':sp,
+        'ep':ep,
+        'gp':gp,
+        'pp':pp,
+        
+        'equipment':equipment,
+        
+        'personality':personality,
+        'ideals':ideals,
+        'bonds':bonds,
+        'flaws':flaws,
+        
+        'features':features,
         
     };
     url = "http://127.0.0.1:5000/api/updateCharacter";
@@ -255,6 +357,7 @@ function updateCharacter(email){
             .then(location.reload())
             .then(alert("Saved"))
             .catch(err => alert(err));
+
 }
 
 
@@ -306,18 +409,28 @@ function levelToProf(level){
 
 
 function checkProficiency(id,mod,level){
-    if (document.getElementById(id).checked == true) {
-        document.getElementById(id).checked = true;
+    if (document.getElementById(id).checked == 1) {
         return mod + levelToProf(level);
     }else{
         return mod;
     }
 }
 
-function profBonus(prof,mod,level){
-    if (prof == true) {
-        return mod + levelToProf(level);
-    }else{
-        return mod;
+
+function check(id) {
+    document.getElementById(id).checked = true;
+}
+
+function uncheck(id) {
+    document.getElementById(id).checked = false;
+}
+
+function setCorrect(id,val){
+    if(val == 1 || val ==true || val =='1'){
+    document.getElementById(id).checked = true;
+    document.getElementById(id).checked;
+    }if(val == 0 || val == false || val=='0'){
+    document.getElementById(id).checked = false;
     }
 }
+
