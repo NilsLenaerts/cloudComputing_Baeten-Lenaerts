@@ -73,11 +73,6 @@
                                 </details>
                                 @endforeach
                             @endif
-                            @if(isset($classlevel->class_specific))
-                                @foreach($classlevel->class_specific as $key=>$value)
-                                <li>{{$key}}: {{$value}}</li>
-                                @endforeach
-                            @endif
                         </ul>
                     </details>
                 </li>

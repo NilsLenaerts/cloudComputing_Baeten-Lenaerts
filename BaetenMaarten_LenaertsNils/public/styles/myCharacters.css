@@ -45,3 +45,31 @@ and open the template in the editor.
     cursor: pointer;
     border-radius: 4px;
 } 
+
+/* Style the tab buttons */
+.tablink {
+  background-color: #202110;
+  color:#E6D0BE;
+  float: left;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+  
+}
+
+/* Change background color of buttons on hover */
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Set default styles for tab content */
+.tabcontent {
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+

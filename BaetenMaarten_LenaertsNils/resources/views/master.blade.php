@@ -18,6 +18,7 @@
         <title>@yield('subtitle')</title>
       
         <script type="text/javascript" src="/functions/official.js"></script>
+        
         <script type="text/javascript" src="/functions/homebrew.js"></script>
         <script type="text/javascript" src="/functions/firebase.js"></script>
 
@@ -92,4 +93,5 @@
             @yield('content')
         </main>
     </body>
+    <script type="text/javascript" src="/functions/charCheet.js"></script>
 </html>

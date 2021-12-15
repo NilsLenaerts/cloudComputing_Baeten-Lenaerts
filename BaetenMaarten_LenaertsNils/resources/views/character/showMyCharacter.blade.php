@@ -1,9 +1,26 @@
 @extends('master')
 @section('subtitle','')
 @section('content')
-    <div>
-        
-        <script src="{!! mix('app.js') !!}"></script>
+<script src="{!! mix('app.js') !!}"></script>
+    
+    <button class="tablink vertical-center" onclick="openTab('cheet', this, 'red')" id="defaultOpen">Character Cheet</button>
+    <button class="tablink vertical-center" onclick="openTab('spells', this, 'red')">Spell List</button>
+    
+    <div id="spells" class="tabcontent">
+        <div class="tiles center">
+            @if(isset($spells))
+                @foreach ($spells as $id)
+                    <div class="inner-tile">
+                            <a href="/showSpell/{{$id->index}}">
+                            <p>{{$id->name}}</p>
+                        </a>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+ 
+    <div id="cheet" class="tabcontent">
         <p><button type="button" onclick="updateCharacter('{{Auth::user()->email}}')"><strong>Update</strong></button></p> 
         <form class="charsheet margin-2" id="cheet" onchange="updateCharacter('{{Auth::user()->email}}')">
             <header >

@@ -49,6 +49,8 @@ class CharacterController extends Controller
         $classel=strtolower($classe);
         $classe20=rawurlencode($classel);
         
+        $spells= json_decode(file_get_contents("https://www.dnd5eapi.co/api/spells"));
+        error_log(json_encode($spells));
         $character= json_decode(file_get_contents("http://127.0.0.1:5000/api/getCharacter/" . $name20 ."/" . $email));
         $races= json_decode(file_get_contents("https://www.dnd5eapi.co/api/races/" . $race20));
         $classes = json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $classe20));
@@ -58,11 +60,14 @@ class CharacterController extends Controller
         return view("character/showMyCharacter")->with("character",$character)
                                                 ->with("race",$races)
                                                 ->with("classe",$classes)
-                                                ->with("classlevelfeatures",$classlevels);
+                                                ->with("classlevelfeatures",$classlevels)
+                                                ->with("spells",$spells->results);
     }
     
 
 }
+
+
 
 /*
  * 
