@@ -42,15 +42,17 @@ class homebrewController extends Controller
         echo(json_encode($homebrewSpell));
     }
     
-    
-    public function deleteSpell($name){  
-        $deletedSpell = DB::table('spells')->delete->where('name','=',$name)->first();
+    public function deleteSpell(Request $request){
+        $name = $request->name;
+        error_log($name);
+        $deletedSpell = DB::table('spells')->where('name','=',$name)->delete();
         error_log(json_encode($deletedSpell));
         echo(json_encode($deletedSpell));
     }
     
     public function updateSpell(Request $request){  
-        $updatedSpell = DB::table('spells')->update->where('name','=',$name)->first();
+        $name = $request->name;
+        $updatedSpell = DB::table('spells')->where('name','=',$name)->update();
         error_log(json_encode($updatedSpell));
         echo(json_encode($updatedSpell));
     }
@@ -85,5 +87,13 @@ class homebrewController extends Controller
         error_log("TWEETJE");
         echo(json_encode($homebrewItem));
         error_log("DRIETJE");
+    }
+    
+    public function deleteItem(Request $request){
+        $name = $request->name;
+        error_log($name);
+        $deletedItem = DB::table('items')->where('name','=',$name)->delete();
+        error_log(json_encode($deletedItem));
+        echo(json_encode($deletedItem));
     }
 }

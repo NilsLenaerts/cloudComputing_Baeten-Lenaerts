@@ -4,9 +4,8 @@
 
 //spells tab bijmaken in char cheet
 
-homebrew items/spells toekennen aan user
 homebrew items/spells kunnen deleten en update/editen
-char cheet inhoud inladen afmaken
+
 wanring unieke names bij characters, homeberw spells, homebrew items
 calendar soap
 Swagger
