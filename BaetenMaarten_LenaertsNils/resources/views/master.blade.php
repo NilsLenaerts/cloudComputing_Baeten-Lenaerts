@@ -36,7 +36,7 @@
             </li>    
 
             <li class="dropdown float-left">
-              <a href="/homebrew" class="dropbtn">Homebrew</a>
+              <a href="/homebrew" class="dropbtn"><i class="fa fa-flask" aria-hidden="true"></i> Homebrew</a>
               <div class="dropdown-content">
                 <a href="/foundHomebrewSpells">Homebrew spells</a>
                 <a href="/foundHomebrewItems">Homebrew Items</a>
@@ -44,7 +44,7 @@
             </li>
 
             <li class="dropdown float-left">
-              <a href="/realm" class="dropbtn"> D&D Realm</a>
+              <a href="/realm" class="dropbtn"><i class="fa fa-globe" aria-hidden="true"></i> D&D Realm</a>
               <div class="dropdown-content">
                 <a href="/spells">Spells</a>
                 <a href="/classes">Classes</a>
@@ -54,7 +54,7 @@
             </li>
             
             <li class="dropdown float-left">
-              <a href="/rules" class="dropbtn">Rules</a>
+                <a href="/rules" class="dropbtn"><i class="fa fa-book"></i> Rules</a>
               <div class="dropdown-content">
                 <a href="/adventuring">Adventuring</a>
                 <a href="/appendix">Appendix</a>
@@ -66,23 +66,23 @@
             </li>
 
             <li class="dropdown float-left">
-              <a href="javascript:void(0)" class="dropbtn">Calendar</a>
+              <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-calendar" aria-hidden="true"></i> Calendar</a>
             </li>
             
-            <li class="dropdown float-right" style="margin-right: 150px;">
+            <li class="dropdown float-right" >
               @guest
-              <a href="/login" class="dropbtn">Login</a>
+              <a href="/login" class="dropbtn"><i class="fa fa-sign-in"></i> Login</a>
               @else
-              <a href="/profile" class="dropbtn">{{ Auth::user()->name }}</a>
+              <a href="/profile" class="dropbtn"><i class="fa fa-user"></i> {{ Auth::user()->name }}</a>
               <div class="dropdown-content">
-              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a> <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf</form>
-                <a href="/myCharacters">My characters</a>
+              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout</a> <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf</form>
+                <a href="/myCharacters"><i class="fa fa-folder-open-o" aria-hidden="true"></i> My characters</a>
               </div>
               @endguest
             </li>
             
             <li class="dropdown float-left">
-              <a href="/random" class="dropbtn">Random Creator</a>
+              <a href="/random" class="dropbtn"><i class="fa fa-cubes" aria-hidden="true"></i> Random Creator</a>
               <div class="dropdown-content">
                 <a href="/character">Random Character Creator</a>
                 <a href="/encounter">Random Encounter Creator</a>
