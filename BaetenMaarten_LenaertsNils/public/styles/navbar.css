@@ -21,6 +21,15 @@
     text-decoration: none;
 }
 
+.dropbtn2  {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    width: 100%; /* Full width */
+}
+
 .navbar a:hover, .dropdown:hover .dropbtn  {
     background-color: red;
 }

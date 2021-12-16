@@ -91,8 +91,8 @@
             
         </ul>
         <main class="border-box padding-2">
-            <div class="dropdown ">
-            <button class="dropbtn">Die</button>
+            <div class="dropdown float-left ">
+            <button class="dropbtn2"><i class="fa fa-random"></i>   Roll</button>
                 <div class="dropdown-content" style="background-color: #E6D0BE;">
                     <a class="popup" onclick="roll('d20')">D20  
                     <span class="popuptext" id="d20"></span>
