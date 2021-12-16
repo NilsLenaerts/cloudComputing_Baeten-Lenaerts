@@ -242,9 +242,6 @@
               <div class="otherprofs box textblock">
                 <label for="otherprofs">Other Proficiencies and Languages</label>
                 <textarea name="otherprofs" id="otherprofs">
-                    @if(isset($race->languages))@foreach($race->languages as $language) {{$language->name}},@endforeach @endif
-                    @if(isset($race->starting_proficiencies))@foreach($race->starting_proficiencies as $profs)  {{$profs->name}}, @endforeach  @endif
-                    @if(isset($classe->proficiencies))@foreach ($classe->proficiencies as $proficiencies)   {{$proficiencies->name}},  @endforeach @endif
                     {{$character->otherprofs}}
                 </textarea>
               </div>
