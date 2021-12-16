@@ -4,10 +4,13 @@
 
 //spells tab bijmaken in char cheet
 
-homebrew items/spells kunnen deleten en update/editen
+//homebrew items/spells kunnen deleten 
 
+homebrew spells update/editen
+checkbokske char cheet weglaten?
 wanring unieke names bij characters, homeberw spells, homebrew items
 calendar soap
 Swagger
 documentatie
+Peer review
 DOCKER!!

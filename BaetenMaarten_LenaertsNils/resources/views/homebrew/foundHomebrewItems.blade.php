@@ -4,9 +4,9 @@
     <div>
         <h2 class="font-family-draconis center">Homebrew Items</h2>
         <div id="spellform">
-            <p>Name:  <input type="string" name="name" value="name" id="name"/></p>
-            <p>Price:  <input type="string" name="price" value="price" id="price"/></p>
-            <p>Description:  <input type="string" name="description" value="Description" id="description"/></p> 
+            <p>Name:  <input type="string" name="name" placeholder="name" id="name"/></p>
+            <p>Price:  <input type="string" name="price" placeholder="price" id="price"/></p>
+            <p>Description:  <input type="string" name="description" placeholder="Description" id="description"/></p> 
             <p><button type="button" onclick="saveItem()"><strong>Save</strong></button> </p>
         </div>
     </div>

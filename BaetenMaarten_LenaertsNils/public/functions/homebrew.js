@@ -16,11 +16,16 @@ function saveSpell(){
     var range = document.getElementById("range").value;
     var ritual = document.getElementById("ritual").value;
     var availability = document.getElementById("availability").value;
-
+    
+    var com20=decodeURI(components);
+    var mat20 = decodeURI(material);
+    var range20=decodeURI(range);
+    var av20= decodeURI(availability);
+    var desc20 = decodeURI(description);
     var url ="http://127.0.0.1:1200/api/savespell/";
-    var params = "name=" + name20 + "&castingTime=" + castingTime +"&level=" + level +"&components=" + components +
-                    "&materials=" + materials +"&description=" + description + "&school=" + school + "&range=" + range +
-                    "&ritual=" + ritual +"&availability=" + availability;
+    var params = "name=" + name20 + "&castingTime=" + castingTime +"&level=" + level +"&components=" + com20 +
+                    "&materials=" + mat20 +"&description=" + desc20 + "&school=" + school + "&range=" + range20 +
+                    "&ritual=" + ritual +"&availability=" + av20;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     //Send the proper header information along with the request
@@ -46,7 +51,7 @@ function deleteSpell(name){
     }
     location.reload();
 }
-
+/*
 function updateSpell(name){
     var name20 = decodeURI(name);
     var castingTime = document.getElementById("castingTime").value;
@@ -72,8 +77,7 @@ function updateSpell(name){
     }
     //location.reload();
 }
-
-
+*/
 
 
 
@@ -87,8 +91,9 @@ function saveItem(){
     var name20 = decodeURI(name);
     var price = document.getElementById("price").value;
     var description = document.getElementById("description").value;
+    var des20 = decodeURI(description);
     var url ="http://127.0.0.1:1200/api/saveitem/";
-    var params = "name=" + name20 + "&price=" + price +"&description=" + description;
+    var params = "name=" + name20 + "&price=" + price +"&description=" + des20;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     //Send the proper header information along with the request
