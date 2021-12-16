@@ -1,10 +1,14 @@
-class info inladen in char cheet
+//class info inladen in char cheet
 
-class specific doet moeilijk, monk en rogue hebben o.a. andere structuur, ook in de realm -> classe dit nog oplossen en dus ook bij inladen char cheet
+//class specific doet moeilijk, monk en rogue hebben o.a. andere structuur, ook in de realm -> classe dit nog oplossen en dus ook bij inladen char cheet
 
-spells tab bijmaken in char cheet
+//spells tab bijmaken in char cheet
 
 homebrew items/spells toekennen aan user
 homebrew items/spells kunnen deleten en update/editen
 char cheet inhoud inladen afmaken
 wanring unieke names bij characters, homeberw spells, homebrew items
+calendar soap
+Swagger
+documentatie
+DOCKER!!

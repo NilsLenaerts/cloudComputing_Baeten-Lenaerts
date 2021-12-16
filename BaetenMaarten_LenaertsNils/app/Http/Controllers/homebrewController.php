@@ -7,7 +7,8 @@
  */
 
 namespace App\Http\Controllers;
-header('Access-Control-Allow-Origin: *');
+//header('Access-Control-Allow-Origin: *');
+//header('Access-Control-Allow-Origin: http://127.0.0.1:8000');
 use Illuminate\Http\Request;
 
 class homebrewController extends Controller{

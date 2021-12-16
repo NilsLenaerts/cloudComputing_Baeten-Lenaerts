@@ -12,21 +12,6 @@ function createCharacter(){
     var background = document.getElementById("background").value;
     var alignment = document.getElementById("alignment").value;
     var xp = document.getElementById("xp").value;
-    /*
-    var classChosen = getClass(classe);
-    for (classChosen['saving_throws'] : savin){
-        
-    }
-    */
-   
-   
-    /*
-    var strsavebonus = profBonus(strsaveprofcient,strmod,classlevel);
-    var dexsavebonus = profBonus(dexsaveprofcient,dexmod,classlevel);
-    var consavebonus = profBonus(consaveprofcient,conmod,classlevel);
-    var wissavebonus = profBonus(wissaveprofcient,wismod,classlevel);
-    var intsavebonus = profBonus(intsaveprofcient,intmod,classlevel);
-    var chasavebonus = profBonus(chasaveprofcient,chamod,classlevel);*/
     
     var strscore = document.getElementById("strscore").value;
     var dexscore = document.getElementById("dexscore").value;
@@ -44,46 +29,6 @@ function createCharacter(){
     
     var profbonus = levelToProf(classlevel);
         
-    /*
-    var classeinput = classe.toLowerCase();
-    var raceinput = race.toLowerCase();
-    var str="";
-    
-    var races = fetch("https://www.dnd5eapi.co/api/classes/" + classeinput)
-        .then(response => {if (response.ok) return response.json();
-                            else alert("error");})
-        .then()
-        .catch(err => console.log(err));
-
-
-    var classes = fetch("https://www.dnd5eapi.co/api/races/" + raceinput)
-        .then(response => {if (response.ok) return response.json();
-                            else alert("error");})
-        .then()
-        .catch(err => console.log(err));
-
-    $str = "";
-
-    if(races['languages']){
-        for(races['languages'] in races ){
-            str.concat(races['languages'],", ");
-        }
-    }
-    console.log(str)
-    if(races['starting_proficiencies']){
-        for(races['starting_proficiencies'] in races ){
-            str.concat(races['starting_proficiencies'],", ");
-        }
-    }
-    console.log(str)
-    if(classes['proficiencies']){
-        for(classes['proficiencies'] in classes ){
-            str.concat(classes['proficiencies'],", ");
-        }
-    }
-    console.log(str)
-    var otherprofs = str;
-    */
     let content = {
         "email":email,
         "name": name, 
@@ -93,14 +38,7 @@ function createCharacter(){
         "background":background,
         "alignment":alignment,
         "xp":xp,
-        /*
-        'strsavebonus':strsavebonus,
-        'dexsavebonus':dexsavebonus,
-        'consavebonus':consavebonus,
-        'wissavebonus':wissavebonus,
-        'intsavebonus':intsavebonus,
-        'chasavebonus':chasavebonus,*/
-        
+
         'strscore':strscore,
         'dexscore':dexscore,
         'conscore':conscore,
@@ -116,9 +54,7 @@ function createCharacter(){
         'chamod':chamod,
         
         'profbonus':profbonus,
-        
-        /*'otherprofs':otherprofs,*/
-        
+
 
     };
     console.log(content);
@@ -177,14 +113,6 @@ function updateCharacter(email){
     var intmod = scoreToMod(intscore);
     var wismod = scoreToMod(wisscore);
     var chamod = scoreToMod(chascore);
- /*
-    var strsavebonus = checkProficiency("strengthsaveprof",strmod,classlevel);
-    var dexsavebonus = checkProficiency("dexteritysaveprof",dexmod,classlevel);
-    var consavebonus = checkProficiency("constitutionsaveprof",conmod,classlevel);
-    var wissavebonus = checkProficiency("wisdomsaveprof",wismod,classlevel);
-    var intsavebonus = checkProficiency("intelligencesaveprof",intmod,classlevel);
-    var chasavebonus = checkProficiency("charismasaveprof",chamod,classlevel);
-    */
 
     var strsavebonus = document.getElementById("strsave").value;
     var dexsavebonus = document.getElementById("dexsave").value;
@@ -433,3 +361,4 @@ function setCorrect(id,val){
     document.getElementById(id).checked = false;
     }
 }
+

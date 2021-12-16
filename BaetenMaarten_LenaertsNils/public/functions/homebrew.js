@@ -32,6 +32,35 @@ function saveSpell(){
     location.reload();
 }
 
+function deleteSpell(name){
+    var url="http://127.0.0.1:1200/api/deletespell/";
+    var params = "name=" +name;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(params);
+    xhr.onload = () => {
+        alert("Succes");
+    }
+    //location.reload();
+}
+
+function updateSpell(name){
+    var url="http://127.0.0.1:1200/api/updatespell/";
+    var params = "name=" +name;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(params);
+    xhr.onload = () => {
+        alert("Succes");
+    }
+    //location.reload();
+}
+
+
+
+
 
 /*
  * Request
@@ -55,3 +84,4 @@ function saveItem(){
     }
     location.reload();
 }
+
