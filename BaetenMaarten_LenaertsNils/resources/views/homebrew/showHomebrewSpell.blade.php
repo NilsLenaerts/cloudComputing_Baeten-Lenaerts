@@ -1,11 +1,8 @@
 @extends("master")
-@section("pagina","...")
-
+@section("pagina","Homebrew Spell")
 @section("content")
-
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$homebrewSpell->name}}</h1>
-    <div class="display-flex">
-        
+    <div class="display-flex"> 
         <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
             <p class="bold">Casting Time:</p> 
             <p>{{$homebrewSpell->castingTime}}</p>  
@@ -24,7 +21,7 @@
             <p class="bold">Materials:</p> 
             <p>{{$homebrewSpell->materials}}</p>  
         </div>
-        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color flex-basis-45 vertical-align-top">
             <p class="bold">Description:</p> 
             <p>{{$homebrewSpell->description}}</p>  
         </div>

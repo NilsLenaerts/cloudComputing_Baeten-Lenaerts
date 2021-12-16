@@ -1,5 +1,9 @@
 /* global Auth */
 
+
+/*
+ * Creates a character, saves it on the character's api (firebase) database
+ */
 function createCharacter(){
     var email = document.getElementById("email").innerHTML;
     //console.log(email);
@@ -69,6 +73,10 @@ function createCharacter(){
             /*.catch(err => alert(err))*/;
 }
 
+/*
+ * 
+ * @param {string} name
+ */
 function deleteCharacter(name){
     //console.log(name)
     var email = document.getElementById("email").innerHTML;
@@ -82,13 +90,14 @@ function deleteCharacter(name){
         headers: {"Content-type": "application/json"},
         body: JSON.stringify(content)  
     })
-            .then(location.reload())
-            /*.then(alert("Deleted"))*/
-            //.catch(err => alert(err));
+            .then(location.reload());
 }
 
 
-
+/*
+ * 
+ * @param {string} email
+ */
 function updateCharacter(email){
     var name = document.getElementById("name").value;
     var race = document.getElementById("race").value;
@@ -105,14 +114,6 @@ function updateCharacter(email){
     var intscore = document.getElementById("intscore").value;
     var wisscore = document.getElementById("wisscore").value;
     var chascore = document.getElementById("chascore").value;
-
-    
-    var strmod = scoreToMod(strscore);
-    var dexmod = scoreToMod(dexscore);
-    var conmod = scoreToMod(conscore);
-    var intmod = scoreToMod(intscore);
-    var wismod = scoreToMod(wisscore);
-    var chamod = scoreToMod(chascore);
 
     var strsavebonus = document.getElementById("strsave").value;
     var dexsavebonus = document.getElementById("dexsave").value;
@@ -288,7 +289,11 @@ function updateCharacter(email){
 
 }
 
-
+/*
+ * Determines the modifier according to the ability score
+ * @param {int} score
+ * @return {int} mod
+ */
 function scoreToMod(score){
     if(score==1) {
         return -5;
@@ -316,7 +321,11 @@ function scoreToMod(score){
     
 }
 
-
+/*
+ * Determines the proficiency bonus according to the level of the character
+ * @param {int} level
+ * @return {int} proficiency bonus
+ */
 function levelToProf(level){
     if(level >= 1 && level <= 4){
         return 2;
@@ -335,7 +344,7 @@ function levelToProf(level){
     }
 }
 
-
+/*
 function checkProficiency(id,mod,level){
     if (document.getElementById(id).checked == 1) {
         return mod + levelToProf(level);
@@ -343,16 +352,16 @@ function checkProficiency(id,mod,level){
         return mod;
     }
 }
-
-
+*/
+/*
 function check(id) {
     document.getElementById(id).checked = true;
 }
 
 function uncheck(id) {
     document.getElementById(id).checked = false;
-}
-
+}*/
+/*
 function setCorrect(id,val){
     if(val == 1 || val ==true || val =='1'){
     document.getElementById(id).checked = true;
@@ -361,4 +370,4 @@ function setCorrect(id,val){
     document.getElementById(id).checked = false;
     }
 }
-
+*/

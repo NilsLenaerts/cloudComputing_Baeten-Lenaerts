@@ -1,6 +1,5 @@
-
 @extends("master")
-@section("pagina","...")
+@section("pagina","Monsters")
 @section("content")
     <h2 class="font-family-draconis center">Monsters</h2>
     <div class="tiles">

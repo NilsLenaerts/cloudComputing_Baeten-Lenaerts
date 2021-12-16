@@ -1,14 +1,9 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 16 dec. 2021, 14:35:27
     Author     : Maarten
 */
 
-/* Popup container - can be anything you want */
+/* Popup container */
 .popup {
   position: relative;
   display: inline-block;

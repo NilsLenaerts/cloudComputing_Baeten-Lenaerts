@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 
-
+/*
+ * For switching from your character cheet to the spell list, for quick acces
+ * @param the id of the tab, present element, the color of the tab
+*/
 function openTab(tabName, elmnt, color) {
   // Hide all elements with class="tabcontent" by default */
   var i, tabcontent, tablinks;

@@ -9,6 +9,10 @@
 homebrew spells update/editen
 checkbokske char cheet weglaten?
 
+Tiles bij rules?
+showspell fout in structuur?
+Dropdown class feature char cheet styling
+
 wanring unieke names bij characters, homeberw spells, homebrew items
 calendar soap
 Swagger

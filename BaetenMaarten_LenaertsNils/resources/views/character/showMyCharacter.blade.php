@@ -1,5 +1,5 @@
 @extends('master')
-@section('subtitle','')
+@section('subtitle','My Character')
 @section('content')
 <script src="{!! mix('app.js') !!}"></script>
     

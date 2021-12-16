@@ -1,5 +1,5 @@
 @extends('master')
-@section('subtitle','Spells')
+@section('subtitle','Homebrew Spells')
 @section('content')
     <div>
         <h2 class="font-family-draconis center">5e Homebrew Spell creator</h2>
@@ -31,7 +31,6 @@
                         <p>{{$hspell->name}}</p>
                     </a>
                         <button onclick="document.getElementById('{{$hspell->name}}').style.display='block'" class="button1" > Delete</button>
-
                         <div id="{{$hspell->name}}" class="modal">
                           <span onclick="document.getElementById('{{$hspell->name}}').style.display='none'" class="close" title="Close Modal">&times;</span>
                           <form class="modal-content" action="/action_page.php">
@@ -48,7 +47,6 @@
                             </div>
                           </form>
                         </div>
-
                         <script>
                             // Get the modal
                             var modal = document.getElementById('{{$hspell->name}}');

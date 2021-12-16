@@ -18,7 +18,6 @@
         <title>@yield('subtitle')</title>
       
         <script type="text/javascript" src="/functions/official.js"></script>
-        
         <script type="text/javascript" src="/functions/homebrew.js"></script>
         <script type="text/javascript" src="/functions/firebase.js"></script>
         <script type="text/javascript" src="/functions/diceRoller.js"></script>
@@ -73,7 +72,7 @@
               @guest
               <a href="/login" class="dropbtn"><i class="fa fa-sign-in"></i> Login</a>
               @else
-              <a href="/profile" class="dropbtn"><i class="fa fa-user"></i> {{ Auth::user()->name }}</a>
+              <a href="/" class="dropbtn"><i class="fa fa-user"></i> {{ Auth::user()->name }}</a>
               <div class="dropdown-content">
               <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout</a> <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf</form>
                 <a href="/myCharacters"><i class="fa fa-folder-open-o" aria-hidden="true"></i> My characters</a>
@@ -82,10 +81,10 @@
             </li>
             
             <li class="dropdown float-left">
-              <a href="/random" class="dropbtn"><i class="fa fa-cubes" aria-hidden="true"></i> Random Creator</a>
+              <a href="/" class="dropbtn"><i class="fa fa-cubes" aria-hidden="true"></i> Random Creator</a>
               <div class="dropdown-content">
-                <a href="/character">Random Character Creator</a>
-                <a href="/encounter">Random Encounter Creator</a>
+                <a href="/">Random Character Creator</a>
+                <a href="/">Random Encounter Creator</a>
               </div>
             </li>
             

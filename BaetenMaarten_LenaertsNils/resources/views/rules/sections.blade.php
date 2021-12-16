@@ -1,13 +1,12 @@
 @extends('master')
-@section('subtitle', 'Rules')
+@section('subtitle', "Sections")
 @section('content')
-<style type="text/css">
-    table, th, td{
-        padding: 15px;
-            }
-</style>
+    <style type="text/css">
+        table, th, td{
+            padding: 15px;
+                }
+    </style>
 <script src="{!! mix('app.js') !!}"></script>
-
     <h1 class ="font-family-draconis center">{{$sections}} </h3>
     <ul>
         @foreach ($subSections as $section)

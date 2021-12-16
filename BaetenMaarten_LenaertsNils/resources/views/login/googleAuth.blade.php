@@ -1,5 +1,5 @@
 @extends('master')
-@section('subtitle', 'Rules')
+@section('subtitle', 'Authentication')
 @section('content')
 <html>
     <h2 class="font-family-draconis center">Google Login</h2>

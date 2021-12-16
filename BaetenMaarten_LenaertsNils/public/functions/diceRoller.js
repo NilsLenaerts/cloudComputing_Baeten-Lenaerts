@@ -5,9 +5,10 @@
  */
 
 /*
- * Promise
- * Searches the traits on the official dnd 5th api
+ * Promise request to the diceroller api
+ * Rolls a specific die
  * @param name
+ * @return {json} object with the generated value and dice that was rolled
  */
 function roll(dice){
     url = "http://roll.diceapi.com/json/" + dice;

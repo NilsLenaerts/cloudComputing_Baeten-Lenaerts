@@ -14,7 +14,8 @@
         <group>
             <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/master.blade.php</file>
             <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/character/showMyCharacter.blade.php</file>
-            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/public/functions/charCheet.js</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/public/functions/firebase.js</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/app/Http/Controllers/CharacterController.php</file>
         </group>
     </open-files>
 </project-private>

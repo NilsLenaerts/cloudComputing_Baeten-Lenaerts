@@ -37,6 +37,10 @@ function saveSpell(){
     location.reload();
 }
 
+/*
+ * Deletes a homebrew spell according to the name given
+ * @param {string} name
+ */
 function deleteSpell(name){
     name20=decodeURI(name);
     var url="http://127.0.0.1:1200/api/deletespell/";
@@ -105,6 +109,10 @@ function saveItem(){
     location.reload();
 }
 
+/*
+ * Deletes a homebrew item according to the name given
+ * @param {string} name
+ */
 function deleteItem(name){
     name20=decodeURI(name);
     var url="http://127.0.0.1:1200/api/deleteitem/";

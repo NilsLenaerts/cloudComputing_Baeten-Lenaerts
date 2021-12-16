@@ -25,7 +25,11 @@ function getTrait(name){
         .then(function(json){p.innerHTML += markdown.render(json.desc[0]);console.log(json.desc);}).catch(err => console.log(err));
 }
 
-
+/*
+ * Promise
+ * Searches the features on the official dnd 5th api
+ * @param name
+ */
 function getFeatures(name){
     var p = document.getElementById(name);
     fetch("https://www.dnd5eapi.co/api/features/" + name)

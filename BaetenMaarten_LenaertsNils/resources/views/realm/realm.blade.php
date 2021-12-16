@@ -1,5 +1,5 @@
 @extends('master')
-@section('subtitle', 'Rules')
+@section('subtitle', "Realm")
 @section('content')
     <h2 class="font-family-draconis center">Welcome to the D&amp;D&nbsp; 5e Realm</h2>
     <div class="tiles center">

@@ -1,10 +1,9 @@
 @extends('master')
-@section('subtitle','Spells')
+@section('subtitle','My Characters')
 @section('content')
     <div>
         <div>
             <h2 class="font-family-draconis center">My characters</h2>
-
             <p class="font-family-draconis center">Email: </p>
             <p class="font-family-draconis center" id="email" value="{{ Auth::user()->email }}">{{ Auth::user()->email }}</p>
             
@@ -57,19 +56,13 @@
             </form>
         <div>    
         <div class="tiles center">
-
             @if(isset($characters))
             @foreach ($characters as $char)
-                <div class="inner-tile">
-                    
+                <div class="inner-tile">  
                     <a href="showMyCharacter/{{$char->name}}/{{$char->race}}/{{$char->classe}}">
                         <p>{{$char->name}}</p>
-                    </a>
-                    
-                    <button onclick="document.getElementById('{{$char->name}}').style.display='block'" class="button1" > 
-                        Delete
-                    </button>
-
+                    </a> 
+                    <button onclick="document.getElementById('{{$char->name}}').style.display='block'" class="button1" > Delete</button>
                     <div id="{{$char->name}}" class="modal">
                       <span onclick="document.getElementById('{{$char->name}}').style.display='none'" class="close" title="Close Modal">&times;</span>
                       <form class="modal-content" action="/action_page.php">
@@ -86,7 +79,6 @@
                         </div>
                       </form>
                     </div>
-                    
                     <script>
                         // Get the modal
                         var modal = document.getElementById({{$char->name}});
@@ -97,8 +89,6 @@
                           }
                         }
                     </script>
-  
-
                 </div>
             @endforeach
             @endif

@@ -6,25 +6,11 @@ use App\Models\Character;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CharacterController extends Controller
-{
-    //
-    public function home(){
-        $name = "guest";
-        try{
-            if(Auth::user()){
-                $name = Auth::user()->name;
-            }
-            
-        } catch (Exception $e) {
-                dd($e->getMessage());
-        }
-
-            
-        return view("home")->with("name", $name);
-    }
-    
-
+class CharacterController extends Controller{ 
+    /*
+     * Gets the character according to e specific e-mail adress.
+     * @return list of characters
+     */
     public function getMyCharacters(){
         $email = Auth::user()->email;
         error_log("hier");
@@ -38,7 +24,10 @@ class CharacterController extends Controller
     }
     
     /*
-    * Haalt de inhoud van een character op
+    * Gets the content of a specific character 
+     * along with the  race and class abbilities from the DnD 5th api
+     * @param the name, race and class of the character
+     * @return the character, the race, the features of the class, the list of all the spells
     */
     public function showCharacter($name,$race,$classe){
         $email = Auth::user()->email;
@@ -63,17 +52,5 @@ class CharacterController extends Controller
                                                 ->with("classlevelfeatures",$classlevels)
                                                 ->with("spells",$spells->results);
     }
-    
-
 }
 
-
-
-/*
- * 
-                                        @if(isset($classlevel->class_specific))
-                                            @foreach($classlevel->class_specific as $key=>$value)
-                                            <li>{{$key}}: {{$value}}</li>
-                                            @endforeach
-                                        @endif
- */

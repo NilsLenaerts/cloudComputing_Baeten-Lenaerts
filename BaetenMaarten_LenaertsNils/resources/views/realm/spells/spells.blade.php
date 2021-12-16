@@ -18,9 +18,9 @@
                         <p>{{$id->name}}</p>
                     </a>
                 </div>
-                    @endforeach
-                @endif
+            @endforeach
+            @endif
         </div>
-</div>
+    </div>
 @stop
 
