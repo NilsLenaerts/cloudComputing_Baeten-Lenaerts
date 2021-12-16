@@ -94,23 +94,23 @@
             <div class="dropdown ">
             <button class="dropbtn">Die</button>
                 <div class="dropdown-content" style="background-color: #E6D0BE;">
-                    <a class="popup" onclick="roll('d20')">D20
-                    <span class="popuptext" id="myPopup"></span>
+                    <a class="popup" onclick="roll('d20')">D20  
+                    <span class="popuptext" id="d20"></span>
                     </a>
-                    <a class="popup" onclick="roll('d12')">D12
-                    <span class="popuptext" id="myPopup"></span>
+                    <a class="popup" onclick="roll('d12')">D12  
+                    <span class="popuptext" id="d12"></span>
                     </a>
-                    <a class="popup" onclick="roll('d10')">D10
-                    <span class="popuptext" id="myPopup"></span>
+                    <a class="popup" onclick="roll('d10')">D10  
+                    <span class="popuptext" id="d10"></span>
                     </a>
-                    <a class="popup" onclick="roll('d8')">D8
-                    <span class="popuptext" id="myPopup"></span>
+                    <a class="popup" onclick="roll('d8')">D8    
+                    <span class="popuptext" id="d8"></span>
                     </a>
-                    <a class="popup" onclick="roll('d6')">D6
-                    <span class="popuptext" id="myPopup"></span>
+                    <a class="popup" onclick="roll('d6')">D6    
+                    <span class="popuptext" id="d6"></span>
                     </a>
-                    <a class="popup" onclick="roll('d4')">D4
-                    <span class="popuptext" id="myPopup"></span>
+                    <a class="popup" onclick="roll('d4')">D4    
+                    <span class="popuptext" id="d4"></span>
                     </a>
                         
                 </div>
