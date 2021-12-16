@@ -21,7 +21,7 @@
         
         <script type="text/javascript" src="/functions/homebrew.js"></script>
         <script type="text/javascript" src="/functions/firebase.js"></script>
-
+        <script type="text/javascript" src="/functions/diceRoller.js"></script>
 
     </head>
 
@@ -88,8 +88,33 @@
                 <a href="/encounter">Random Encounter Creator</a>
               </div>
             </li>
+            
         </ul>
         <main class="border-box padding-2">
+            <div class="dropdown ">
+            <button class="dropbtn">Die</button>
+                <div class="dropdown-content" style="background-color: #E6D0BE;">
+                    <a class="popup" onclick="roll('d20')">D20
+                    <span class="popuptext" id="myPopup"></span>
+                    </a>
+                    <a class="popup" onclick="roll('d12')">D12
+                    <span class="popuptext" id="myPopup"></span>
+                    </a>
+                    <a class="popup" onclick="roll('d10')">D10
+                    <span class="popuptext" id="myPopup"></span>
+                    </a>
+                    <a class="popup" onclick="roll('d8')">D8
+                    <span class="popuptext" id="myPopup"></span>
+                    </a>
+                    <a class="popup" onclick="roll('d6')">D6
+                    <span class="popuptext" id="myPopup"></span>
+                    </a>
+                    <a class="popup" onclick="roll('d4')">D4
+                    <span class="popuptext" id="myPopup"></span>
+                    </a>
+                        
+                </div>
+            </div>
             @yield('content')
         </main>
     </body>
