@@ -18,7 +18,8 @@ function roll(dice){
     .then(function (body) {
         console.log(body);
         var popup = document.getElementById("myPopup");
-        popup.innerHTML = (body.dice[0].value);
+        var myObj = JSON.parse(body);
+        popup.innerHTML = (myObj.dice[0].value);
         popup.classList.toggle("show");
         
     });
