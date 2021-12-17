@@ -14,10 +14,10 @@
             @if(isset($spells))
             @foreach ($spells as $id)
             <div class="inner-tile">
-                        <a href="/showSpell/{{$id->index}}">
-                        <p>{{$id->name}}</p>
-                    </a>
-                </div>
+                <a href="/showSpell/{{$id->index}}">
+                    <p>{{$id->name}}</p>
+                </a>
+            </div>
             @endforeach
             @endif
         </div>

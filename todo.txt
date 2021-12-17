@@ -1,21 +1,24 @@
 //class info inladen in char cheet
-
 //class specific doet moeilijk, monk en rogue hebben o.a. andere structuur, ook in de realm -> classe dit nog oplossen en dus ook bij inladen char cheet
-
 //spells tab bijmaken in char cheet
-
 //homebrew items/spells kunnen deleten 
 
-homebrew spells update/editen
+homebrew spells update/editen weglaten?
 checkbokske char cheet weglaten?
 
-Tiles bij rules?
-showspell fout in structuur?
-Dropdown class feature char cheet styling
+// documentatie
+//---Dropdown class feature char cheet styling
+maarten:
+---Dropwdown dice roller shuiftheader op, dus niet meer in center
+---showspell fout in structuur? <div>
+--death saves
+---warning unieke names bij characters, homeberw spells, homebrew items on-hover warning displayen
+---Swagger
 
-wanring unieke names bij characters, homeberw spells, homebrew items
-calendar soap
-Swagger
-documentatie
+
+nils:
+---tokens aan api
+---calendar soap
+---DOCKER!!
+
 Peer review
-DOCKER!!

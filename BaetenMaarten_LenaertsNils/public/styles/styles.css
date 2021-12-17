@@ -118,6 +118,11 @@ body {
     text-align: right;
 }
 
+.text-left {
+    text-align: left;
+}
+
+
 .light-background-color {
     background-color: rgb(156, 122, 96, 0.4);
 }
@@ -142,6 +147,27 @@ h2 {
     font-size: 2.5rem;
     color: #20211D;
 }
+
+.font-size-100{
+    font-size: 100% !important;
+}
+
+.font-size-90{
+    font-size: 90% !important;
+}
+
+.font-size-200{
+    font-size: 200% !important;
+}
+
+.font-size-50{
+    font-size: 50% !important;
+}
+
+.font-size-25{
+    font-size: 25% !important;
+}
+
 
 .center{
    text-align: center; 

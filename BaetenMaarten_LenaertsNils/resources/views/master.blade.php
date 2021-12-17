@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="/styles/characterCheet.css">
         <link rel="stylesheet" href="/styles/modal.css">
         <link rel="stylesheet" href="/styles/myCharacters.css">
+        <link rel="stylesheet" href="/styles/details.css">
         <link rel="icon" href="/images/logo.png" sizes="any">   
         
         
@@ -110,8 +111,7 @@
                     </a>
                     <a class="popup" onclick="roll('d4')">D4    
                     <span class="popuptext" id="d4"></span>
-                    </a>
-                        
+                    </a>     
                 </div>
             </div>
             @yield('content')
