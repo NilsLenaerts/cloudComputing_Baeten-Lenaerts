@@ -6,10 +6,10 @@ A site created by Baeten Maarten & Lenaerts Nils
 
 This Project uses several API's, some of them already exsisted, others we had to design our self. Below a list of the api's is shown
 - Homebrew API
-	-Created by Baeten Maarten & Lenaerts Nils
-	-Language: PHP
-	-Type: REST
-	-Description:
+	- Created by Baeten Maarten & Lenaerts Nils
+	- Language: PHP
+	- Type: REST
+	- Description:
 		This api stores homebrew items and spells, which a user can create. These items or spells are then stored in a SQL local database.
 		Be aware to choose unique names, since there can only be one item or spell with that name. 
 		Before you start tinkering ont it, first take a look if someone already designed a spell with that name.
