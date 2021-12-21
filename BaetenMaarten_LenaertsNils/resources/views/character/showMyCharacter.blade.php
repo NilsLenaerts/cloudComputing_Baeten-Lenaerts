@@ -63,7 +63,7 @@
                                     <label for="Strengthscore">Strength</label><input name="Strengthscore" placeholder="10" class="stat" value="{{$character->score->strscore}}" id="strscore"/>
                                 </div>
                                 <div class="modifier">
-                                    <input name="Strengthmod" placeholder="+0"  value="{{$character->mod->strmod}}" class="statmod"/>
+                                    <input readonly name="Strengthmod" placeholder="+0"  value="{{$character->mod->strmod}}" class="statmod"/>
                                 </div>
                             </li>
                             <li>
@@ -71,7 +71,7 @@
                                     <label for="Dexterityscore">Dexterity</label><input name="Dexterityscore" placeholder="10" class="stat" value="{{$character->score->dexscore}}" id="dexscore"/>
                                 </div>
                                 <div class="modifier">
-                                    <input name="Dexteritymod" placeholder="+0" value="{{$character->mod->dexmod}}" class=statmod/>
+                                    <input readonly name="Dexteritymod" placeholder="+0" value="{{$character->mod->dexmod}}" class=statmod/>
                                 </div>
                             </li>
                             <li>
@@ -79,7 +79,7 @@
                                     <label for="Constitutionscore">Constitution</label><input name="Constitutionscore" placeholder="10" class="stat" value="{{$character->score->conscore}}" id="conscore"/>
                                 </div>
                                 <div class="modifier">
-                                    <input name="Constitutionmod" placeholder="+0" value="{{$character->mod->conmod}}" class="statmod"/>
+                                    <input readonly name="Constitutionmod" placeholder="+0" value="{{$character->mod->conmod}}" class="statmod"/>
                                 </div>
                             </li>
                             <li>
@@ -87,7 +87,7 @@
                                     <label for="Wisdomscore">Wisdom</label><input name="Wisdomscore" placeholder="10" class="stat" value="{{$character->score->wisscore}}" id="wisscore"/>
                                 </div>
                                 <div class="modifier">
-                                    <input name="Wisdommod" placeholder="+0" value="{{$character->mod->wismod}}" />
+                                    <input readonly name="Wisdommod" placeholder="+0" value="{{$character->mod->wismod}}" />
                                 </div>
                             </li>
                             <li>
@@ -95,7 +95,7 @@
                                     <label for="Intelligencescore">Intelligence</label><input name="Intelligencescore" placeholder="10" class="stat" value="{{$character->score->intscore}}" id="intscore"/>
                                 </div>
                                 <div class="modifier">
-                                    <input name="Intelligencemod" placeholder="+0" value="{{$character->mod->intmod}}" class="statmod"/>
+                                    <input readonly name="Intelligencemod" placeholder="+0" value="{{$character->mod->intmod}}" class="statmod"/>
                                 </div>
                             </li>
                             <li>
@@ -103,18 +103,12 @@
                                     <label for="Charismascore">Charisma</label><input name="Charismascore" placeholder="10" class="stat" value="{{$character->score->chascore}}" id="chascore"/>
                                 </div>
                                 <div class="modifier">
-                                    <input name="Charismamod" placeholder="+0" value="{{$character->mod->chamod}}" class="statmod"/>
+                                    <input readonly name="Charismamod" placeholder="+0" value="{{$character->mod->chamod}}" class="statmod"/>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="attr-applications">
-                        <div class="inspiration box">
-                            <div class="label-container">
-                                <label for="inspiration">Inspiration</label>
-                            </div>
-                            <input name="inspiration" type="checkbox" />
-                        </div>
                         <div class="proficiencybonus box">
                             <div class="label-container">
                                 <label for="proficiencybonus">Proficiency Bonus</label>
