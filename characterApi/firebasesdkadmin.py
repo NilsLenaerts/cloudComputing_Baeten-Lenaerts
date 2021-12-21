@@ -143,14 +143,6 @@ def createChar():
             'intsavebonus':'',
             'chasavebonus':''
         },
-        'saveproficient':{
-            'strsaveproficient':'',
-            'dexsaveproficient':'',
-            'consaveproficient':'',
-            'wissaveproficient':'',
-            'intsaveproficient':'',
-            'chasaveproficient':''
-        },
         'skill':{
             'acrobatics' :'',
             'animal' :'',
@@ -258,19 +250,19 @@ def updateChar():
     wisscore = json['wisscore']
     chascore = json['chascore']
 
+    strmod = json['strmod']
+    dexmod = json['dexmod']
+    conmod = json['conmod']
+    intmod = json['intmod']
+    wismod = json['wismod']
+    chamod = json['chamod']
+
     strsavebonus = json['strsavebonus']
     dexsavebonus = json['dexsavebonus']
     consavebonus = json['consavebonus']
     wissavebonus = json['wissavebonus']
     intsavebonus = json['intsavebonus']
     chasavebonus = json['chasavebonus']
-
-    strsaveproficient=json['strsaveproficient']
-    dexsaveproficient=json['dexsaveproficient']
-    consaveproficient=json['consaveproficient']
-    wissaveproficient=json['wissaveproficient']
-    intsaveproficient=json['intsaveproficient']
-    chasaveproficient=json['chasaveproficient']
 
     acrobatics =json['acrobatics']
     animal =json['animal']
@@ -351,7 +343,15 @@ def updateChar():
                     'intscore':intscore,
                     'wisscore':wisscore,
                     'chascore':chascore
-                    },
+                },
+                'mod':{
+                    'strmod':strmod,
+                    'dexmod':dexmod,
+                    'conmod':conmod,
+                    'intmod':intmod,
+                    'wismod':wismod,
+                    'chamod':chamod
+                },
                 'save':{
                     'strsavebonus':strsavebonus,
                     'dexsavebonus':dexsavebonus,
@@ -359,16 +359,7 @@ def updateChar():
                     'wissavebonus':wissavebonus,
                     'intsavebonus':intsavebonus,
                     'chasavebonus':chasavebonus
-                },
-                'saveproficient':{
-                    'strsaveproficient':strsaveproficient,
-                    'dexsaveproficient':dexsaveproficient,
-                    'consaveproficient':consaveproficient,
-                    'wissaveproficient':wissaveproficient,
-                    'intsaveproficient':intsaveproficient,
-                    'chasaveproficient':chasaveproficient
-
-                },        
+                },  
                 'skill':{
                     'acrobatics' :acrobatics,
                     'animal' :animal,

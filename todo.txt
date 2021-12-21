@@ -7,11 +7,10 @@ homebrew spells update/editen weglaten?
 checkbokske char cheet weglaten?
 
 // documentatie
-//---Dropdown class feature char cheet styling
+//---Dropdown class feature char cheet styling (goed genoeg)
 maarten:
----Dropwdown dice roller shuiftheader op, dus niet meer in center
----showspell fout in structuur? <div>
---death saves
+//---Dropwdown dice roller shuiftheader op, dus niet meer in center
+//--death saves
 ---warning unieke names bij characters, homeberw spells, homebrew items on-hover warning displayen
 ---Swagger
 

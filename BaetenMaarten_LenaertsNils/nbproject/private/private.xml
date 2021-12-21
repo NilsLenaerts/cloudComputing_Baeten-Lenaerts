@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>resources/views/character/showMyCharacter.blade.php</url>
+            <bookmark id="2">
+                <name/>
+                <line>424</line>
+                <key/>
+            </bookmark>
+        </file>
         <file>
             <url>resources/views/character/myCharacters.blade.php</url>
             <bookmark id="1">
@@ -12,9 +20,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/realm/spells/spells.blade.php</file>
             <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/master.blade.php</file>
             <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/character/showMyCharacter.blade.php</file>
-            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/public/styles/details.css</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/realm/spells/showSpell.blade.php</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/app/Http/Controllers/RulesController.php</file>
         </group>
     </open-files>
 </project-private>

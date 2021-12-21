@@ -9,7 +9,7 @@
             
             <form  class="margin-2" id="myCharacters">
                 <p>E-mail <input type="string" name="email" value="{{Auth::user()->email}}" id="email" disabled="disabled"/></p>
-                <p>Name:  <input type="string" name="name" value="Anna" id="name"/></p>
+                <p>Name:  <input type="string" name="name" value="Anna" id="name" /></p>
                 <p>Race:                  
                     <select id="race">
                         <option value="Dragonborn">Dragonborn</option>

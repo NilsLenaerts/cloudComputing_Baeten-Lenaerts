@@ -8,11 +8,20 @@ function createCharacter(){
     var email = document.getElementById("email").innerHTML;
     //console.log(email);
     var name = document.getElementById("name").value;
+    if (name == ""){
+        alert("Choosa a Unique name, ")
+        name = "Kaelor";
+    }
+
     //var name20 = decodeURI(name);
     var race = document.getElementById("race").value;
     var classe = document.getElementById("classe").value;
     
     var classlevel = document.getElementById("classlevel").value;
+    if(classlevel == ""){
+        alert("Choosa a level ")
+        classlevel = 1;
+    }
     var background = document.getElementById("background").value;
     var alignment = document.getElementById("alignment").value;
     var xp = document.getElementById("xp").value;
@@ -114,6 +123,13 @@ function updateCharacter(email){
     var intscore = document.getElementById("intscore").value;
     var wisscore = document.getElementById("wisscore").value;
     var chascore = document.getElementById("chascore").value;
+    
+    var strmod = scoreToMod(strscore);
+    var dexmod = scoreToMod(dexscore);
+    var conmod = scoreToMod(conscore);
+    var intmod = scoreToMod(intscore);
+    var wismod = scoreToMod(wisscore);
+    var chamod = scoreToMod(chascore);
 
     var strsavebonus = document.getElementById("strsave").value;
     var dexsavebonus = document.getElementById("dexsave").value;
@@ -121,14 +137,7 @@ function updateCharacter(email){
     var wissavebonus = document.getElementById("wissave").value;
     var intsavebonus = document.getElementById("intsave").value;
     var chasavebonus = document.getElementById("chasave").value;
-    
-    var strsaveproficient = document.getElementById("strengthsaveprof").checked;
-    var dexsaveproficient = document.getElementById("dexteritysaveprof").checked;
-    var consaveproficient = document.getElementById("constitutionsaveprof").checked;
-    var wissaveproficient = document.getElementById("wisdomsaveprof").checked;
-    var intsaveproficient = document.getElementById("intelligencesaveprof").checked;
-    var chasaveproficient = document.getElementById("charismasaveprof").checked;
-    
+       
     var acrobatics = document.getElementById("acrobatics").value;
     var animal = document.getElementById("animal").value;
     var arcana = document.getElementById("arcana").value;
@@ -206,19 +215,19 @@ function updateCharacter(email){
         'wisscore':wisscore,
         'chascore':chascore,
         
+        'strmod':strmod,
+        'dexmod':dexmod,
+        'intmod':intmod,
+        'conmod':conmod,
+        'wismod':wismod,
+        'chamod':chamod,
+        
         'strsavebonus':strsavebonus,
         'dexsavebonus':dexsavebonus,
         'consavebonus':consavebonus,
         'wissavebonus':wissavebonus,
         'intsavebonus':intsavebonus,
         'chasavebonus':chasavebonus,
-        
-        'strsaveproficient':strsaveproficient,
-        'dexsaveproficient':dexsaveproficient,
-        'consaveproficient':consaveproficient,
-        'wissaveproficient':wissaveproficient,
-        'intsaveproficient':intsaveproficient,
-        'chasaveproficient':chasaveproficient,
         
         'acrobatics':acrobatics,
         'animal':animal,
