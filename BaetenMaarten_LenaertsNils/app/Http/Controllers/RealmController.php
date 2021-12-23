@@ -7,15 +7,18 @@ use Illuminate\Http\Request;
 
 class RealmController extends Controller
 {
-    //
     
+    /*
+     * @return the view ot the realm page
+     */
     public function realm(){
         return view("realm/realm");
     }
     
     /*
+     * Searches spell by level on the DnD 5th api
      * @Param request
-     * Zoekt spells op de D&D 5e API, eventueel op level, en geeft deze terug
+     * @return spells view, the searched spells
      */
     public function foundSpells(Request $request){
         $level=$request->level;
@@ -37,7 +40,9 @@ class RealmController extends Controller
     }
     
     /*
-     * Haalt de classes op van de D&D5e api en geeft deze terug
+     * Gets the classes on the DnD 5th api
+     * @param request
+     * @return the foundclasses view, classes
      */
     public function foundClasses(Request $request){
         $classes= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/"));
@@ -46,7 +51,9 @@ class RealmController extends Controller
     }
     
     /*
-     * Haalt de Races op van de D&D5e api en geeft deze terug
+     * Gets the races on the DnD 5th api
+     * @param request
+     * @return the foundraces view, races
      */
     public function foundRaces(Request $request){
         $races= json_decode(file_get_contents("https://www.dnd5eapi.co/api/races/"));
@@ -56,8 +63,10 @@ class RealmController extends Controller
     
     
     /*
-    * Haalt de classes op van de D&D5e api en geeft deze terug
-    */
+     * Gets the monsters on the DnD 5th api
+     * @param request
+     * @return the foundmonsters view, monsters
+     */
     public function foundMonsters(Request $request){
         $monsters= json_decode(file_get_contents("https://www.dnd5eapi.co/api/monsters/"));
         return view("realm/monsters/foundMonsters")->with("monsters",$monsters->results);  
@@ -66,7 +75,9 @@ class RealmController extends Controller
     
     
     /*
-     * Haalt de inhoud van een spell op
+     * Gets the spell on the DnD 5th api according to the params
+     * @param name of the spell
+     * @return the showspells view, spell
      */
     public function showSpell($name){
         $spell= json_decode(file_get_contents("https://www.dnd5eapi.co/api/spells/" . $name));
@@ -76,7 +87,9 @@ class RealmController extends Controller
     
     
     /*
-     * haalt de inhoud van een klasse op
+     * Gets the class and the level features on the DnD 5th api according to the params
+     * @param name of the class
+     * @return the showclass view, class, classlevels
      */
     public function showClass($name){
         $class= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/" . $name));
@@ -86,15 +99,9 @@ class RealmController extends Controller
     }
     
     /*
-    * Haalt de classes op van de D&D5e api en geeft deze terug
-    *//*
-    public function showClassLevels($name){
-        $classlevels= json_decode(file_get_contents("https://www.dnd5eapi.co/api/classes/". $name . "/levels"));
-        return view("realm/classes/showClass")->with("classlevels",$classlevels);  
-    }*/
-
-    /*
-     * haalt de inhoud van een klasse op
+     * Gets the race on the DnD 5th api according to the params
+     * @param name of the race
+     * @return the showrace view, race
      */
     public function showRace($name){
         $race= json_decode(file_get_contents("https://www.dnd5eapi.co/api/races/" . $name));
@@ -102,7 +109,9 @@ class RealmController extends Controller
     }
 
     /*
-     * haalt de inhoud van een klasse op
+     * Gets the trait on the DnD 5th api according to the params
+     * @param name of the trait
+     * @return the showtrait view, trait
      */
     public function showTrait($name){
         $trait= json_decode(file_get_contents("https://www.dnd5eapi.co/api/traits/" . $name));
@@ -110,7 +119,9 @@ class RealmController extends Controller
     }
     
     /*
-     * haalt de inhoud van een klasse op
+     * Gets the subrace on the DnD 5th api according to the params
+     * @param name of the subrace
+     * @return {html} the showsubrace view, subrace
      */
     public function showSubrace($name){
         $subrace= json_decode(file_get_contents("https://www.dnd5eapi.co/api/subraces/" . $name));
@@ -118,7 +129,9 @@ class RealmController extends Controller
     }
     
     /*
-     * haalt de inhoud van een klasse op
+     * Gets the subclass on the DnD 5th api according to the params
+     * @param name of the subclass
+     * @return the showsubclass view, subclass
      */
     public function showSubclass($name){
         $subclass= json_decode(file_get_contents("https://www.dnd5eapi.co/api/subclasses/" . $name));
@@ -127,17 +140,12 @@ class RealmController extends Controller
     
     
     /*
-    * haalt de inhoud van een klasse op
-    */
+     * Gets the monster on the DnD 5th api according to the param
+     * @param name of the monster
+     * @return the showmonster view, monster
+     */
     public function showMonster($name){
         $monster= json_decode(file_get_contents("https://www.dnd5eapi.co/api/monsters/" . $name));
         return view("realm/monsters/showMonster")->with("monster",$monster);  
     }
-    
-
-   
-    //------------------------------------------------------------------------------------------
-    
-    
-    
 }

@@ -1,11 +1,8 @@
 @extends("master")
 @section("pagina","...")
-
 @section("content")
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$spell->name}}</h1>
-    
     <p class="text-right bold"><i class="fa fa-magic"></i> School of magic: {{$spell->school->name}}</p>
-    
     <div class="display-flex">
     
         <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
@@ -67,8 +64,8 @@
                 @endforeach
             </ul>
         </div>
-    
     </div>
+    
     @if(isset($spell->desc))
     <div class="margin-1 padding-1 light-background-color display-inline-block vertical-align-top">   
         <p class="bold">Description</p>
@@ -80,5 +77,4 @@
             <p>At higher level: {{$spell->higher_level[0]}}</p>
         @endif    
     </div>
-
 @stop

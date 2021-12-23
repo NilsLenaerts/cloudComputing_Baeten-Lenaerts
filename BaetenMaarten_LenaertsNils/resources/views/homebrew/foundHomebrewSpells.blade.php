@@ -1,5 +1,5 @@
 @extends('master')
-@section('subtitle','Spells')
+@section('subtitle','Homebrew Spells')
 @section('content')
     <div>
         <h2 class="font-family-draconis center">5e Homebrew Spell creator</h2>
@@ -23,18 +23,43 @@
                 <button type="button" class="border-box padding-1 margin-1" onclick="saveSpell()"><strong>Save</strong></button> 
             </div>
         </div>
-
-            <div class="tiles center">
-                @if(isset($homebrewSpells))
-                @foreach ($homebrewSpells as $id)
+        <div class="tiles center" >
+            @if(isset($homebrewSpells))
+            @foreach ($homebrewSpells as $hspell)
                 <div class="inner-tile">
-                            <a href="showHomebrewSpell/{{$id->name}}">
-                            <p>{{$id->name}}</p>
-                        </a>
-                    </div>
-                        @endforeach
-                    @endif
-            </div>
-</div>
+                    <a href="showHomebrewSpell/{{$hspell->name}}">
+                        <p>{{$hspell->name}}</p>
+                    </a>
+                        <button onclick="document.getElementById('{{$hspell->name}}').style.display='block'" class="button1" > Delete</button>
+                        <div id="{{$hspell->name}}" class="modal">
+                          <span onclick="document.getElementById('{{$hspell->name}}').style.display='none'" class="close" title="Close Modal">&times;</span>
+                          <form class="modal-content" action="/action_page.php">
+                            <div class="container">
+                              <h1>Delete {{$hspell->name}}?</h1>
+                              <p>Are you sure you want to delete this homebrew spell </p>
+
+                              <div class="clearfix">
+                                    <button type="button" class="cancelbtn" onclick="document.getElementById('{{$hspell->name}}').style.display='none'">Cancel</button>
+                                    <button type="button" onclick="deleteSpell('{{$hspell->name}}')" class="deletebtn" data-dismiss="modal">
+                                        Delete                         
+                                    </button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <script>
+                            // Get the modal
+                            var modal = document.getElementById('{{$hspell->name}}');
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function(event) {
+                              if (event.target == modal) {
+                                modal.style.display = "none";
+                              }
+                            }
+                        </script>
+                </div>
+            @endforeach
+            @endif                
+        </div>
 @stop
 

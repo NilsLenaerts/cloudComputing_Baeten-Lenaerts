@@ -1,0 +1,211 @@
+swagger: '2.0'
+info:
+  description: Dungeons&Dorks Homebrew API is an api which can be used to store homebrew items such as spells or magic swords.
+  version: "1.0.0"
+  title: Dungeons&Dorks Homebrew API
+  contact:
+    email: you@your-company.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: admins
+    description: Secured Admin-only calls
+  - name: developers
+    description: Operations available to regular developers
+paths:
+  /searchspell:
+    get:
+      tags:
+        - developers
+      summary: returns a list of all the spells in the database
+      operationId: searchInventory
+      description: Returns a list of all the spells in the database xod
+      responses:
+        '400':
+          description: bad input parameter
+          
+  /showHomebrewSpell/{name}:
+    get:
+      tags:
+        - developers
+      summary: Returns a specific spell and is searched by name
+      operationId: showHomebrewSpell
+      description: By passing a name of a spell, the service will provide you of the homebrew spell with that name.
+      parameters:
+        - in: path
+          name: name
+          description: Pass a name of a homebrew spell
+          required: true
+          type: string
+
+      responses:
+        '200':
+          description: search results matching criteria
+
+        '400':
+          description: bad input parameter
+          
+  /savespell/{name}/{castingTime}/{level}/{copmonents}/{materials}/{description}/{school}/{range}/{ritual}/{availability}:    
+    post:
+      tags:
+        - admins
+      summary: Saves a homebrew spell in the database
+      operationId: addInventory
+      description: By passing the correct parameters for creating a spell, the spell will be created in the database
+      parameters:
+        - in: path
+          name: name
+          description: The name of the spell
+          required: true
+          type: string
+        - in: path
+          name: castingTime
+          description: The casting time of the spell
+          required: true
+          type: string
+        - in: path
+          name: level
+          description: The level of the spell
+          required: true
+          type: string
+        - in: path
+          name: copmonents
+          description: The components of the spell
+          required: true
+          type: string
+        - in: path
+          name: materials
+          description: The materials of the spell
+          required: true
+          type: string
+        - in: path
+          name: description
+          description: The description of the spell
+          required: true
+          type: string
+        - in: path
+          name: school
+          description: The school of the spell
+          required: true
+          type: string
+        - in: path
+          name: range
+          description: The range of the spell
+          required: true
+          type: string
+        - in: path
+          name: ritual
+          description: Can the spell be performed as a ritual?
+          required: true
+          type: string
+        - in: path
+          name: availability
+          description: The availability of the spell
+          required: true
+          type: string    
+      responses:
+        '201':
+          description: spell created
+        '400':
+          description: 'invalid input, object invalid'
+        '409':
+          description: an existing spell already exists
+  /searchitem:
+    get:
+      tags:
+        - developers
+      summary: returns a list of all the items
+      operationId: searchItem
+      description: Returns a list of all the items in the database xod
+      responses:
+        '200':
+          description: search results matching criteria
+        '400':
+          description: bad input parameter
+          
+  /showHomebrewItem/{name}:
+    get:
+      tags:
+        - developers
+      summary: Returns a specific item and is searched by name
+      operationId: showHomebrewItem
+      description: |
+        By passing a name of an item, the service will provide you of the homebrew item with that name.
+      parameters:
+        - in: path
+          name: name
+          description: Pass a name of a homebrew item
+          required: true
+          type: string
+
+      responses:
+        '200':
+          description: search results matching criteria
+          
+        '400':
+          description: bad input parameter
+          
+  /saveitem/{name}/{price}/{description}:
+    post:
+      tags:
+        - admins
+      summary: Saves a homebrew spell  
+      operationId: saveItem
+      description: By passing the correct parameters for creating a spell, the spell will be created in the database
+      parameters:
+        - in: path
+          name: name
+          description: the name of the item
+          required: true
+          type: string
+        - in: path
+          name: price
+          description: the price of the item
+          required: true
+          type: string
+        - in: path
+          name: description
+          description: the description of the item
+          required: true
+          type: string
+      responses:
+        '400':
+          description: 'invalid input, object invalid'
+          
+  /deleteitem:
+    post:
+      tags:
+        - admins
+      summary: Delete a homebrew item 
+      operationId: deleteItem
+      description: Deletes a homebrew item from the database according to the request
+      responses:
+        '400':
+          description: 'invalid input, object invalid'
+          
+  /deletespell:
+    post:
+      tags:
+        - admins
+      summary: Delete a homebrew spell 
+      operationId: deleteSpell
+      description: Deletes a spell item from the database according to the request
+      responses:
+        '400':
+          description: 'invalid input, object invalid'
+          
+  /updatespell:
+    post:
+      tags:
+        - admins
+      summary: Updates a homebrew spell
+      operationId: updateSpell
+      description: Updates a spell item from the database according to the request
+      responses:
+        '400':
+          description: 'invalid input, object invalid'
+host: virtserver.swaggerhub.com
+basePath: /DnD91/HomebrewApi/1.0.0
+schemes:
+ - https

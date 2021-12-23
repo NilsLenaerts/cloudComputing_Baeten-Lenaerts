@@ -1,4 +1,3 @@
-#firebase import
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
@@ -108,7 +107,8 @@ def createChar():
     chamod = json['chamod']
 
     profbonus = json['profbonus']
-    
+    #otherprofs=json['otherprofs']
+
     char_ref = ref.push({
         'email':email,
         'name':name,
@@ -137,20 +137,11 @@ def createChar():
         'profbonus':profbonus,
         'save':{
             'strsavebonus':'',
-            'strsavebonus':'',
             'dexsavebonus':'',
             'consavebonus':'',
             'wissavebonus':'',
             'intsavebonus':'',
             'chasavebonus':''
-        },
-        'saveproficient':{
-            'strsaveprofcient':'false',
-            'dexsaveprofcient':'false',
-            'consaveprofcient':'false',
-            'wissaveprofcient':'false',
-            'intsaveprofcient':'false',
-            'chasaveprofcient':'false'
         },
         'skill':{
             'acrobatics' :'',
@@ -173,14 +164,44 @@ def createChar():
             'survival':''
         },
         'ac':'',
-        'pp':'',
+        'pap':'',
         'speed':'',
-        'otherprof':'',
+        'otherprofs':'',
         'hp':{
             'maxhp':'',
             'currenthp':'',
-            'temphp':''
-        }
+            'temphp':'',
+            'remaininghd':''
+        },
+        'combat':{
+            'atkname1':'',
+            'atkbonus1':'',
+            'atkdamage1':'',
+
+            'atkname2':'',
+            'atkbonus2':'',
+            'atkdamage2':'',
+
+            'atkname3':'',
+            'atkbonus3':'',
+            'atkdamage3':'',
+            'textareacombat':''
+        },
+        'money':{
+            'cp':'',
+            'sp':'',
+            'ep':'',
+            'gp':'',
+            'pp':''
+        },
+        'equipment':'',
+        'flavor':{
+            'personality':'',
+            'ideals':'',
+            'bonds':'',
+            'flaws':'',
+        },
+        'features':'',    
 
     })
     return "succes"
@@ -229,19 +250,19 @@ def updateChar():
     wisscore = json['wisscore']
     chascore = json['chascore']
 
+    strmod = json['strmod']
+    dexmod = json['dexmod']
+    conmod = json['conmod']
+    intmod = json['intmod']
+    wismod = json['wismod']
+    chamod = json['chamod']
+
     strsavebonus = json['strsavebonus']
     dexsavebonus = json['dexsavebonus']
     consavebonus = json['consavebonus']
     wissavebonus = json['wissavebonus']
     intsavebonus = json['intsavebonus']
     chasavebonus = json['chasavebonus']
-
-    strsaveprofcient=json['strsaveprofcient']
-    dexsaveprofcient=json['dexsaveprofcient']
-    consaveprofcient=json['consaveprofcient']
-    wissaveprofcient=json['wissaveprofcient']
-    intsaveprofcient=json['intsaveprofcient']
-    chasaveprofcient=json['chasaveprofcient']
 
     acrobatics =json['acrobatics']
     animal =json['animal']
@@ -262,14 +283,45 @@ def updateChar():
     stealth=json['stealth']
     survival=json['survival']
 
-    otherprof=json['otherprof']
+
     ac=json['ac']
-    pp=json['pp']
+    pap=json['pap']
     speed=json['speed']
 
     maxhp=json['maxhp']
     currenthp=json['currenthp']
     temphp=json['temphp']
+    remaininghd=json['remaininghd']
+
+    otherprofs=json['otherprofs']
+
+    atkname1=json['atkname1']
+    atkbonus1=json['atkbonus1']
+    atkdamage1=json['atkdamage1']
+
+    atkname2=json['atkname2']
+    atkbonus2=json['atkbonus2']
+    atkdamage2=json['atkdamage2']
+
+    atkname3=json['atkname3']
+    atkbonus3=json['atkbonus3']
+    atkdamage3=json['atkdamage3']
+    textareacombat=json['textareacombat']
+
+    cp=json['cp']
+    sp=json['sp']
+    ep=json['ep']
+    gp=json['gp']
+    pp=json['pp']
+
+    equipment=json['equipment']
+
+    personality=json['personality']
+    ideals=json['ideals']
+    bonds=json['bonds']
+    flaws=json['flaws']
+
+    features=json['features']
 
     characters = ref.get()
     #print(characters)
@@ -291,7 +343,15 @@ def updateChar():
                     'intscore':intscore,
                     'wisscore':wisscore,
                     'chascore':chascore
-                    },
+                },
+                'mod':{
+                    'strmod':strmod,
+                    'dexmod':dexmod,
+                    'conmod':conmod,
+                    'intmod':intmod,
+                    'wismod':wismod,
+                    'chamod':chamod
+                },
                 'save':{
                     'strsavebonus':strsavebonus,
                     'dexsavebonus':dexsavebonus,
@@ -299,16 +359,7 @@ def updateChar():
                     'wissavebonus':wissavebonus,
                     'intsavebonus':intsavebonus,
                     'chasavebonus':chasavebonus
-                },
-                'saveproficient':{
-                    'strsaveprofcient':strsaveprofcient,
-                    'dexsaveprofcient':dexsaveprofcient,
-                    'consaveprofcient':consaveprofcient,
-                    'wissaveprofcient':wissaveprofcient,
-                    'intsaveprofcient':intsaveprofcient,
-                    'chasaveprofcient':chasaveprofcient
-
-                },        
+                },  
                 'skill':{
                     'acrobatics' :acrobatics,
                     'animal' :animal,
@@ -329,15 +380,47 @@ def updateChar():
                     'stealth':stealth,
                     'survival':survival
                 },
-                'otherprof':otherprof,
+                'otherprofs':otherprofs,
                 'ac':ac,
-                'pp':pp,
+                'pap':pap,
                 'speed':speed,
                 'hp':{
                     'maxhp':maxhp,
                     'currenthp':currenthp,
                     'temphp':temphp,
-                }
+                    'remaininghd':remaininghd
+                },
+
+                'combat':{
+
+                    'atkname1':atkname1,
+                    'atkbonus1':atkbonus1,
+                    'atkdamage1':atkdamage1,
+
+                    'atkname2':atkname2,
+                    'atkbonus2':atkbonus2,
+                    'atkdamage2':atkdamage2,
+
+                    'atkname3':atkname3,
+                    'atkbonus3':atkbonus3,
+                    'atkdamage3':atkdamage3,
+                    'textareacombat':textareacombat,
+                },
+                'money':{
+                    'cp':cp,
+                    'sp':sp,
+                    'ep':ep,
+                    'gp':gp,
+                    'pp':pp,
+                },
+                'equipment':equipment,
+                'flavor':{
+                    'personality':personality,
+                    'ideals':ideals,
+                    'bonds':bonds,
+                    'flaws':flaws,
+                },
+                'features':features,   
 
             })
     return "Succes"
@@ -349,18 +432,18 @@ def getCharacters(email):
     jsontot=[]
     ref = db.reference('/characters')
     characters = ref.get()
-
-    for charId in characters:
-        new_ref=db.reference('/characters/' + charId)
-        item = new_ref.get()
-        
-        if(item['email'] == email):
-            #print(item)
-            jsontot.append(item)
-    print("list")
-    print(jsontot)
-    print("endOfList")
-    return jsonify(jsontot)
+    if(characters):
+        for charId in characters:
+            new_ref=db.reference('/characters/' + charId)
+            item = new_ref.get()
+            
+            if(item['email'] == email):
+                #print(item)
+                jsontot.append(item)
+        print("list")
+        print(jsontot)
+        print("endOfList")
+        return jsonify(jsontot)
 
 class MyCharacters(Resource):
     def get(self, email):
@@ -433,8 +516,6 @@ def setCharacter():
         }
         }
     })
-
-
 def updateCharacter():
 #updating data
     ref = db.reference('character')
@@ -442,7 +523,6 @@ def updateCharacter():
     char_ref.update({
         'name':'Faker'
     })
-
 def multipleUpdate():
 #multiple update
     ref = db.reference('character')
@@ -450,8 +530,6 @@ def multipleUpdate():
         'char1/class':'warlock',
         'char2/race':'dwarf'
     })
-
-
 def pushCharacter():
 #adding value using push
     ref = db.reference('character2')
@@ -462,8 +540,6 @@ def pushCharacter():
         'age':'21'
     })
     print(char_ref.key)
-
-
 def getCharacter():
     #retrieving data
     ref = db.reference('character2')

@@ -1,14 +1,13 @@
 @extends("master")
-@section("pagina","...")
+@section("pagina","Race")
 @section("content")
     <script src="{!! mix('app.js') !!}"></script>
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$race->name}}</h1>
     <h3 class="center margin-0 padding-0 font-family-draconis">Speed: {{$race->speed}}ft</h3>
-    
     <div class="display-flex">
-        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color flex-basis-45 vertical-align-top">
             @if(isset($race->ability_bonuses))
-            <p class="bold">Subclasses:</p>
+            <p class="bold">Abilityscore Bonusses:</p>
             <ul>
                 @foreach($race->ability_bonuses as $bonuses)
                 <li> Ability score: {{$bonuses->ability_score->name}} +{{$bonuses->bonus}}</li>
@@ -17,12 +16,12 @@
             @endif
         </div>
         
-        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color flex-basis-45 vertical-align-top">
             <p class="bold"> Alignment:</p> 
             <p>{{$race->alignment}}</p>
         </div>
         
-        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color flex-basis-70 vertical-align-top">
             <p class="bold"> Age:</p>
             <p>{{$race->age}}</p>
         </div>
@@ -32,7 +31,7 @@
             <p>{{$race->size}}</p>
         </div>
         
-        <div class="margin-1 padding-1 light-background-color flex-basis-20 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color flex-basis-70 vertical-align-top">
             <p class="bold">Size description:</p> 
             <p>{{$race->size_description}}</p>
         </div>
@@ -50,7 +49,7 @@
         </div>
 
         
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-92 vertical-align-top">
             @if(isset($race->languages))
             <p class="bold">Language description:</p> 
             <p>{{$race->language_desc}}</p>
@@ -62,7 +61,7 @@
             @endif
         </div>
         
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-92 vertical-align-top">
             <p class="bold">You have the following traits:</p>
             <ul>
             @foreach ($race->traits as $trait)

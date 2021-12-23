@@ -1,7 +1,7 @@
 @extends("master")
-@section("pagina","...")
-
+@section("pagina","Class")
 @section("content")
+    <script src="{!! mix('app.js') !!}"></script>
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$class->name}}</h1>
    
     <p class="text-right bold">Hit die: d{{$class->hit_die}}</p>
@@ -53,11 +53,8 @@
             @endif
         </div>
         
-                
-
         
-        
-        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
+        <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-100 vertical-align-top">
             <p class="bold">Your levelling traits</p>
             <ul>
             @foreach ($classlevels as $classlevel)
@@ -76,17 +73,11 @@
                                 </details>
                                 @endforeach
                             @endif
-                            @if(isset($classlevel->class_specific))
-                                @foreach($classlevel->class_specific as $key=>$value)
-                                <li>{{$key}}: {{$value}}</li>
-                                @endforeach
-                            @endif
                         </ul>
                     </details>
                 </li>
             @endforeach
             </ul>
         </div>
-        
     </div>
 @stop

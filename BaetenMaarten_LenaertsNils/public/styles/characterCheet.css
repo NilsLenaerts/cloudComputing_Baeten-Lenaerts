@@ -1,3 +1,7 @@
+/* 
+    Created on : 9 dec. 2021, 20:25:48
+    Author     : Maarten
+*/
 .red {
   background: red;
 }
@@ -434,13 +438,6 @@ form.charsheet main section.combat > div.hp > div.temporary label {
   font-weight: bold;
     background: rgb(156, 122, 96, 0.4);
 }
-form.charsheet main section.combat > div.hitdice, form.charsheet main section.combat > div.deathsaves {
-  flex: 1 50%;
-  height: 100px;
-}
-form.charsheet main section.combat > div.hitdice > div, form.charsheet main section.combat > div.deathsaves > div {
-  height: 80px;
-}
 form.charsheet main section.combat > div.hitdice > div {
   background: transparent;
   margin: 10px;
@@ -488,53 +485,7 @@ form.charsheet main section.combat > div.hitdice > div > div.remaining input {
   flex: 1;
     background: rgb(156, 122, 96, 0.4);
 }
-form.charsheet main section.combat > div.deathsaves > div {
-  margin: 10px;
-  background: transparent;
-  border: 1px solid black;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column-reverse;  
-  background: rgb(156, 122, 96, 0.4);
-}
-form.charsheet main section.combat > div.deathsaves > div > div.label {
-  text-align: center;
-}
-form.charsheet main section.combat > div.deathsaves > div > div.label label {
-  font-size: 10px;
-}
-form.charsheet main section.combat > div.deathsaves > div > div.marks {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  
-}
-form.charsheet main section.combat > div.deathsaves > div > div.marks div.deathsuccesses, form.charsheet main section.combat > div.deathsaves > div > div.marks div.deathfails {
-  display: flex;
-  align-items: center;
-}
-form.charsheet main section.combat > div.deathsaves > div > div.marks div.deathsuccesses label, form.charsheet main section.combat > div.deathsaves > div > div.marks div.deathfails label {
-  font-size: 8px;
-  text-align: right;
-  flex: 1 50%;
-}
-form.charsheet main section.combat > div.deathsaves > div div.bubbles {
-  flex: 1 40%;
-  margin-left: 5px;
-}
-form.charsheet main section.combat > div.deathsaves > div div.bubbles input[type=checkbox] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 10px;
-  height: 10px;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-form.charsheet main section.combat > div.deathsaves > div div.bubbles input[type=checkbox]:checked {
-  background: transparent;
-}
+
 form.charsheet main section.attacksandspellcasting {
   border: 1px solid black;
   border-radius: 10px;
@@ -619,6 +570,8 @@ form.charsheet main section.flavor {
   padding: 10px;
   background: transparent;
   border-radius: 10px;
+  width:150%
+
 }
 form.charsheet main section.flavor div {
   background: transparent;
@@ -626,6 +579,7 @@ form.charsheet main section.flavor div {
   flex-direction: column-reverse;
   padding: 5px;
   border: 1px solid black;
+  
 }
 form.charsheet main section.flavor div label {
   text-align: center;
@@ -648,6 +602,7 @@ form.charsheet main section.flavor div:last-child {
 }
 form.charsheet main section.features {
   padding: 10px;
+  width:150%;
 }
 form.charsheet main section.features div {
   padding: 10px;
