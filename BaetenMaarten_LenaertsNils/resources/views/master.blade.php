@@ -67,12 +67,12 @@
               <a href="javascript:void(0)" class="dropbtn">Calendar</a>
             </li>
             
-            <li class="dropdown float-right" style="margin-right: 150px;">
+            <li class="dropdown float-right" style="margin-right: px;">
               @guest
               <a href="/login" class="dropbtn">Login</a>
               @else
               <a href="/profile" class="dropbtn">{{ Auth::user()->name }}</a>
-              <div class="dropdown-content">
+              <div class="dropdown-content" style="float:right;">
               <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a> <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf</form>
                 <a href="/myCharacters">My characters</a>
               </div>
