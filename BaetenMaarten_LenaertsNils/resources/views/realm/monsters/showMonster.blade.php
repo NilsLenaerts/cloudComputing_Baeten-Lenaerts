@@ -1,10 +1,7 @@
 @extends("master")
-@section("pagina","...")
-
+@section("pagina","Monster")
 @section("content")
-
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$monster->name}}</h4>
-
     <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
         <p class="bold">Info</p>
         <p> Size: {{$monster->size}}</p>
@@ -13,7 +10,6 @@
         <p> CR: {{$monster->challenge_rating}}</p>
         <p> Xp: {{$monster->xp}}</p>
     </div>
-
     <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
         <p class="bold">AC: </p>
         <p>{{$monster->armor_class}}</p>
@@ -33,7 +29,7 @@
 
     <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
         @if(isset($monster->proficiencies))
-        <p class="bold">Skills & Savung throws</p>
+        <p class="bold">Skills & Saving throws</p>
         <ul>
             @foreach($monster->proficiencies as $proficiencies)
             <li>{{$proficiencies->proficiency->name}}: +{{$proficiencies->value}}</li>

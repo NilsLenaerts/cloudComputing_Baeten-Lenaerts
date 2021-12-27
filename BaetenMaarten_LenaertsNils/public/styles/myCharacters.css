@@ -1,0 +1,68 @@
+/* 
+    Created on : 12 dec. 2021, 22:45:50
+    Author     : Maarten
+*/
+#myCharacters {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#myCharacters p {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+#myCharacters select {
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+    background: rgb(156, 122, 96, 0.4);
+    border-radius: 4px;
+}
+
+#myCharacters input {
+    background: rgb(156, 122, 96, 0.4);
+    border: hidden;
+    text-align: right;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+#myCharacters button {
+    width: 30%;
+    background-color: #202110;
+    border: none;
+    color:#E6D0BE;
+    cursor: pointer;
+    border-radius: 4px;
+} 
+
+/* Style the tab buttons */
+.tablink {
+  background-color: #202110;
+  color:#E6D0BE;
+  float: left;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+  
+}
+
+/* Change background color of buttons on hover */
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Set default styles for tab content */
+.tabcontent {
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+

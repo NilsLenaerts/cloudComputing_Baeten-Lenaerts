@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>resources/views/character/showMyCharacter.blade.php</url>
+            <bookmark id="2">
+                <name/>
+                <line>387</line>
+                <key/>
+            </bookmark>
+        </file>
         <file>
             <url>resources/views/character/myCharacters.blade.php</url>
             <bookmark id="1">
@@ -13,8 +21,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/master.blade.php</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/routes/web.php</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/public/styles/navbar.css</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/character/myCharacters.blade.php</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/app/Http/Controllers/RealmController.php</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/resources/views/character/showMyCharacter.blade.php</file>
             <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/public/functions/firebase.js</file>
-            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/app/Http/Controllers/CharacterController.php</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/public/styles/popup.css</file>
+            <file>file:/C:/Users/Maarten/Documents/IIW/Ma/Cloud%20computing/Taak/cloudComputing_Baeten-Lenaerts/BaetenMaarten_LenaertsNils/app/Http/Controllers/HomeController.php</file>
         </group>
     </open-files>
 </project-private>

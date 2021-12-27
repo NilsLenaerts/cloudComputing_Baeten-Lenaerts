@@ -1,5 +1,5 @@
 @extends('master')
-@section('subtitle', 'Rules')
+@section('subtitle', 'Homebrew')
 @section('content')
     <h2 class="font-family-draconis center">Welcome to the D&amp;D&nbsp; 5e Realm</h2>
     <p class="font-family-draconis center"> Here's the short definition of homebrew as it 

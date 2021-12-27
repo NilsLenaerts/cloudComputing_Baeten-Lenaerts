@@ -1,6 +1,5 @@
 @extends("master")
-@section("pagina","...")
-
+@section("pagina","Subrace")
 @section("content")
 <script src="{!! mix('app.js') !!}"></script>
     <h1 class="center margin-0 padding-0 font-family-draconis">{{$subrace->name}}</h1>
@@ -16,8 +15,6 @@
                 </ul>
             @endif
         </div>
-        
-
         
         <div class="margin-1 padding-1 light-background-color display-inline-block flex-basis-45 vertical-align-top">
             @if(isset($subrace->racial_traits))

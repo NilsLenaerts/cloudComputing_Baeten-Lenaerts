@@ -1,13 +1,6 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Http\Controllers;
-header('Access-Control-Allow-Origin: *');
 use Illuminate\Http\Request;
 
 class homebrewController extends Controller{
@@ -17,7 +10,9 @@ class homebrewController extends Controller{
     }
     
     /*
-     * geeft de lijst met homebrew spells terug
+     * Gets the homebrew spell from our homebrew api
+     * @param request
+     * @return foundhomebrewspells view, homebrew spells
      */
     public function foundHomebrewSpells(Request $request){
         //$level=$request->level;
@@ -30,8 +25,10 @@ class homebrewController extends Controller{
     }
     
     /*
-    * Haalt de inhoud van een spell op
-    */
+     * Gets the homebrew spell accroding to the params
+     * @param name
+     * @return showhomebrewspell view, homebrewspell
+     */
     public function showHomebrewSpell($name){
         $name20 =rawurlencode($name);
         $homebrewSpell= json_decode(file_get_contents("http://127.0.0.1:1200/api/showHomebrewSpell/" . $name20));
@@ -39,10 +36,10 @@ class homebrewController extends Controller{
         return view("homebrew/showHomebrewSpell")->with("homebrewSpell",$homebrewSpell);  
     }
 
-    //-----------------------------------------------------
-        
     /*
-     * geeft de lijst met homebrew items terug
+     * Gets the homebrew items from our homebrew api
+     * @param request
+     * @return foundhomebrewitems view, homebrew items
      */
     public function foundHomebrewItems(Request $request){
         //$level=$request->level;
@@ -55,8 +52,10 @@ class homebrewController extends Controller{
     }
     
     /*
-    * Haalt de inhoud van een item op
-    */
+     * Gets the homebrew item accroding to the params
+     * @param name
+     * @return showhomebrewitem view, homebrew item
+     */
     public function showHomebrewItem($name){
         $name20 =rawurlencode($name);
         $homebrewItem= json_decode(file_get_contents("http://127.0.0.1:1200/api/showHomebrewItem/" . $name20));
