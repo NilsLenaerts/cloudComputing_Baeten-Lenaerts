@@ -1,0 +1,2 @@
+curl -k "https://localhost:7081/api/Events"
+curl -kd '{"name":"akan","start":"now","end":"overtommorow","OwnerSecret":"ikbenGeheim"}' -H "Content-Type:application/json" -X POST "https://localhost:7081/api/Events"
