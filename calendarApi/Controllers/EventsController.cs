@@ -64,8 +64,7 @@ public class EventsController : ControllerBase
         {
             return NotFound();
         }
-        if (Event.Id is null)
-        {
+        if (Event.Id is null){
             return NotFound();
         }
 
