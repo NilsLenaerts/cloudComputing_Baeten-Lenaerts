@@ -1,17 +1,21 @@
 using SoapCore;
 using calendarApi.Models;
+using calendarApi.Services;
 using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.Configure<CalendarDatabaseSettings>(builder.Configuration.GetSection("CalendarDatabase"));
 
-builder.Services.AddControllers();
-builder.Services.AddDbContext<CalendarContext>(opt=> opt.UseInMemoryDatabase("eventList"));
+// Add services to the container.
+builder.Services.AddControllers()
+.AddJsonOptions(
+        options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
-//builder.Services.AddSingleton<IExampleService, Service>();
-
+builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<EventsService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
