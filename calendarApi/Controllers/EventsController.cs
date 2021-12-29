@@ -64,6 +64,10 @@ public class EventsController : ControllerBase
         {
             return NotFound();
         }
+        if (Event.Id is null)
+        {
+            return NotFound();
+        }
 
         await _EventsService.RemoveAsync(Event.Id);
 
