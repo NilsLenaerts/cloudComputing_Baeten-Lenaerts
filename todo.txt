@@ -17,7 +17,7 @@ maarten:
 
 nils:
 ---tokens aan api
----calendar soap
+---calendar soap (werkt ongeveer, moet mischien nog wat beter in vorm van de datastructuur)
 ---DOCKER!!
 
 Peer review
