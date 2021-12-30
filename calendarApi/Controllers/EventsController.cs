@@ -13,9 +13,9 @@ public class EventsController : ControllerBase
     public EventsController(EventsService EventsService) =>
         _EventsService = EventsService;
 
-    [HttpGet]
+    /*[HttpGet]
     public async Task<List<Event>> Get() =>
-        await _EventsService.GetAsync();
+        await _EventsService.GetAsync("id");
 
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<Event>> Get(string id)
@@ -71,5 +71,5 @@ public class EventsController : ControllerBase
         await _EventsService.RemoveAsync(Event.Id);
 
         return NoContent();
-    }
+    }*/
 }

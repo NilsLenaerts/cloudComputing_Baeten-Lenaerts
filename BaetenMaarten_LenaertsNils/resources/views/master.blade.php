@@ -70,7 +70,7 @@
             </li>
 
             <li class="dropdown float-left">
-              <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-calendar" aria-hidden="true"></i> Calendar</a>
+              <a href="/calendar" class="dropbtn"><i class="fa fa-calendar" aria-hidden="true"></i> Calendar</a>
             </li>
             
 

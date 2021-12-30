@@ -15,7 +15,8 @@ builder.Services.AddControllers()
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<EventsService>();
+//builder.Services.AddSingleton<EventsService>();
+builder.Services.AddSingleton<IEventsServiceContract, EventsService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,7 +26,7 @@ if (app.Environment.IsDevelopment())
     //app.UseSwagger();
     //app.UseSwaggerUI();
 }
-//app.UseSoapEndpoint<IExampleService>("/Service.asmx", new SoapEncoderOptions());
+app.UseSoapEndpoint<IEventsServiceContract>("/Service.asmx", new SoapEncoderOptions());
 
 app.UseHttpsRedirection();
 

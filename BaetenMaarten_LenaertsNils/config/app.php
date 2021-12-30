@@ -173,6 +173,12 @@ return [
         
         
         /*
+         * soap
+         */
+        Artisaninweb\SoapWrapper\ServiceProvider::class, 
+
+
+        /*
          * Package Service Providers...
          */
 
@@ -240,7 +246,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        //'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'SoapWrapper' => Artisaninweb\SoapWrapper\Facade\SoapWrapper::class,
 
     ],
 

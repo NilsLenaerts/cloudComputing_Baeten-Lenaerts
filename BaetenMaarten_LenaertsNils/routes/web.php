@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\RealmController;   
 use App\Http\Controllers\RulesController;    
@@ -52,6 +53,9 @@ Route::get('/combat', [RulesController::class, 'ruleInfo']);
 Route::get('/equipment', [RulesController::class, 'ruleInfo']);
 Route::get('/spellcasting', [RulesController::class, 'ruleInfo']);
 Route::get('/using-ability-scores', [RulesController::class, 'ruleInfo']);
+
+Route::get('/calendar', [CalendarController::class, 'calendarInfo']);
+Route::post('/event', [CalendarController::class, 'eventInfo']);
 
 
 
