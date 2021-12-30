@@ -30,3 +30,5 @@ BaetenMaarten_LenaertsNils/composer.lock
 *.zip
 /nbproject/private/
 /characterApi/nbproject/private/
+
+calendarapi/mongodata
