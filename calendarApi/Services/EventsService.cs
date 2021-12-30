@@ -19,22 +19,29 @@ public class EventsService : IEventsServiceContract
 
     public async Task<List<Event?>> GetAsync(string? id){
         List<Event?> EventList = new List<Event?>();
-        if(string.IsNullOrEmpty(id)){
-            EventList = await _eventsCollection.Find(_ => true).ToListAsync();
-            return EventList;
+        try{
             
-            
-        }else{
-            
-            Console.WriteLine(id);
-            if(CheckHex(id)){
-                EventList.Add(await _eventsCollection.Find(x => x.Id == id).FirstOrDefaultAsync());
+            if(string.IsNullOrEmpty(id)){
+                EventList = await _eventsCollection.Find(_ => true).ToListAsync().WaitAsync(TimeSpan.FromSeconds(5));
                 return EventList;
-            }
+            
+            
+            }else{
+            
+                Console.WriteLine(id);
+                if(CheckHex(id)){
+                    EventList.Add(await _eventsCollection.Find(x => x.Id == id).FirstOrDefaultAsync().WaitAsync(TimeSpan.FromSeconds(5)));
+                    return EventList;
+                }
+                EventList.Add(null);
+                return EventList;
+            
+                }
+        }catch(System.TimeoutException){
             EventList.Add(null);
             return EventList;
-            
         }
+        
         
     }
         

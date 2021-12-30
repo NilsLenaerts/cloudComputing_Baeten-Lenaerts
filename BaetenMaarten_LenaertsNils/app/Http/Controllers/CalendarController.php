@@ -8,6 +8,7 @@ use App\Soap\getEventRequest;
 
 class CalendarController extends Controller{
 	public function calendarInfo(){
+		set_time_limit(5);
 		$wrapper = new SoapWrapper();
 		$wrapper->add("getAllEvents", function($service){
 			$service
