@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\homebrewController; 
+use App\Http\Controllers\HomebrewController; 
 
 //header('Access-Control-Allow-Origin: *');
 

@@ -20,7 +20,7 @@ class homebrewController extends Controller{
         //$name=$request->name;
         //error_log($spells->results);
         error_log("hoer");
-        $homebrewSpells= json_decode(file_get_contents("http://127.0.0.1:1200/api/searchspell"));
+        $homebrewSpells= json_decode(file_get_contents("http://localhost:1200/api/searchspell"));
         return view("homebrew/foundHomebrewSpells")->with("homebrewSpells",$homebrewSpells);    
     }
     
