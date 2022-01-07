@@ -22,7 +22,7 @@
         <script type="text/javascript" src="/functions/homebrew.js"></script>
         <script type="text/javascript" src="/functions/firebase.js"></script>
         <script type="text/javascript" src="/functions/diceRoller.js"></script>
-
+        <script type="text/javascript" src="/functions/calendar.js"></script>
     </head>
 
     <body class="margin-0 background home-background-image">
