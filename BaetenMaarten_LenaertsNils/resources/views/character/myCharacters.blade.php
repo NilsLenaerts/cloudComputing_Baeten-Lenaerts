@@ -6,6 +6,7 @@
             <h2 class="font-family-draconis center">My characters</h2>
             <p class="font-family-draconis center">Email: </p>
             <p class="font-family-draconis center" id="email" value="{{ Auth::user()->email }}">{{ Auth::user()->email }}</p>
+            <p style="font-size: 0; "id="secret" value="{{ Auth::user()->userSecret }}">{{ Auth::user()->userSecret }}</p>
             
             <form  class="margin-2" id="myCharacters">
                 <p>E-mail <input type="string" name="email" value="{{Auth::user()->email}}" id="email" disabled="disabled"/></p>

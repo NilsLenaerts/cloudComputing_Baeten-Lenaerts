@@ -6,6 +6,7 @@
  */
 function createCharacter(){
     var email = document.getElementById("email").innerHTML;
+    var secret = document.getElementById("secret").innerHTML;
     //console.log(email);
     var name = document.getElementById("name").value;
     if (name == ""){
@@ -44,6 +45,7 @@ function createCharacter(){
         
     let content = {
         "email":email,
+        "secret":secret,
         "name": name, 
         "race": race, 
         "classe": classe,
@@ -89,9 +91,12 @@ function createCharacter(){
 function deleteCharacter(name){
     //console.log(name)
     var email = document.getElementById("email").innerHTML;
+    var secret = document.getElementById("secret").innerHTML;
+
     let content = {
         "email": email,
         "name": name, 
+        "secret":secret
     }
     url = "http://127.0.0.1:5000/api/deleteCharacter";
     fetch(url, {
@@ -197,9 +202,13 @@ function updateCharacter(email){
     var flaws =document.getElementById("flaws").value;
     
     var features=document.getElementById("features").value;
+
+    var secret = document.getElementById("secret").innerHTML;
+
     
     let content = {
         "email":email,
+        "secret":secret,
         "name": name, 
         "race": race, 
         "classe": classe,

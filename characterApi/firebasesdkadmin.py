@@ -106,11 +106,14 @@ def createChar():
     wismod = json['wismod']
     chamod = json['chamod']
 
+    secret = json["secret"]
+
     profbonus = json['profbonus']
     #otherprofs=json['otherprofs']
 
     char_ref = ref.push({
         'email':email,
+        'secret':secret,
         'name':name,
         'race':race,
         'classe':classe,
@@ -322,11 +325,12 @@ def updateChar():
     flaws=json['flaws']
 
     features=json['features']
+    secret=json['secret']
 
     characters = ref.get()
     #print(characters)
     for key,val in characters.items():
-        if(val['name'] == name and val['email']== email):
+        if(val['name'] == name and val['email']== email and val['secret']==secret):
             update_ref = ref.child(key)
             update_ref.update({
                 'name':name,
@@ -436,7 +440,7 @@ def getCharacters(email):
         for charId in characters:
             new_ref=db.reference('/characters/' + charId)
             item = new_ref.get()
-            
+            print(item)
             if(item['email'] == email):
                 #print(item)
                 jsontot.append(item)
@@ -444,6 +448,8 @@ def getCharacters(email):
         print(jsontot)
         print("endOfList")
         return jsonify(jsontot)
+    else:
+        return jsonify()
 
 class MyCharacters(Resource):
     def get(self, email):
@@ -471,13 +477,18 @@ def DeleteCharacter():
     json = request.get_json()
     name = json['name']
     email = json['email']
-    print(json)
+    secret = json['secret']
+    #print(json)
     print(email)
+    print(secret)
     print("1")
     for key,val in characters.items():
         print("2")
         print(val['name'])
-        if(val['name'] == name and val['email'] == email):
+        print(val['secret'])
+        if(secret == val['secret']):
+            print('secret ok')
+        if(val['name'] == name and val['email'] == email and val['secret'] == secret):
             print('3')
             delete_ref = ref.child(key)
             delete_ref.delete()

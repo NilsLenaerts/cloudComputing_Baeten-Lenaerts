@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CharacterController extends Controller{ 
+
+    /**
+     * Create a new controller instance.
+     * @return void
+     */
+    public function __construct(){
+        //$this->middleware('auth');
+    }
     /*
      * Gets the character according to e specific e-mail adress.
      * @return list of characters

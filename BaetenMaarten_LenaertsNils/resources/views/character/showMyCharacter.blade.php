@@ -2,6 +2,7 @@
 @section('subtitle','My Character')
 @section('content')
 <script src="{!! mix('app.js') !!}"></script>
+<p style="font-size: 0; "id="secret" value="{{ Auth::user()->userSecret }}">{{ Auth::user()->userSecret }}</p>
     
     <button class="tablink vertical-center" onclick="openTab('cheet', this, 'red')" id="defaultOpen">Character Cheet</button>
     <button class="tablink vertical-center" onclick="openTab('spells', this, 'red')">Spell List</button>
