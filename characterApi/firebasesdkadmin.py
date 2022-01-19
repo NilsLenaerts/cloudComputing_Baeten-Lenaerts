@@ -330,7 +330,7 @@ def updateChar():
     characters = ref.get()
     #print(characters)
     for key,val in characters.items():
-        if(val['name'] == name and val['email']== email and val['secret']==secret):
+        if(val['name'] == name and val['email'] == email and val['secret'] == secret):
             update_ref = ref.child(key)
             update_ref.update({
                 'name':name,
@@ -505,7 +505,7 @@ def DeleteCharacter():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
 
 ######################## FIREBASE  ###########################################################
 

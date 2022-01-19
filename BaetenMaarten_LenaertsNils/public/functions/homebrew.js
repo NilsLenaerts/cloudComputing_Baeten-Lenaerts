@@ -18,7 +18,7 @@ function saveSpell(){
     var availability = document.getElementById("availability").value;
     
     var com20=decodeURI(components);
-    var mat20 = decodeURI(material);
+    var mat20 = decodeURI(materials);
     var range20=decodeURI(range);
     var av20= decodeURI(availability);
     var desc20 = decodeURI(description);

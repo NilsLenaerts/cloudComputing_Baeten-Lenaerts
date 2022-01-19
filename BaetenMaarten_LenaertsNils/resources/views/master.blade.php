@@ -28,7 +28,7 @@
     <body class="margin-0 background home-background-image">
       <audio id="my_audio" src="/sounds/BattleAMBLoop.mp3" loop="loop"></audio>
       <script type="text/javascript">window.onload = function() {
-    document.getElementById("my_audio").play();
+    //document.getElementById("my_audio").play();
 }</script>
         <ul class="navbar margin-0 padding-0 height-10-vh">
             <li class="dropdown float-left margin-right-1">

@@ -1,2 +1,5 @@
 firebase_admin
 flask
+flask_restful
+flask_cors
+

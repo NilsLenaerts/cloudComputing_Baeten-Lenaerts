@@ -18,7 +18,5 @@ namespace calendarApi.Models
         public DateTime StartTime { get; set;}
         [DataMember]
         public DateTime EndTime { get; set;}
-        [DataMember]
-        public string? OwnerSecret {get;set;}
     }
 }

@@ -4,6 +4,6 @@ curl -kd '{"name":"akan","start":"now","end":"overtommorow","OwnerSecret":"ikben
 curl -kd '{"Name": "vechten in diepenbeek", "Owner": "owner@email.com", "OwnerSecret": "ownersecrets", "StartTime": "2021-12-29T16:30:00", "EndTime": "2021-12-29T18:30:00"}' -H "Content-Type:application/json" -X POST "https://localhost:7081/api/Events"
 
 
-db.Events.insertMany([{ "Name": "vechten in diepenbeek", "Owner": "owner@email.com", "OwnerSecret": "ownersecrets", "StartTime": "2021-12-29T16:30:00", "EndTime": "2021-12-29T18:30:00" }, { "Name": "vechten in gekke plek", "Owner": "owner2@email.com", "OwnerSecret": "owner2secrets", "StartTime": "2022-09-15T16:30:00", "EndTime": "2022-09-15T18:30:00" }])
+db.Events.insertMany([{ "Name": "newyear campaign", "Owner": "maarten.baeten@student.uhasselt.be", "StartTime": "2022-01-02T12:30:00", "EndTime": "2022-01-02T18:30:00" }, { "Name": "valentines party", "Owner": "nils.lenaerts@student.uhasselt.be", "StartTime": "2022-02-14T16:30:00", "EndTime": "2022-02-14T18:30:00" }])
 
 mongod --dbpath mongoData/
