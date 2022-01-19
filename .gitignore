@@ -33,3 +33,5 @@ BaetenMaarten_LenaertsNils/composer.lock
 
 calendarApi/mongoData
 calendarApi/obj
+
+characterApi/firebase-sdk.json
